@@ -7,12 +7,15 @@ flex-direction:column;
 gap:1rem;
 background:var(--light_black);
 border-radius:8px;
+border:1px solid var(--border_color);
 
 h5{
     letter-spacing:1px;
     font-size:1rem;
 }
 .aboutText{
+    letter-spacing:1px;
+    // line
     color:var(--gray);
     font-size:14px;
 }

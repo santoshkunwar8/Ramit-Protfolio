@@ -2,9 +2,11 @@
 
 import About from "../../components/home/About/About"
 import UserInfo from "../../components/home/UserInfo/UserInfo"
-import WorkItem from "../../components/home/Works/Work"
+// import WorkItem from "../../components/home/Works/Work"
 import HeroItems from "../../components/home/heroItems/HeroItems"
+import WorkBox from "../../components/works/WorkBox"
 import { HomeWrapper } from "./Home.styles"
+import Skills from "./Skills/Skills"
 
 const Home = () => {
   return (
@@ -21,9 +23,9 @@ const Home = () => {
               </div>
               <HeroItems/>
               <div className="hero_item_wrapper" >
-                {
+                {/* {
                   works.map(work=><WorkItem work={work}/>)
-                }
+                } */}
                 {/* <WorkItem />
                 <WorkItem/>
                 <WorkItem/> */}
@@ -33,8 +35,9 @@ const Home = () => {
                     <UserInfo/>
                     <About/>
               </div> 
-
         </div>
+                <WorkBox/>
+                <Skills/>
     </HomeWrapper>
   )
 }

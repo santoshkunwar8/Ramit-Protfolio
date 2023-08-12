@@ -9,7 +9,11 @@ import {styled} from "styled-components";
 export const AppWrapper=styled.div`
 
 background:var(--black_color);
-height:100vh;
+// height:100vh;
+max-width:1200px;
+width:95%;
+margin:0 auto;
+
 witdh:100%
 
 `

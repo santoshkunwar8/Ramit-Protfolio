@@ -11,11 +11,12 @@ gap:1rem;
     opacity:1 !important;
 }
 .itemBox{
+    border:1px solid var(--border_color);
     opacity:0.6;
     height:150px;
     width:150px;
     background:var(--light_black);
-    border-radius:10px;
+    border-radius:7px;
     cursor:pointer;
     display:flex;
     flex-direction:column;
