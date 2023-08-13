@@ -6,6 +6,7 @@ export const HomeWrapper= styled.div`
 height:100%;
 width:100%;
 padding:2rem;
+padding-bottom:0;
 display:flex;
 flex-direction:column;
 gap:5rem;
@@ -13,6 +14,7 @@ gap:5rem;
 .hero_section{
     display:flex;
     gap:1rem;
+    height:70vh;
     
 }
 .hero_item_wrapper{
@@ -46,7 +48,7 @@ gap:5rem;
         border:none;
         outline:none;
         background:var(--main_color);
-        height:50px;
+        height:45px;
         width:120px;
         letter-spacing:1px;
         // font-weight:bold;

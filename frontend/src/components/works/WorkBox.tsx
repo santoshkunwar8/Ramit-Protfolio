@@ -7,6 +7,9 @@ const WorkBox = () => {
   return (
     <WorkBoxWrapper>
       <div className="text_content">
+        <div className="circle_bg">
+
+        </div>
         <div>
 
       <h1>  Code Creations</h1> 

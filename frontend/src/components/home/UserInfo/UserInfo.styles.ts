@@ -78,7 +78,7 @@ gap:1rem;
             background:var(--main_color);
           }
         svg{
-            font-size:2rem;
+            font-size:1.4rem;
         }
 
     }

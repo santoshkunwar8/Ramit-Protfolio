@@ -8,6 +8,21 @@ background-color:var(--light_black);
 display:flex;
 overflow:hidden;
 border:1px solid var(--border_color);
+position:relative;
+backdrop-filter:blur(40px);
+.circle_bg{
+    left:-50px;
+    bottom:0;
+    z-index:-1;
+    opacity:0.5;
+
+    position:absolute;
+    width:150px;
+    height:150px;
+border:30px solid #8325FD;
+    filter:blur(10px);
+    border-radius:50%;  
+}
 .text_content{
     flex:6;
     padding:2rem;

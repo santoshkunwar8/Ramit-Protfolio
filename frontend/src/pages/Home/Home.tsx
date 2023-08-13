@@ -1,6 +1,10 @@
 // import React from 'react'
 
+import Footer from "../../Layouts/Footer/Footer"
 import About from "../../components/home/About/About"
+import Clients from "../../components/home/Clients/Clients"
+import ProjectItem from "../../components/home/Project/ProjectItem"
+import Reviews from "../../components/home/Reviews/Reviews"
 import UserInfo from "../../components/home/UserInfo/UserInfo"
 // import WorkItem from "../../components/home/Works/Work"
 import HeroItems from "../../components/home/heroItems/HeroItems"
@@ -38,6 +42,17 @@ const Home = () => {
         </div>
                 <WorkBox/>
                 <Skills/>
+                <Clients/>
+                <Reviews/>
+                <div className="projectContainer">
+
+
+                <ProjectItem/>
+
+
+
+                </div>
+                <Footer/>
     </HomeWrapper>
   )
 }
