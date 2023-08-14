@@ -1,6 +1,7 @@
 // import React from 'react'
 
 import Footer from "../../Layouts/Footer/Footer"
+import Navbar from "../../Layouts/Navbar/Navbar"
 import About from "../../components/home/About/About"
 import Clients from "../../components/home/Clients/Clients"
 import ProjectItem from "../../components/home/Project/ProjectItem"
@@ -15,6 +16,7 @@ import Skills from "./Skills/Skills"
 const Home = () => {
   return (
     <HomeWrapper >
+      <Navbar/>
         <div className="hero_section">
           <div className="hero_section_left" >
 

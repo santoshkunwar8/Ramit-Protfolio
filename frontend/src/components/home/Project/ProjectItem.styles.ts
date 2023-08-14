@@ -33,7 +33,7 @@ padding-bottom:10px;
 }
 .project_info{
     display:flex;
-    padding:10px 4px; 
+    padding:10px; 
     flex-direction:column;
     gap:5px;
     .project_name{
@@ -65,6 +65,7 @@ padding-bottom:10px;
                 width:60%;
                 background:var(--main_color);
                 height:100%;
+                   border-radius:8px;
 
             }
         }
