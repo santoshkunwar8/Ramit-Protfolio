@@ -17,6 +17,16 @@ const WorkSchema =  mongoose.Schema({
     },
     photos:[],
     mainImg:String,
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"User",
+    },
+    tools:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Tools"
+        }
+    ],
     comment:[
         {
             type:mongoose.Schema.Types.ObjectId,

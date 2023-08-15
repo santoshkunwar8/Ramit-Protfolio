@@ -10,6 +10,10 @@ const CommentSchema =  mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"User"
     },
+    work:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Work"
+    }
 
 })
 
