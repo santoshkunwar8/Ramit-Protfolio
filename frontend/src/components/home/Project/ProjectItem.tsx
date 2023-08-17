@@ -1,9 +1,12 @@
 // import React from 'react'
 
-import { AiOutlineLike } from "react-icons/ai"
+// import { AiOutlineLike } from "react-icons/ai"
 import { ProjectItemWrapper } from "./ProjectItem.styles"
-
-const ProjectItem = () => {
+import { WorkType } from "../../../utils/Types"
+type ProjectItemPropsType={
+  work:WorkType, 
+}
+const ProjectItem:React.FC<ProjectItemPropsType> = ({work}) => {
   return (
     <ProjectItemWrapper>
 
@@ -17,13 +20,13 @@ const ProjectItem = () => {
     <div className="project_info">
       <div>
         
-        <h3 className="project_name">Vrumies.org</h3>
-        <p className="project_desc">Online Marketplace</p>
+        <h3 className="project_name">{work.name}</h3>
+        <p className="project_desc">{work.type}</p>
       </div>
 
 
     <div className="projectAction">
-        <p className="ratint_text">Rating 4/5</p>
+        <p className="ratint_text">Rating {work.rating}/5</p>
         <div className="ratingBar">
             <div className="ratingProgress">
 

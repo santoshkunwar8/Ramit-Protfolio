@@ -5,6 +5,7 @@ import Admin from "./pages/Admin/Admin";
 import Upload from "./pages/Admin/Upload/Upload";
 import Work from "./pages/Admin/Upload/Work/Work";
 import Tools from "./pages/Admin/Upload/Tools/Tools";
+import WorkDetail from "./pages/WorkDetail/WorkDetail";
 // import 
 function App() {
 
@@ -24,8 +25,8 @@ function App() {
 
         </Route>
       </Route>
-
-    </Routes>
+      <Route path="/work/:id" element={<WorkDetail/>}/>
+    </Routes> 
     </BrowserRouter>
     </AppWrapper>
 

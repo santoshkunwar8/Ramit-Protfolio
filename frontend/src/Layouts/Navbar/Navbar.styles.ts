@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 
-export const NavbarWrapper= styled.div`
+export const NavbarWrapper = styled.div`
 
-height:50px;
+height:70px;
 width:100%;
 display:flex;
 align-items:center;

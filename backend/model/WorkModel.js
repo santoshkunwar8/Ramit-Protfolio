@@ -17,6 +17,7 @@ const WorkSchema =  mongoose.Schema({
     },
     photos:[],
     mainImg:String,
+    rating:Number,
     user:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"User",
@@ -27,7 +28,7 @@ const WorkSchema =  mongoose.Schema({
             ref:"Tools"
         }
     ],
-    comment:[
+    comments:[
         {
             type:mongoose.Schema.Types.ObjectId,
             ref:"Comment"

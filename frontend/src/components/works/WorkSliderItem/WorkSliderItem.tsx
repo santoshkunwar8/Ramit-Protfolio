@@ -2,6 +2,7 @@ import React from 'react'
 import { WorkSliderItemWrapper } from './workSlider.styles'
 import WorkBox from '../WorkBox'
 import ProjectItem from '../../home/Project/ProjectItem'
+import { works } from '../../../utils/data'
 
 const WorkSliderItem = () => {
   return (
@@ -18,12 +19,9 @@ const WorkSliderItem = () => {
 
         </div>
         <div className='work_item_wrapper'>
-                <ProjectItem/>
-                <ProjectItem/>
-                <ProjectItem/>
-                <ProjectItem/>
-                <ProjectItem/>
-                <ProjectItem/>
+            {
+              works.map((w)=><ProjectItem key={w._id} work={w}/>)
+            }
         </div>
     </WorkSliderItemWrapper>
   )

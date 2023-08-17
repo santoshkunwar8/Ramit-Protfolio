@@ -38,19 +38,10 @@ const Home = () => {
                     <About/>
               </div> 
         </div>
-                {/* <WorkBox/> */}
                 <WorkSlider/>
                 <Skills/>
                 <Clients/>
-                <Reviews/>
-                <div className="projectContainer">
-
-
-                <ProjectItem/>
-
-
-
-                </div>
+                <Reviews/> 
                 <Footer/>
     </HomeWrapper>
   )
