@@ -15,13 +15,15 @@ const ProjectItem = () => {
 
     </div>
     <div className="project_info">
-
+      <div>
+        
         <h3 className="project_name">Vrumies.org</h3>
         <p className="project_desc">Online Marketplace</p>
+      </div>
 
 
     <div className="projectAction">
-        <p className="ratint_text">Rating</p>
+        <p className="ratint_text">Rating 4/5</p>
         <div className="ratingBar">
             <div className="ratingProgress">
 

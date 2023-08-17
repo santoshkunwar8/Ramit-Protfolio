@@ -2,6 +2,7 @@
 
 import Footer from "../../Layouts/Footer/Footer"
 import Navbar from "../../Layouts/Navbar/Navbar"
+import WorkSlider from "../../Layouts/WorkSlider/WorkSlider"
 import About from "../../components/home/About/About"
 import Clients from "../../components/home/Clients/Clients"
 import ProjectItem from "../../components/home/Project/ProjectItem"
@@ -29,12 +30,7 @@ const Home = () => {
               </div>
               <HeroItems/>
               <div className="hero_item_wrapper" >
-                {/* {
-                  works.map(work=><WorkItem work={work}/>)
-                } */}
-                {/* <WorkItem />
-                <WorkItem/>
-                <WorkItem/> */}
+             
               </div>
             </div>
             <div className="hero_section_right">
@@ -42,7 +38,8 @@ const Home = () => {
                     <About/>
               </div> 
         </div>
-                <WorkBox/>
+                {/* <WorkBox/> */}
+                <WorkSlider/>
                 <Skills/>
                 <Clients/>
                 <Reviews/>

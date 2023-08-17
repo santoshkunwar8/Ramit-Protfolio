@@ -2,7 +2,8 @@ import { styled } from "styled-components";
 
 export const ProjectItemWrapper = styled.div`
 
-width:250px;
+width:220px;
+min-width:220px;
 // height:400px;
 // padding:3px;
 display:flex;
@@ -21,7 +22,7 @@ padding-bottom:10px;
 
 .image_wrapper{
     width:100%;
-    height:150px;
+    height:120px;
     opacity:0.7;
 
     img{
@@ -44,7 +45,7 @@ padding-bottom:10px;
 
     .project_desc{
         color:var(--gray);
-        font-size:14px;
+        font-size:11px;
         letter-spacing:1px;
     }
     .projectAction{
@@ -56,7 +57,7 @@ padding-bottom:10px;
             margin-bottom:5px;
         }
         .ratingBar{
-            height:7px;
+            height:5px;
             background:gray;
             width:90%;
             border-radius:8px;
