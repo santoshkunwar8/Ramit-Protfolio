@@ -1,8 +1,8 @@
 import { ClientItemWrapper } from './ClientItem.styles'
 type ClientItemProps={
   client:{
-    name:String,
-    img:String,
+    name:string,
+    img:string,
   }
 }
 const ClientItem:React.FC<ClientItemProps> = ({client}) => {
