@@ -1,9 +1,14 @@
 import Rating from '@mui/material/Rating';
 import { ReviewItemWrapper } from './Review.styles'
 
-const ReviewItem = () => {
+
+type ReviewItemType={
+  big:boolean;
+}
+
+const ReviewItem:React.FC<ReviewItemType> = ({big}) => {
   return (
-    <ReviewItemWrapper>
+    <ReviewItemWrapper style={{flex:big? "1":"",minWidth:big?"320px":""}}>
 
         <div className="review_top">
     <div className='user_image_wrapper'>

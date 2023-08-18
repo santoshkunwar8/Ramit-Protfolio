@@ -1,6 +1,8 @@
 
 import { Rating } from '@mui/material'
 import { MainWorkDetailsWrapper } from './MainWorkDetails.styles'
+import SkillItem from '../../home/SkillsItem/SkillItem'
+import SmallSkillItem from '../../home/SkillsItem/SmallSkillItem'
 
 const MainWorkDetails = () => {
   return (
@@ -37,17 +39,23 @@ const MainWorkDetails = () => {
             <p className='workDesc'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime reprehenderit et facere iusto in, explicabo, ducimus ea quaerat, tempora dolorum aliquid. Laudantium. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia maiores accusantium similique!</p>
         </div>
 
-    </div>
-
     <div className='actionBox'>
-
+        <div className='techUsed'>
+                {
+                    skillArr.map(skill=><SmallSkillItem key={skill.name} skill={skill}/>)
+                }
+        </div>
         <div className='shareBox'>
 
-            
+            <img width="48" height="48" src="https://img.icons8.com/color/48/facebook.png" alt="facebook"/>
+            <img width="48" height="48" src="https://img.icons8.com/color/48/twitter-circled--v1.png" alt="twitter-circled--v1"/>
+            <img width="48" height="48" src="https://img.icons8.com/color/48/linkedin.png" alt="linkedin"/>
             
         </div>
 
     </div>
+    </div>
+
 
 
     </MainWorkDetailsWrapper>
@@ -55,3 +63,29 @@ const MainWorkDetails = () => {
 }
 
 export default MainWorkDetails
+
+
+const skillArr=[
+  {
+    name:"Javascript",
+    image:"/images/js.png"
+  },
+  {
+    name:"Java",
+    image:"/images/java.png"
+  },
+  {
+   name:"Php",
+   image:"/images/php.png"
+ },
+  {
+    name:'React Js',
+    image:"/images/react.png"
+  },
+  {
+    name:"Node Js",
+    image:"/images/node.png"
+  },
+   
+
+]

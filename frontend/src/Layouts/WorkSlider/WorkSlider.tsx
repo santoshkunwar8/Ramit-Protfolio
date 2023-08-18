@@ -18,19 +18,7 @@ const WorkSlider = () => {
     <WorkSliderWrapper>
           <Slider {...settings} className='slider'>
             <WorkBox/>
-            <WorkSliderItem/>
-          <div className='workSliderItem'>
-            <h3>3</h3>
-          </div>
-          <div className='workSliderItem'>
-            <h3>4</h3>
-          </div>
-          <div className='workSliderItem'>
-            <h3>5</h3>
-          </div>
-          <div className='workSliderItem'>
-            <h3>6</h3>
-          </div>
+            <WorkSliderItem/> 
         </Slider>
     </WorkSliderWrapper>
   )

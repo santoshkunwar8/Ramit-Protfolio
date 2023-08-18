@@ -6,6 +6,7 @@ import Upload from "./pages/Admin/Upload/Upload";
 import Work from "./pages/Admin/Upload/Work/Work";
 import Tools from "./pages/Admin/Upload/Tools/Tools";
 import WorkDetail from "./pages/WorkDetail/WorkDetail";
+import Reviews from "./pages/Reviews/Reviews";
 // import 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
         </Route>
       </Route>
       <Route path="/work/:id" element={<WorkDetail/>}/>
+      <Route  path="/reviews" element={<Reviews/>}/>
     </Routes> 
     </BrowserRouter>
     </AppWrapper>

@@ -1,5 +1,5 @@
 // import React from 'react'
-import { SkillItemWrapper } from './SkillItem.styles'
+import { SmallSkillItemWrapper } from './SmallSkillItem.styles'
 
 
 type SkillItemProp={
@@ -9,17 +9,17 @@ type SkillItemProp={
     }
 }
 
-const SkillItem:React.FC<SkillItemProp> = ({skill}) => {
+const SmallSkillItem:React.FC<SkillItemProp> = ({skill}) => {
 
   return (
-    <SkillItemWrapper>
+    <SmallSkillItemWrapper>
 
         <img src={skill.image} alt="nodejs" />
         <p>{skill.name}</p>
 
 
-    </SkillItemWrapper>
+    </SmallSkillItemWrapper>
   )
 }
 
-export default SkillItem
+export default SmallSkillItem;

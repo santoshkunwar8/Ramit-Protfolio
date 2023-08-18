@@ -6,7 +6,7 @@ export const MainWorkDetailsWrapper = styled.div`
 display:flex;
 gap:1rem;
 // height:40px;
-padding:2rem;
+
 .imageBox{
     border:1px solid var(--border_color);
     background:var(--light_black);
@@ -44,6 +44,11 @@ padding:2rem;
     border:1px solid var(--border_color);
     flex:8;
     padding: 1rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+
     .infoTop{
         display:flex;
         flex-direction:column;
@@ -86,6 +91,31 @@ padding:2rem;
             }
         }
     }
-}
+    .actionBox{
 
+        display:flex;
+        width:100%;
+        justify-content:space-between;
+        
+        .techUsed{
+            display:flex;
+      
+            gap:5px;
+        }
+        .shareBox{
+           
+         
+            justify-self:flex-end;
+            border-radius:6px;
+            display:flex;
+            gap:10px;
+            align-items:center;
+            margin-top:auto;
+            display:inline-flex;
+            padding:0 0.4rem;
+
+            
+        }
+    }
+}
 `
