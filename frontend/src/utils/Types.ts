@@ -37,7 +37,7 @@ export type WorkType = {
     photos: string[],
     tools: ToolType[],
     comments: CommentType[],
-
+    platform: string,
 }
 
 type CommentType = {

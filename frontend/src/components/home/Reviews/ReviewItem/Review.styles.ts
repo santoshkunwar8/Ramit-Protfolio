@@ -15,6 +15,7 @@ border-radius:6px;
         flex:1;
     }
     .user_image_wrapper{
+        min-width:40px;
         width:40px;
         height:40px;
 

@@ -201,6 +201,7 @@ export const works = [
         link: "debai.org",
         rating: 5,
         type: "Online Debate Platform",
+        platform: "Web Application",
         user: {
             _id: "",
             username: "santosh",
