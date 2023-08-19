@@ -4,6 +4,7 @@ import {RiLockPasswordFill} from "react-icons/ri"
 import {MdEmail} from "react-icons/md"
 import Navbar from '../../../Layouts/Navbar/Navbar'
 import { LoginWrapper } from './login.styles'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   const [loginData,setLoginData] = useState({
@@ -33,7 +34,9 @@ const Login = () => {
           </div>
           <button type="submit">Login</button>
           <div className='login_bottom'>
+            <Link  to={"/signup"}>
             <p className='accountText'>dont have account ?</p>
+            </Link>
 
           </div>
         </form>

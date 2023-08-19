@@ -3,6 +3,7 @@ import Navbar from '../../../Layouts/Navbar/Navbar'
 import { MdEmail } from 'react-icons/md'
 import { RiLockPasswordFill } from 'react-icons/ri'
 import {ImFlag} from "react-icons/im"
+import { Link } from 'react-router-dom'
 const Signup = () => {
   return (
     <AuthWrapper>
@@ -42,8 +43,10 @@ const Signup = () => {
       </form>
         <button type="submit">Login</button>
         <div className='login_bottom'>
-        <p className='accountText'>dont have account ?</p>
-        
+       <Link to={"/login"}>
+        <p className='accountText'>already have account  ?</p> 
+       
+       </Link>
       </div>
       </div>
     </div>
