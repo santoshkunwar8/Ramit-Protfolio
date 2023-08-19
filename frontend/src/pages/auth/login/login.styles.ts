@@ -19,7 +19,7 @@ flex-direction:column;
             align-items:center;
             gap:10px;
 
-            
+
             .headerText{
                 font-weight:600;
                 letter-spacing:1px;
@@ -35,8 +35,7 @@ flex-direction:column;
             width:95%;
             gap:1rem;        
             .input_item{
-                // width:100%
-                flex:1;
+                            flex:1;
                 border-radius:7px;
                 padding:0 1rem;
             background:var(--light_black);
