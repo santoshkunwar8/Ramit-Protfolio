@@ -1,10 +1,17 @@
 import React from 'react'
 import { ProjectItemWrapper } from './ProjectItem.styles'
 import { BiSolidShareAlt } from 'react-icons/bi'
+import { useNavigate } from 'react-router-dom'
 
 const ProjectItem = () => {
+  const navigate =useNavigate()
+
+  const handleNavigate=()=>{
+    navigate(`/work/123`)
+  }
+
   return (
-    <ProjectItemWrapper>
+    <ProjectItemWrapper onClick={handleNavigate}>
       
             <h1 className='mainText'>Debai : Online Debate Platform </h1>
             <div className='secondary_text'>

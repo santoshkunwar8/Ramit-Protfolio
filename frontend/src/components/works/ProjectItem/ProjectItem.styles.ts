@@ -5,13 +5,18 @@ export const ProjectItemWrapper = styled.div`
 
 min-width:480px;
 flex:1;
-
+cursor:pointer;
 background:var(--light_black);
 padding:2rem;
 display:flex;
 flex-direction:column;
 border-radius:18px;
 gap:10px;
+transition:all .3s ease;
+&:hover{
+    scale:1.02;
+    background:#151515;
+}
 .mainText{
     font-weight:600;
     font-size:1.6rem;
@@ -68,6 +73,7 @@ gap:10px;
         svg{
             font-size:1.5rem;
             cursor:pointer;
+            fill:var(--main_color) !important;
         }
     }
 }

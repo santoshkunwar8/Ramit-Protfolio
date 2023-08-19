@@ -26,6 +26,9 @@ justify-content:space-between;
         display:flex;
         align-items:center;
         gap:1rem;
+        a{
+            text-decoration:none;
+        }
         .active_nav{
             color:var(--main_color);
             position:relative;
@@ -45,7 +48,7 @@ justify-content:space-between;
         li{
             cursor:pointer;
             list-style:none;
-            font-weight:bold;
+            // font-weight:bold;
             font-size:15px;
             letter-spacing:1px;
             color:var(--gray);
@@ -58,14 +61,17 @@ justify-content:space-between;
     }
     .client_button{
         background:var(--main_color);
-        border-radius:40px;
+        border-radius:7px;
         letter-spacing:1px;
         font-size:14px;
         padding:0 1rem;
         height:45px;
+        cursor:pointer;
         letter-spacing:1px;
+        border:none;
         text-transform:uppercase;
-        font-weight:600;
+        outline:none;
+        // font-weight:600;
     }
 }
 `

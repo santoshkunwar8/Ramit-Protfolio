@@ -1,4 +1,4 @@
-
+import {Link} from "react-router-dom";
 import { NavbarWrapper } from './Navbar.styles'
 
 const Navbar = () => {
@@ -11,13 +11,21 @@ const Navbar = () => {
         <div className='nav_right'>
 
         <ul className='nav_list'>
+            <Link  to="/">
             <li className='active_nav'>Dashboard</li>
+            
+            </Link> 
+            <Link to={"/reviews"}>
             <li>Reviews</li>
+            </Link>
+           <Link to={"/works"}>
             <li>Works</li>
+           </Link>
 
             
         </ul>
             <button className='client_button'>Become Client</button>
+                 <button className='client_button'>Register</button>
         </div>
 
 
