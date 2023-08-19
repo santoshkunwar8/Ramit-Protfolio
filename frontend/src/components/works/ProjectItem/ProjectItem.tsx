@@ -15,9 +15,9 @@ const ProjectItem = () => {
             <button className='progressBtn'>Done</button>
             <div className="project_bottom">
 
-            <div>
+            <div className='project_other_info'>
                 <b>debai.org</b>
-                <p className='editedTime'>Edited 3days ago</p>
+                <p className='editedTime'>Edited 3 days ago</p>
                 </div>
                 <div className='project_action'>
                     <BiSolidShareAlt/>
