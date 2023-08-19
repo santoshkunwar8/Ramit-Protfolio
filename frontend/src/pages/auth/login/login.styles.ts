@@ -18,6 +18,8 @@ flex-direction:column;
             display:flex;
             align-items:center;
             gap:10px;
+
+            
             .headerText{
                 font-weight:600;
                 letter-spacing:1px;
