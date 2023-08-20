@@ -4,6 +4,9 @@ import { SkillItemWrapper } from './SkillItem.styles'
 
 type SkillItemProp={
     skill:{
+      _id?:string,
+      createdAt?:string,
+      updatedAt?:string,
         name:string,
         image:string,
     }

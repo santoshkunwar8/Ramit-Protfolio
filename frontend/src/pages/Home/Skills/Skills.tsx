@@ -1,9 +1,40 @@
 import { AiOutlineRight } from 'react-icons/ai'
 import { SkillWrapper } from './Skill.styles'
 import SkillItem from '../../../components/home/SkillsItem/SkillItem'
+import { getToolsApi } from '../../../utils/api'
+import { useEffect, useState } from 'react'
+import { ToolType } from '../../../utils/Types'
 
 
 const Skills = () => {
+
+  const [skillsData,setSkillsData]  = useState<ToolType[]>([])
+
+
+
+useEffect(()=>{
+  fetchSkillsFromDB()
+
+},[])
+
+
+  const fetchSkillsFromDB=async()=>{
+
+    try {
+        const {data,status} = await  getToolsApi();
+        if(status===200){
+          setSkillsData(data.message);
+        }
+
+        
+
+    } catch (error) {
+        console.log(error)
+    }
+
+
+
+  }
   return (
     <SkillWrapper>
         <div className="tech_box">
@@ -23,7 +54,7 @@ const Skills = () => {
                   </div>
                   <div className='toolsContainer'>
                     {
-                      skillArr.map(skill=><SkillItem key={skill.name} skill={skill}/>)
+                      skillsData.map(skill=><SkillItem key={skill.name} skill={skill}/>)
                     }
          
                   </div>
