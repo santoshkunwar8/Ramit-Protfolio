@@ -1,8 +1,7 @@
 import React, { useEffect, useState ,useRef, SyntheticEvent} from 'react'
 import { UploadWorkWrapper } from './Work.styles'
 import {BiSolidCloudUpload} from "react-icons/bi"
-import { FilesType, ToolType, WorkState } from '../../../../utils/Types'
-import { AxiosInstance } from '../../../../utils/axios'
+import { FilesType, ToolType, WorkState } from '../../../../utils/Types';
 import { createProjectApi, getToolsApi } from '../../../../utils/api'
 import useUploadImage from '../../../../hooks/UploadImage'
 const Work = () => {
@@ -22,6 +21,8 @@ const Work = () => {
     const [uploadedCount,setUploadedCount] =useState<number>(0)
     const [files,setFiles] = useState <FilesType[]>([])
     const {upload} = useUploadImage()
+
+
 
 
     useEffect(()=>{
@@ -120,7 +121,6 @@ const Work = () => {
     }
 
 
-    console.log(files)
 
     const handleSelectChange=(event:React.ChangeEvent<HTMLSelectElement>)=>{
 

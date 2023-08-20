@@ -65,7 +65,10 @@ flex-direction:column;
             }
         }
     }
-    button{
+    button , .uploadImageButton{
+        display:flex;
+        justify-content:center;
+        align-items:center;
         cursor:pointer;
         background:var(--main_color);
         font-size:18px;
@@ -75,6 +78,12 @@ flex-direction:column;
         width:100%;
         height:70px;
         
+    }
+    .uploadImageButton{
+        background:var(--light_black);
+        font-size:15px;
+        color:var(--gray);
+        border:1px solid var(--border_color);
     }
     .login_bottom{
         display:flex;
