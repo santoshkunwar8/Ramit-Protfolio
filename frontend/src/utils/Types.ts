@@ -47,13 +47,17 @@ type CommentType = {
     work: string,
 }
 
-type UserType = {
-    _id: string,
+export type UserType = {
+    _id?: string,
     username: string,
     email: string,
     profileImg: string,
-    isAdmin: boolean,
-    isMember: boolean,
+    password?: string,
+    isAdmin?: boolean,
+    isMember?: boolean,
+
     country: string,
+    isClient?: boolean,
+
 }
 

@@ -21,9 +21,11 @@ const UserSchema =  mongoose.Schema({
         type:Boolean,
         default:false,
     },
-    isMember:{
-        type:String,
-        required:false,
+    
+    isClient:{
+        type:Boolean,
+        default:false,
+
     }
 },{timestamps:true})
 
