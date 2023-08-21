@@ -18,6 +18,7 @@ type loginPayload = {
     email: string,
     password: string,
 }
+export const getClientsApi = () => AxiosInstance.get("/user/client")
 
 export const createUserApi = (data: UserType) => AxiosInstance.post("/user/create", data)
 export const loginApi = (data: loginPayload) => AxiosInstance.post("/user/login", data)

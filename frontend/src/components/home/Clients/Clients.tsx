@@ -1,8 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { ClientsWrapper } from './clients.styles'
 import ClientItem from './ClientItem/ClientItem'
+import { UserType } from '../../../utils/Types'
+import { getClientsApi } from '../../../utils/api'
 
 const Clients = () => {
+
+ const [clientsData,setClientsData] =useState<UserType[]>([])
+ const [totalCount,setTotalCount] =useState(0)
+
+
+ 
+
+
+
+  useEffect(()=>{
+    handleFetchClients()
+  },[])
+
+
+  const handleFetchClients=async()=>{
+
+
+      try {
+        const {data,status} = await  getClientsApi();  
+        if(status===200){
+            setTotalCount(data.message.length);
+          setClientsData(data.message)
+        }
+
+      } catch (error) {
+            console.log(error)
+      }
+  }
+  
+
+
   return (
     <ClientsWrapper>
         <div className='client_content'>
@@ -31,19 +64,19 @@ const Clients = () => {
         <div className="client_data_box">
 
             {
-                clientArr.map(client=><ClientItem key={client.name} client={client}/>)
+                clientsData.slice(0,20).map(client=><ClientItem key={client._id} client={client} />)
             }
             {/* <ClientItem client={}/>                             */}
-            <div className='client_data'>
+            {
+                clientsData.length -20  > 0 ?
+                <div className='client_data'>
 
-            <p>28+</p>
+            <p>{clientsData.length -20}+</p>
             <p>others</p>
     
-                {/* <img src={ } alt="clientImg" /> */}
-        <button>
-          {/* {client.name} */}
-        </button>
-            </div>
+
+            </div>:""
+            }
 
 
         </div>

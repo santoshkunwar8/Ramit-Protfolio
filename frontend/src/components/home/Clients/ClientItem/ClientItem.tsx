@@ -1,16 +1,14 @@
+import { UserType } from '../../../../utils/Types'
 import { ClientItemWrapper } from './ClientItem.styles'
 type ClientItemProps={
-  client:{
-    name:string,
-    img:string,
-  }
+  client:UserType
 }
 const ClientItem:React.FC<ClientItemProps> = ({client}) => {
   return (
     <ClientItemWrapper>
-        <img src={ client.img} alt="clientImg" />
+        <img src={ client.profileImg} alt="clientImg" />
         <button>
-          {client.name}
+          {client.username}
         </button>
     </ClientItemWrapper>
   )
