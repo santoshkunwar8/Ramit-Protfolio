@@ -4,6 +4,9 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { ReviewModalWrapper } from './ReviewModal.styles';
+import { Rating } from '@mui/material';
+import { ReviewStateType } from '../../../utils/Types';
+import { createReviewsApi } from '../../../utils/api';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -26,6 +29,29 @@ const  ReviewModal:React.FC<ReviewModalPropsType>=({children}) =>{
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [reviewsData,setReviewsData] = React.useState<ReviewStateType>({
+    rating:0,
+    text:"",
+    user:"64dace25af403e0cf8dafe0e"
+  })
+
+  const handleSubmit=async()=>{
+
+    try {
+        const { data,status} = await createReviewsApi(reviewsData)
+        if(status===200){
+          alert("successfull")
+        }
+
+
+    } catch (error) {
+
+       console.log(error)      
+
+    }
+  }
+
+  
 
   return (
     <div>
@@ -41,9 +67,15 @@ const  ReviewModal:React.FC<ReviewModalPropsType>=({children}) =>{
             ADD REVIEW
           </Typography>
           <ReviewModalWrapper>
-
-                <textarea placeholder='Add review...' className='reviewInput' name="" id=""></textarea>
-                <button className='reviewButton'>Add</button>
+                <Rating
+                 size='large' max={5} value={reviewsData.rating}
+                 onChange={(event, newValue) => {
+                 if(newValue)
+                setReviewsData(prev=>({...prev, rating:newValue}));
+        }}
+                  />
+                <textarea placeholder='Add review...' className='reviewInput' name="text"  onChange={e=>setReviewsData(prev=>({...prev,text:e.target.value}))} id=""></textarea>
+                <button  onClick={handleSubmit} className='reviewButton'>Add</button>
           </ReviewModalWrapper>
         </Box>
       </Modal>

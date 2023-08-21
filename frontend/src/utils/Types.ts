@@ -61,3 +61,17 @@ export type UserType = {
 
 }
 
+export type ReviewStateType = {
+    user: string,
+    rating: number,
+    text: string
+}
+export type ReviewType = {
+    text: string,
+    rating: number,
+    user: UserType,
+    _id: string,
+    updatedAt: string,
+    createdAt: string,
+
+}

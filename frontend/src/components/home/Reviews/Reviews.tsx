@@ -1,8 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { ReviewsWrapper } from './Reviews.styles'
 import ReviewItem from './ReviewItem/ReviewItem'
+import { getAllReviewsApi } from '../../../utils/api'
+import { ReviewType } from '../../../utils/Types'
 
 const Reviews = () => {
+
+   const [reviewsData,setReviewsData] =useState<ReviewType[]>([])
+
+  useEffect(()=>{
+    handleFetchReviews()
+  },[])
+
+
+  const handleFetchReviews=async()=>{
+
+
+      try {
+        const {data,status} = await  getAllReviewsApi();  
+        if(status===200){
+          setReviewsData(data.message)
+        }
+
+      } catch (error) {
+        
+      }
+  }
+  
+
   return (
     
     <ReviewsWrapper>
@@ -22,11 +47,9 @@ const Reviews = () => {
         </div>
         <div className='review_wrapper'>
 
-                <ReviewItem/>
-                 <ReviewItem/>
-                  <ReviewItem/>
-                   <ReviewItem/>
-
+              {
+                reviewsData.map(review=><ReviewItem  big={true} review={review} key={review._id}/>)
+              }
 
         </div>
 

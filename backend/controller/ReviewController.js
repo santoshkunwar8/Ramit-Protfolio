@@ -20,7 +20,7 @@ class ReviewController{
         try {
 
            
-                const review = await ReviewModel.find({});
+                const review = await ReviewModel.find({}).populate("user")
                 res.status(200).json({message:review,success:true})
         } catch (error) {
                 console.log(error)

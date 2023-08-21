@@ -1,4 +1,4 @@
-import { ToolsStateType, UserType, WorkState } from "./Types";
+import { ReviewStateType, ToolsStateType, UserType, WorkState } from "./Types";
 import { AxiosInstance } from "./axios";
 
 // tool
@@ -21,3 +21,12 @@ type loginPayload = {
 
 export const createUserApi = (data: UserType) => AxiosInstance.post("/user/create", data)
 export const loginApi = (data: loginPayload) => AxiosInstance.post("/user/login", data)
+
+
+// reviews
+export const createReviewsApi = (data: ReviewStateType) => AxiosInstance.post("/review/create", data)
+export const getAllReviewsApi = () => AxiosInstance.get("/review")
+
+
+
+

@@ -2,8 +2,34 @@ import { ReviewsWrapper } from './Reviews.styles'
 import Navbar from '../../Layouts/Navbar/Navbar'
 import ReviewItem from '../../components/home/Reviews/ReviewItem/ReviewItem'
 import ReviewModal from '../../Layouts/modal/ReviewModal/ReviewModal'
+import { useEffect, useState } from 'react'
+import { getAllReviewsApi } from '../../utils/api'
 
 const Reviews = () => {
+
+
+  const [reviewsData,setReviewsData] =useState([])
+
+  useEffect(()=>{
+    handleFetchReviews()
+  },[])
+
+
+  const handleFetchReviews=async()=>{
+
+
+      try {
+        const {data,status} = await  getAllReviewsApi();  
+        if(status===200){
+          setReviewsData(data.message)
+        }
+
+      } catch (error) {
+        
+      }
+  }
+  
+
   return (
     <ReviewsWrapper>
 
@@ -28,15 +54,13 @@ const Reviews = () => {
           </div>
     <div className="review_wrapper">
 
-          <ReviewItem big={true}/>
-            <ReviewItem big={true}/>
-              <ReviewItem big={true}/>
-                <ReviewItem big={true}/>
+         {
+          reviewsData.map(review=><ReviewItem big={true} review={review}/>
+          
 
-                  <ReviewItem big={true}/>
-                    <ReviewItem big={true}/>
-                      <ReviewItem big={true}/>
-                        <ReviewItem big={true}/>
+          )
+         } 
+          
     </div>
 
         </div>
