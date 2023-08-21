@@ -65,7 +65,7 @@ justify-content:space-between;
         letter-spacing:1px;
         font-size:14px;
         padding:0 1rem;
-        height:45px;
+        height:37px;
         cursor:pointer;
         letter-spacing:1px;
         border:none;

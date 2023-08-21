@@ -1,8 +1,9 @@
-import React from 'react'
 import { WorkSliderItemWrapper } from './workSlider.styles'
-import WorkBox from '../WorkBox'
 import { works } from '../../../utils/data'
 import ProjectItem from '../ProjectItem/ProjectItem'
+import {Link} from "react-router-dom";
+
+
 
 const WorkSliderItem = () => {
   return (
@@ -13,9 +14,11 @@ const WorkSliderItem = () => {
     <img width="44" height="44" src="https://img.icons8.com/3d-fluency/94/hard-working.png" alt="hard-working"/>
             <h1 className='header_text'>Explore my project</h1>
             </div>
+         <Link to="/works">
             <button className='explore_button'>
                 Explore All
             </button>
+         </Link>
 
         </div>
         <div className='work_item_wrapper'>

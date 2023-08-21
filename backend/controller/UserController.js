@@ -27,6 +27,23 @@ class UserController{
     }
 
 
+    static async becomeClient(req,res){
+        const {userId} = req.params;
+        try {
+              const   updatedUser =   await UserModel.findByIdAndUpdate(userId,{
+                    isClient:true,
+                },{
+                    new:true,
+                    returnDocument:true,
+                    returnOriginal:false,
+                })
+                res.status(200).json({message:updatedUser,success:true})
+        } catch (error) {
+                res.status(500).json({message:error,success:false})
+                
+        }
+    }
+
    static async login(req,res){
     const {email,password:loginPw} = req.body;
     try {

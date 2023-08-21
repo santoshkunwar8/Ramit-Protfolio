@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom";
 import { NavbarWrapper } from './Navbar.styles'
+import ClientModal from "../modal/ClientModal/ClientModal";
 
 const Navbar = () => {
   return (
@@ -24,10 +25,11 @@ const Navbar = () => {
            <Link to={"/works"}>
             <li>Works</li>
            </Link>
-
-            
         </ul>
-            <button className='client_button'>Become Client</button>
+           
+           <ClientModal>
+             <button className='client_button'>Become Client</button>
+            </ClientModal>
                <Link to={"/signup"}>
                  <button className='client_button'>Register</button>
                </Link>
