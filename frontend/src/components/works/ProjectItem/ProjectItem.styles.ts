@@ -7,7 +7,7 @@ min-width:480px;
 flex:1;
 cursor:pointer;
 background:var(--light_black);
-padding:2rem;
+padding:${props => props.big ? "2rem" : "1.5rem"};
 display:flex;
 flex-direction:column;
 border-radius:18px;
@@ -19,17 +19,16 @@ transition:all .3s ease;
 }
 .mainText{
     font-weight:600;
-    font-size:1.6rem;
+    font-size: ${props => props.big ? "1.6rem" : "1.2rem"};
     letter-spacing:1px;
 }
-
 .secondary_text span{
-
+    font-size: ${props => props.big ? "14px" : "12px"};
     letter-spacing:1px;
 }
 .project_desc{
     color:var(--gray);
-    font-size:14px;
+    font-size: ${props => props.big ? "14px" : "12px"};
     letter-spacing:1px;
 }
 .progressBtn{
@@ -54,17 +53,18 @@ transition:all .3s ease;
     .project_other_info{
         display:flex;
         flex-direction:column;
-        gap:5px;
+        gap: ${props => props.big ? "5px" : "2px"};
     
         b{
             font-weight:500;
             color:var(--main_color);
             letter-spacing:1px;
             cursor:pointer;
+                        font-size:${props => props.big ? "14px" : "12px"};
         }
         
         .editedTime{
-            font-size:12px;
+            font-size:${props => props.big ? "12px" : "10px"};
             letter-spacing:1px;
             color:var(--gray);
         }

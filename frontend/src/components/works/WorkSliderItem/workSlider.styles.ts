@@ -42,7 +42,7 @@ gap:1rem;
     gap:1rem;
     max-width:100%;
     overflow-x:scroll;
-    padding:1rem;
+    padding:1rem 0rem;
 }
 
 `

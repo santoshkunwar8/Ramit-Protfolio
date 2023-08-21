@@ -11,7 +11,7 @@ const ProjectItem = () => {
   }
 
   return (
-    <ProjectItemWrapper onClick={handleNavigate}>
+    <ProjectItemWrapper big={false} onClick={handleNavigate}>
       
             <h1 className='mainText'>Debai : Online Debate Platform </h1>
             <div className='secondary_text'>
