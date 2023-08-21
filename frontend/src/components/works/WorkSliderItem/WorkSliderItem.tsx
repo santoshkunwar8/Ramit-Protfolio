@@ -1,8 +1,8 @@
 import React from 'react'
 import { WorkSliderItemWrapper } from './workSlider.styles'
 import WorkBox from '../WorkBox'
-import ProjectItem from '../../home/Project/ProjectItem'
 import { works } from '../../../utils/data'
+import ProjectItem from '../ProjectItem/ProjectItem'
 
 const WorkSliderItem = () => {
   return (
@@ -10,7 +10,7 @@ const WorkSliderItem = () => {
         <div className='work_header'>
             <div className='header_left'>
 
-    <img width="54" height="54" src="https://img.icons8.com/3d-fluency/94/hard-working.png" alt="hard-working"/>
+    <img width="44" height="44" src="https://img.icons8.com/3d-fluency/94/hard-working.png" alt="hard-working"/>
             <h1 className='header_text'>Explore my project</h1>
             </div>
             <button className='explore_button'>
@@ -20,7 +20,7 @@ const WorkSliderItem = () => {
         </div>
         <div className='work_item_wrapper'>
             {
-              works.map((w)=><ProjectItem key={w._id} work={w}/>)
+              works.map((w)=><ProjectItem />)
             }
         </div>
     </WorkSliderItemWrapper>

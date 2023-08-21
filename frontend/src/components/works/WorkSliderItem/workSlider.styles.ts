@@ -27,12 +27,13 @@ gap:1rem;
         outline:none;
     }
     img{
-        width:60px;
-        height:60px;
+        width:44px;
+
+        height:44px;
         }
         .header_text{
                 font-weight: 600;
-            font-size: 2rem;
+            font-size: 1.7rem;
             letter-spacing: 1.1px;
         }
 }
