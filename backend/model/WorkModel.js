@@ -18,7 +18,12 @@ const WorkSchema =  mongoose.Schema({
     photos:[],
     mainImg:String,
     platform:String,
-    rating:Number, 
+    rating:Number,
+    status:{
+        type:String,
+        default:"progress",
+        enum:["progress","completed"]
+    } ,
     tools:[
         {
             type:mongoose.Schema.Types.ObjectId,

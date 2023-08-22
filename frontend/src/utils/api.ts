@@ -10,7 +10,7 @@ export const createToolApi = (data: ToolsStateType) => AxiosInstance.post("/tool
 
 // project 
 export const createProjectApi = (data: WorkState) => AxiosInstance.post("/work/create", data)
-
+export const getAllProjectApi = () => AxiosInstance.get("/work");
 
 // user
 

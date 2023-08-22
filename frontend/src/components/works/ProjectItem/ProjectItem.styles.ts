@@ -39,7 +39,8 @@ transition:all .3s ease;
     letter-spacing:1px;
     border:none;
     outline:none;
-    background:var(--main_color);
+    background: ${props => props.progress ? "#e91e63" : "var(--main_color)"};
+
     margin:10px 0;
 
 }

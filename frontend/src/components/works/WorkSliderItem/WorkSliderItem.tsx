@@ -1,11 +1,34 @@
 import { WorkSliderItemWrapper } from './workSlider.styles'
-import { works } from '../../../utils/data'
+
 import ProjectItem from '../ProjectItem/ProjectItem'
 import {Link} from "react-router-dom";
+import { WorkType } from '../../../utils/Types';
+import { useEffect, useState } from 'react';
+import { getAllProjectApi } from '../../../utils/api';
 
 
 
 const WorkSliderItem = () => {
+    const [worksArr,setWorkArr] =useState<WorkType[]>([])
+
+
+
+  useEffect(()=>{
+    fetchAllWorks()
+  },[])
+
+  const fetchAllWorks=async()=>{
+    try {
+      const {data,status}= await getAllProjectApi();
+      if(status===200){
+        setWorkArr(data.message);
+      }
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <WorkSliderItemWrapper>
         <div className='work_header'>
@@ -23,7 +46,7 @@ const WorkSliderItem = () => {
         </div>
         <div className='work_item_wrapper'>
             {
-              works.map((w)=><ProjectItem />)
+              worksArr.map((w)=><ProjectItem key={w._id}  work={w} />)
             }
         </div>
     </WorkSliderItemWrapper>

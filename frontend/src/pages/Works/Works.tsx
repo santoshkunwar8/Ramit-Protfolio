@@ -2,8 +2,33 @@
 import { WorkWrapper } from './Works.styles'
 import Navbar from '../../Layouts/Navbar/Navbar'
 import ProjectItem from '../../components/works/ProjectItem/ProjectItem'
+import { useEffect, useState } from 'react'
+import { WorkType } from '../../utils/Types'
+import { getAllProjectApi } from '../../utils/api'
 
 const Works = () => {
+
+  const [worksArr,setWorkArr] =useState<WorkType[]>([])
+
+
+
+  useEffect(()=>{
+    fetchAllWorks()
+  },[])
+
+  const fetchAllWorks=async()=>{
+    try {
+      const {data,status}= await getAllProjectApi();
+      if(status===200){
+        setWorkArr(data.message);
+      }
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
   return (
     <WorkWrapper>
         <Navbar/>
@@ -45,16 +70,12 @@ const Works = () => {
           </div>
         <div className='workWrapper'>
 
-          <ProjectItem/>
+  {
+    worksArr.map(work=><ProjectItem key={work._id} work={work}/>)
+    
+  }          
 
 
-          <ProjectItem/>
-
-          <ProjectItem/>
-
-          <ProjectItem/>
-
-          <ProjectItem/>
 
         </div>
         </div>

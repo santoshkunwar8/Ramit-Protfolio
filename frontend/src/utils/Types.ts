@@ -29,7 +29,9 @@ export type ToolsStateType = {
 export type WorkType = {
     _id: string,
     type: string,
+    link: string,
     name: string,
+    status: string,
     mainImg: string,
     desc: string,
     rating: number,
@@ -38,6 +40,8 @@ export type WorkType = {
     tools: ToolType[],
     comments: CommentType[],
     platform: string,
+    updatedAt?: string,
+    createdAt?: string,
 }
 
 type CommentType = {
