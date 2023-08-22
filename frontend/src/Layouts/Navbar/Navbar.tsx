@@ -1,8 +1,17 @@
 import {Link} from "react-router-dom";
 import { NavbarWrapper } from './Navbar.styles'
 import ClientModal from "../modal/ClientModal/ClientModal";
+import { useSelector } from "react-redux";
+import { State } from "../../redux/reducers";
 
 const Navbar = () => {
+
+  const {user} = useSelector((state:State)=>state.user)
+
+
+
+
+
   return (
     <NavbarWrapper>
 
@@ -27,12 +36,17 @@ const Navbar = () => {
            </Link>
         </ul>
            
-           <ClientModal>
+           {
+           !user?.isClient && user? <ClientModal>
              <button className='client_button'>Become Client</button>
-            </ClientModal>
-               <Link to={"/signup"}>
+            </ClientModal>:""
+}
+            {
+
+            !user &&  <Link to={"/signup"}>
                  <button className='client_button'>Register</button>
                </Link>
+              } 
                
         </div>
 

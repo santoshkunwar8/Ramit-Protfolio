@@ -6,6 +6,10 @@ import Navbar from '../../../Layouts/Navbar/Navbar'
 import { LoginWrapper } from './login.styles'
 import { Link, useNavigate } from 'react-router-dom'
 import { loginApi } from '../../../utils/api'
+import { useDispatch } from 'react-redux'
+import {bindActionCreators} from "redux"
+import { UserType } from '../../../utils/Types'
+import { actionCreators } from '../../../redux'
 
 const Login = () => {
   const [loginData,setLoginData] = useState({
@@ -14,7 +18,11 @@ const Login = () => {
     
   })
   const navigate =useNavigate()
+  const dispatch =useDispatch()
+  const {AddUserAction} = bindActionCreators(actionCreators,dispatch);
+
   const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
+
 
 
   const {name,value} = e.target;
@@ -28,6 +36,8 @@ e.preventDefault()
 try {
   const {data,status} = await loginApi(loginData)
   if(status===200){
+    const userPayload:UserType = data.message; 
+    AddUserAction(userPayload);
     navigate("/");
   }
 } catch (error) {

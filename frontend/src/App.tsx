@@ -10,9 +10,17 @@ import Reviews from "./pages/Reviews/Reviews";
 import Works from "./pages/Works/Works";
 import Signup from "./pages/auth/signup/Signup";
 import Login from "./pages/auth/login/Login";
+import { useSelector } from "react-redux";
+import {State} from "./redux/reducers/index"
 // import 
 function App() {
 
+  const {user}  = useSelector((state:State)=>state.user);
+
+  console.log(user)
+  
+  
+  
 
   return (
     <>
