@@ -22,7 +22,7 @@ class UserController{
      res.status(200).json({message:user ,success:true})
      } catch (error) {
     console.log(error);
-    res.status(500).json({message:error.message,success:falses})
+    res.status(500).json({message:error.message,success:false})
      }  
     }
 
