@@ -71,7 +71,11 @@ justify-content:space-between;
         border:none;
         text-transform:uppercase;
         outline:none;
-        // font-weight:600;
+
+        &:hover{
+            background:var(--hover_main_color);
+        }
+        
     }
 }
 `

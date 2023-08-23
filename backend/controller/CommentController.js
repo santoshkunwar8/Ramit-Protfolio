@@ -10,7 +10,7 @@ class CommentController{
         const work =  await WorkModel.findOneAndUpdate({
              _id:workId
          },{
-             $push:{comment:comment._doc._id}
+             $push:{comments:comment._doc._id}
          },{
             new:true,
             returnOriginal:false,

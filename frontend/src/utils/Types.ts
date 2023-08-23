@@ -44,7 +44,7 @@ export type WorkType = {
     createdAt?: string,
 }
 
-type CommentType = {
+export type CommentType = {
     _id: string,
     text: string,
     user: UserType,
@@ -80,4 +80,10 @@ export type ReviewType = {
     updatedAt: string,
     createdAt: string,
 
+}
+
+export type commentPayload = {
+    text: string,
+    user: string,
+    work: string,
 }

@@ -1,14 +1,49 @@
-import React, { useState } from 'react'
+import React, { ChangeEvent, useState } from 'react'
 import CommentItem from './CommentItem/CommentItem'
 import { WorkCommentsWrapper } from './WorkComments.styles'
 import { WorkType } from '../../../utils/Types'
+import { InfoWrapper } from '../../../Layouts/Info/Info.styles'
+import Info from '../../../Layouts/Info/Info'
+import { commentOnProjectApi } from '../../../utils/api'
+import { useSelector } from 'react-redux'
+import { State } from '../../../redux/reducers'
+import { IoSend} from 'react-icons/io5'
 type workCommentPropsType={
     work:WorkType|null
 }
 const WorkComments:React.FC<workCommentPropsType> = ({work}) => {
 
     const [hidden,setHidden] =useState(true)
+    const [commentText,setCommentText] =useState<string>("");
+    const {user} = useSelector((state:State)=>state.user)
 
+
+
+    const handleCommentInputChange=(e:ChangeEvent<HTMLTextAreaElement>)=>{
+        setCommentText(e.target.value);
+    }
+
+
+    const  handleSubmit=async()=>{
+        console.log(work?._id, user?._id,commentText)
+        if(!work?._id || !user?._id|| !commentText)return;
+                const commentPaylaod = {
+            text:commentText,
+            work:work?._id,
+            user:user?._id,
+        }
+       
+
+            try {
+               const {status}=  await commentOnProjectApi(commentPaylaod); 
+               if(status===200){
+                alert("successfull")
+               }
+            } catch (error) {
+                console.log(error)
+            }
+        
+    }
 
 
   return (
@@ -32,17 +67,17 @@ const WorkComments:React.FC<workCommentPropsType> = ({work}) => {
         </div>
         <div className='add_commentBox'>
             
-        <button className='commentButton' onClick={()=>setHidden(!hidden)}>Add comment </button>
+        <button className='commentButton' onClick={()=>setHidden(!hidden)}>{hidden ?"Add Comment":"Close"} </button>
         <div className='hiddenComment'>
-            <textarea name="" id=""  placeholder='Add your comment...'></textarea>
-
+            <textarea onChange={handleCommentInputChange} name="" id=""  placeholder='Add your comment...'></textarea>
+            <IoSend onClick={handleSubmit}/>
         </div>
         </div>
 
         <div className='comment_container'>
 
           {
-             work?.comments.map(cmt=><CommentItem key={cmt._id} />)
+          work  ? work?.comments.length > 0 ?  work?.comments.map(cmt=><CommentItem key={cmt._id} comment={cmt} /> ):<Info/>:""
           }
 
         </div>

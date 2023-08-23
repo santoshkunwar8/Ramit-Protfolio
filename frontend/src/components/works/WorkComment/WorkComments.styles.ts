@@ -48,21 +48,31 @@ width:100%;
     flex-direction:column;
     gap:1rem;
     .hiddenComment{
-      
+        display:flex;
         border-radius:7px;
-        border:${props => props.hidden ? "none" : "1px solid var(--border_color)"};
         height:${props => props.hidden ? "0px" : "100px"};
         overflow:hidden;
-        background:var(--light_black);
+        gap:1rem;
+        align-items:flex-end;
         transition:all 0.3s ease;
-
+        svg{
+            font-size:2rem !important;
+            fill:var(--main_color);
+            cursor:pointer;
+            transition:all .3s ease;
+            &:hover{
+                    fill:var(--hover_main_color);
+            }
+        }
         textarea{
             outline:none;
             color:var(--gray);
             padding:1rem;
             width:100%;
-            border:none;
-            background:transparent;
+           
+            
+            border:${props => props.hidden ? "none" : "1px solid var(--border_color)"};
+            background:var(--light_black);
             font-size:15px;
             height:100%;
             letter-spacing:1px;
@@ -85,6 +95,10 @@ width:100%;
     font-size:15px;
     color:white;
     cursor:pointer;
+
+    &:hover{
+        background:var(--hover_main_color);
+    }
 }
 
 }
