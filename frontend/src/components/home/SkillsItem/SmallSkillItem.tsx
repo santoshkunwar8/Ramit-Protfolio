@@ -1,12 +1,10 @@
 // import React from 'react'
+import { ToolType } from '../../../utils/Types'
 import { SmallSkillItemWrapper } from './SmallSkillItem.styles'
 
 
 type SkillItemProp={
-    skill:{
-        name:string,
-        image:string,
-    }
+    skill:ToolType
 }
 
 const SmallSkillItem:React.FC<SkillItemProp> = ({skill}) => {

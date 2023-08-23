@@ -1,8 +1,11 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import CommentItem from './CommentItem/CommentItem'
 import { WorkCommentsWrapper } from './WorkComments.styles'
-
-const WorkComments = () => {
+import { WorkType } from '../../../utils/Types'
+type workCommentPropsType={
+    work:WorkType|null
+}
+const WorkComments:React.FC<workCommentPropsType> = ({work}) => {
 
     const [hidden,setHidden] =useState(true)
 
@@ -38,11 +41,9 @@ const WorkComments = () => {
 
         <div className='comment_container'>
 
-                <CommentItem/>
-                <CommentItem/>
-                <CommentItem/>
-                <CommentItem/>
-                <CommentItem/>
+          {
+             work?.comments.map(cmt=><CommentItem key={cmt._id} />)
+          }
 
         </div>
     </WorkCommentsWrapper>

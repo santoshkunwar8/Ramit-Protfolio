@@ -17,22 +17,23 @@ const UserInfo = () => {
 
             </div>
             <div className="social_media_box">
-                <div className="media_box current_media" >
+              
+                <a href='https://www.linkedin.com/in/santosh-kunwar-5573a2273/' target='_blank' className="media_box current_media" >
 
                 <FaLinkedinIn/>
-                </div>
-                <div className="media_box">
+                </a>
+                <a href='https://www.fiverr.com/santoshkunwa442' target='_blank' className="media_box">
 
                 <TbBrandFiverr/>
-                </div>
-                <div className="media_box">
+                </a>
+                <a  href='https://github.com/Santoshkunwar44' target='_blank' className="media_box">
 
                 <VscGithub/>
-                </div>
-                <div className='media_box'>
+                </a>
+                <a href='https://twitter.com/santosh68789183' target='_blank' className='media_box'>
 
                 <FaTwitter/>
-                </div>
+                </a>
 
             </div>
         </div>

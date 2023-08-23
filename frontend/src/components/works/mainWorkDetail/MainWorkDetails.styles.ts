@@ -19,7 +19,7 @@ gap:1rem;
 
     .mainImgWrapper{
         width:100%;
-        height:100%;
+        height:300px;
 
         img{
             width:100%;
@@ -34,6 +34,7 @@ gap:1rem;
         img{
             width:100px;
             height:100px;
+            object-fit:cover;
             border-radius:4px;
         }
     }
@@ -56,11 +57,17 @@ gap:1rem;
         .primaryInfo{
             display:flex;
            justify-content:space-between;
+           .main_info{
+            display:flex;
+            flex-direction:column;
+            gap:5px;
+           }
         }
     
 
         .workName{
             letter-spacing:1px;
+            font-size:1.4rem;
             // text-transform:uppercase;
         }
         .workType{
@@ -96,6 +103,7 @@ gap:1rem;
         display:flex;
         width:100%;
         justify-content:space-between;
+        align-items:center;
         
         .techUsed{
             display:flex;
@@ -103,16 +111,19 @@ gap:1rem;
             gap:5px;
         }
         .shareBox{
+            border:1px solid var(--border_color);
+            width:50px;
+            height:50px;
+            display:grid;
+            place-items:center;
+            border-radius:4px;
+            cursor:pointer;
            
+         svg{
+            font-size:2rem;
+            fill:var(--main_color);
+         }
          
-            justify-self:flex-end;
-            border-radius:6px;
-            display:flex;
-            gap:10px;
-            align-items:center;
-            margin-top:auto;
-            display:inline-flex;
-            padding:0 0.4rem;
 
             
         }

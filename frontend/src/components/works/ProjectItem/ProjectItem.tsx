@@ -13,11 +13,12 @@ const ProjectItem:React.FC<ProjectItemPropsType> = ({work}) => {
   const navigate =useNavigate()
 
   const handleNavigate=()=>{
-    navigate(`/work/123`)
+    navigate(`/work/${work._id}`)
   }
 
   return (
-    <ProjectItemWrapper big={false} progress={work?.status === "progress"} onClick={handleNavigate}>
+    
+    <ProjectItemWrapper  big={false} progress={work?.status === "progress"} onClick={handleNavigate}>
       
             <h1 className='mainText'> {work.name} </h1>
             <div className='secondary_text'>

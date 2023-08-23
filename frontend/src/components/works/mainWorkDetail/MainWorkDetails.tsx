@@ -3,20 +3,30 @@ import { Rating } from '@mui/material'
 import { MainWorkDetailsWrapper } from './MainWorkDetails.styles'
 import SkillItem from '../../home/SkillsItem/SkillItem'
 import SmallSkillItem from '../../home/SkillsItem/SmallSkillItem'
+import { WorkType } from '../../../utils/Types'
+import React from 'react'
+import { BiShare } from 'react-icons/bi'
 
-const MainWorkDetails = () => {
+type MainWorkPropsType={
+  work:WorkType |null,
+}
+
+const MainWorkDetails:React.FC<MainWorkPropsType> = ({work}) => {
   return (
     <MainWorkDetailsWrapper>
 
     <div className='imageBox'>
         <div className='mainImgWrapper'>
 
-        <img src="https://images.pexels.com/photos/289927/pexels-photo-289927.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+        <img src={work?.mainImg} alt="" />
 
         </div>
         <div className='otherImages'>
-            <img src="https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?auto=compress&cs=tinysrgb&w=400" alt="" />
-            <img src="https://images.pexels.com/photos/114907/pexels-photo-114907.jpeg?auto=compress&cs=tinysrgb&w=400" alt="" />
+          {
+            work?.photos.map(img=>     <img key={img} src={img} alt={"projects Img"} />
+              )
+          }
+         
             </div>
 
     </div>
@@ -24,32 +34,32 @@ const MainWorkDetails = () => {
         <div className='infoTop'>
 
         <div className='primaryInfo'>
-            <div>
+            <div className='main_info'>
 
-            <h1 className='workName'>Vrumies</h1>
+            <h1 className='workName'>{work?.name}</h1>
             <p className='workType'>Online thrift marketplace</p>
-            <a className='workLink' href="">https://vrumies.org</a>
+            <a className='workLink' href="">{work?.link}</a>
             </div>
     <div className='ratingBox'>
 
-        <Rating name="read-only" size='large' value={4} readOnly />
-        <p>(2)</p>
+        <Rating name="read-only"  value={work?.rating} readOnly />
+        <p>(0)</p>
     </div>
             </div>
-            <p className='workDesc'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime reprehenderit et facere iusto in, explicabo, ducimus ea quaerat, tempora dolorum aliquid. Laudantium. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia maiores accusantium similique!</p>
+            <p className='workDesc'>{work?.desc}</p>
         </div>
 
     <div className='actionBox'>
         <div className='techUsed'>
                 {
-                    skillArr.map(skill=><SmallSkillItem key={skill.name} skill={skill}/>)
+                    work?.tools.map(skill=><SmallSkillItem key={skill.name} skill={skill}/>)
                 }
         </div>
         <div className='shareBox'>
-
-            <img width="48" height="48" src="https://img.icons8.com/color/48/facebook.png" alt="facebook"/>
+                <BiShare/>
+            {/* <img width="48" height="48" src="https://img.icons8.com/color/48/facebook.png" alt="facebook"/>
             <img width="48" height="48" src="https://img.icons8.com/color/48/twitter-circled--v1.png" alt="twitter-circled--v1"/>
-            <img width="48" height="48" src="https://img.icons8.com/color/48/linkedin.png" alt="linkedin"/>
+            <img width="48" height="48" src="https://img.icons8.com/color/48/linkedin.png" alt="linkedin"/> */}
             
         </div>
 

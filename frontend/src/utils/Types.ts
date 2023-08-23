@@ -49,6 +49,8 @@ type CommentType = {
     text: string,
     user: UserType,
     work: string,
+    createdAt?: string,
+    updatedAt?: string,
 }
 
 export type UserType = {

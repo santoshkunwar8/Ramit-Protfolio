@@ -18,7 +18,7 @@ class WorkController{
         static async getWork(req,res ){
      try {
         
-     const user =  await    WorkModel.find({}).populate(["tools","comments"])
+     const user =  await    WorkModel.find({...req.query}).populate(["tools","comments"])
      res.status(200).json({message:user ,success:true})
      } catch (error) {
     console.log(error);
