@@ -7,7 +7,7 @@ module.exports=async function(){
           console.log(connection.connection.host);
     } catch (error) {
         
-        console.log(error.message)
+        console.log(error)
 
     }
 

@@ -13,13 +13,15 @@ import Login from "./pages/auth/login/Login";
 import { useSelector } from "react-redux";
 import {State} from "./redux/reducers/index"
 import Contact from "./pages/contact/Contact";
+import useSetup from "./hooks/useSetup"
 // import 
 function App() {
 
-  const {user}  = useSelector((state:State)=>state.user);
-
-  console.log(user)
+  const {user} = useSelector((state:State)=>state.user)
+  console.log("logged in user",user )
+  useSetup();
   
+
   
   
 

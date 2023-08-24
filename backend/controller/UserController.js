@@ -59,6 +59,7 @@ class UserController{
             throw "Invalid credentails"
         }
     
+        req.session.user = other;
 
         res.status(200).json({message:other,success:true})
 
@@ -71,6 +72,19 @@ class UserController{
         // console.log(error)
             return res.status(500).json({message:error})
 
+    }
+   }
+   static getSessionuser(req,res){
+    try {
+        const user = req.session.user;
+        console.log("session ",req.session)
+
+        if(!user){
+            throw "User is not logged in ";
+        }
+        res.status(200).json({message:user,success:true})
+    } catch (error) {
+        res.status(500).json({message:error,success:false})
     }
    }
 }
