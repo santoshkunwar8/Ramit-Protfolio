@@ -54,6 +54,19 @@ gap:1rem;
         display:flex;
         flex-direction:column;
 
+        .statusButton{
+            margin:1rem 0;
+
+            background:${props => props.status === "progress" ? "#e91e63" : "var(--main_color)"};
+            width:fit-content;
+            border:none;
+            height:40px;
+            border-radius:20px;
+            padding:0 1.5rem;
+            font-size:16px;
+            letter-spacing:1px;
+        }
+
         .primaryInfo{
             display:flex;
            justify-content:space-between;

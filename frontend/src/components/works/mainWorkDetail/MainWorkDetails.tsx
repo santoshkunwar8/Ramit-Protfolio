@@ -13,7 +13,7 @@ type MainWorkPropsType={
 
 const MainWorkDetails:React.FC<MainWorkPropsType> = ({work}) => {
   return (
-    <MainWorkDetailsWrapper>
+    <MainWorkDetailsWrapper status={work?.status}>
 
     <div className='imageBox'>
         <div className='mainImgWrapper'>
@@ -38,7 +38,7 @@ const MainWorkDetails:React.FC<MainWorkPropsType> = ({work}) => {
 
             <h1 className='workName'>{work?.name}</h1>
             <p className='workType'>Online thrift marketplace</p>
-            <a className='workLink' href="">{work?.link}</a>
+            <a className='workLink' href={work?.link} target='_blank'>{work?.link}</a>
             </div>
     <div className='ratingBox'>
 
@@ -47,6 +47,9 @@ const MainWorkDetails:React.FC<MainWorkPropsType> = ({work}) => {
     </div>
             </div>
             <p className='workDesc'>{work?.desc}</p>
+            <button className="statusButton">
+              {work?.status}
+            </button>
         </div>
 
     <div className='actionBox'>

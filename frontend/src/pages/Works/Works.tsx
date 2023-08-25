@@ -71,7 +71,7 @@ const Works = () => {
         <div className='workWrapper'>
 
   {
-    worksArr.map(work=><ProjectItem key={work._id} work={work}/>)
+    worksArr.map(work=><ProjectItem big={true} key={work._id} work={work}/>)
     
   }          
 

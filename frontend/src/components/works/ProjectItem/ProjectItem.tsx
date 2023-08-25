@@ -6,10 +6,11 @@ import { WorkType } from '../../../utils/Types'
 import {format} from "timeago.js"
 
 type ProjectItemPropsType={
-  work:WorkType
+  work:WorkType,
+  big:boolean,
 }
 
-const ProjectItem:React.FC<ProjectItemPropsType> = ({work}) => {
+const ProjectItem:React.FC<ProjectItemPropsType> = ({work,big}) => {
   const navigate =useNavigate()
 
   const handleNavigate=()=>{
@@ -18,7 +19,8 @@ const ProjectItem:React.FC<ProjectItemPropsType> = ({work}) => {
 
   return (
     
-    <ProjectItemWrapper  big={false} progress={work?.status === "progress"} onClick={handleNavigate}>
+    <ProjectItemWrapper  big={big} progress={work?.status === "progress"} onClick={handleNavigate}>
+      
       
             <h1 className='mainText'> {work.name} </h1>
             <div className='secondary_text'>

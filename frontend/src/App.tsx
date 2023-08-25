@@ -17,8 +17,8 @@ import useSetup from "./hooks/useSetup"
 // import 
 function App() {
 
-  const {user} = useSelector((state:State)=>state.user)
-  console.log("logged in user",user )
+  // const {user} = useSelector((state:State)=>state.user)
+
   useSetup();
   
 

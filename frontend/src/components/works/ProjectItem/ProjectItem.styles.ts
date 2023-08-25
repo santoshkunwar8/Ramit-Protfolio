@@ -54,7 +54,7 @@ transition:all .3s ease;
     .project_other_info{
         display:flex;
         flex-direction:column;
-        gap: ${props => props.big ? "5px" : "2px"};
+        gap: ${props => props.big ? "8px" : "2px"};
     
         b{
             font-weight:500;
