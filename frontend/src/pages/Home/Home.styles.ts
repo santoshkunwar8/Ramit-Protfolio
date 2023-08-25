@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const HomeWrapper= styled.div`
+export const HomeWrapper = styled.div`
 
 
 height:100%;
@@ -30,6 +30,10 @@ gap:5rem;
 }
 .hero_section_right{
     flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:2rem;
+    height:100%;
 }
 .main_info_box{
     padding: 1rem;   

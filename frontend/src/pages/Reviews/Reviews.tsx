@@ -4,11 +4,17 @@ import ReviewItem from '../../components/home/Reviews/ReviewItem/ReviewItem'
 import ReviewModal from '../../Layouts/modal/ReviewModal/ReviewModal'
 import { useEffect, useState } from 'react'
 import { getAllReviewsApi } from '../../utils/api'
+import { ReviewType } from '../../utils/Types'
+import ReviewSkeletion from '../../Layouts/skeleton/Reviews/ReviewSkeletion'
 
 const Reviews = () => {
 
 
-  const [reviewsData,setReviewsData] =useState([])
+  const [reviewsData,setReviewsData] =useState<ReviewType[] |null>(null)
+
+
+
+  
 
   useEffect(()=>{
     handleFetchReviews()
@@ -31,7 +37,7 @@ const Reviews = () => {
   
 
   return (
-    <ReviewsWrapper>
+    <ReviewsWrapper >
 
         <Navbar/>
 
@@ -55,10 +61,7 @@ const Reviews = () => {
     <div className="review_wrapper">
 
          {
-          reviewsData.map(review=><ReviewItem big={true} review={review}/>
-          
-
-          )
+       reviewsData  ? reviewsData.slice(0,3).map(review=><ReviewItem big={true} review={review}/> ):<ReviewSkeletion/>
          } 
           
     </div>

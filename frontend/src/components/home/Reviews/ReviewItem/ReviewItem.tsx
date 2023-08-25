@@ -26,7 +26,7 @@ const ReviewItem:React.FC<ReviewItemType> = ({big,review}) => {
             <span className='userEmail'>{review.user?.email}</span>
 
     </div>
-    <Rating color='red' name="size-small" defaultValue={review.rating} value={review.rating} size="small" />
+    <Rating  color='red' readOnly name="size-small" defaultValue={review.rating} value={review.rating} size="small" />
     
 
             

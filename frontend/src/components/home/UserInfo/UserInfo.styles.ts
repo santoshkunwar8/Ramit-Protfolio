@@ -1,16 +1,16 @@
 import { styled } from "styled-components";
 
 // styled
-export const UserInfoWrapper=styled.div`
+export const UserInfoWrapper = styled.div`
 
 display:flex;
-height:70%;
+height:300px;
 gap:1rem;
 .imageWrapper{
   
     flex:1;
     background:var(--main_color);
-    height:88%;
+    height:100%;
     border-radius:10px;
     position:relative;
     overflow:hidden;

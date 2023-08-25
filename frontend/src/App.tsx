@@ -10,10 +10,10 @@ import Reviews from "./pages/Reviews/Reviews";
 import Works from "./pages/Works/Works";
 import Signup from "./pages/auth/signup/Signup";
 import Login from "./pages/auth/login/Login";
-import { useSelector } from "react-redux";
-import {State} from "./redux/reducers/index"
+
 import Contact from "./pages/contact/Contact";
 import useSetup from "./hooks/useSetup"
+
 // import 
 function App() {
 
@@ -46,6 +46,7 @@ function App() {
       <Route path="/login" element={<Login/>}/>  
       <Route path="/signup"  element={<Signup/>}/>
       <Route path="/contact" element={<Contact/>}/>
+
     </Routes> 
     </BrowserRouter>
     </AppWrapper>

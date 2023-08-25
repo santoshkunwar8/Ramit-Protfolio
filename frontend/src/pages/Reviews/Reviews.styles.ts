@@ -5,6 +5,7 @@ export const ReviewsWrapper = styled.div`
 display:flex;
 flex-direction:column;
 gap:2rem;
+padding:2rem;
 .reviews_container{
     padding:1rem;
     display:flex;

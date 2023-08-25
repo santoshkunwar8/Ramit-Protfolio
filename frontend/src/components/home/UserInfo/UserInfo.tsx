@@ -6,7 +6,7 @@ const UserInfo = () => {
   return (
     <UserInfoWrapper>
         <div className="imageWrapper">
-<img src="/images/user.png" alt=""  className='userImage'/>
+<img src={"https://res.cloudinary.com/onlinecoder/image/upload/v1692963682/jpyhxdc4esf8yjy7oejz.jpg"} alt=""  className='userImage'/>
         </div>
         <div className="otherInfo">
             <div className='name_box' >
