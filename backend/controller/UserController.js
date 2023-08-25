@@ -1,5 +1,6 @@
 const UserModel = require("../model/UserModel")
-
+const WorkModel = require("../model/WorkModel");
+const SkillModel = require("../model/ToolsModel")
 class UserController{
 
 
@@ -14,6 +15,19 @@ class UserController{
      }  
     }
 
+    static async adminInfo(req,res){
+        try {
+            const works  = await WorkModel.find({}).count();
+            const skills = await SkillModel.find({}).count();
+            const clients = await UserModel.find({isClient:true}).count();
+
+            res.status(200).json({worksCount:works,skillsCount:skills,clientsCount:clients});
+
+        } catch (error) {
+            res.status(500).json({message:error.message,status:false})            
+        }
+
+    }
 
     static async getClients(req,res ){
      try {

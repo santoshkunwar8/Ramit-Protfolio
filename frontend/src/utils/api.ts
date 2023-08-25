@@ -27,6 +27,7 @@ export const createUserApi = (data: UserType) => AxiosInstance.post("/user/creat
 export const loginApi = (data: loginPayload) => AxiosInstance.post("/user/login", data)
 export const becomeClientApi = (userId: string) => AxiosInstance.post(`/user/becomeclient/${userId}`);
 export const getLoggedInUserApi = () => AxiosInstance.get("/user/sessionUser");
+export const getAdminInfoApi = () => AxiosInstance.get("/user/adminInfo")
 
 // reviews
 export const createReviewsApi = (data: ReviewStateType) => AxiosInstance.post("/review/create", data)
