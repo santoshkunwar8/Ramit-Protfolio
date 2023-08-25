@@ -16,3 +16,9 @@ export const RemoveUserAction = () => (dispatch: Dispatch) => {
         type: ActionTypes.REMOVE_USER,
     })
 }
+
+export const refreshAction = () => (dispatch: Dispatch) => {
+    return dispatch({
+        type: ActionTypes.REFRESH
+    })
+}

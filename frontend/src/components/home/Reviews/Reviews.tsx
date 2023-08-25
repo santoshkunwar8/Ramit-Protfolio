@@ -48,7 +48,7 @@ const Reviews = () => {
         <div className='review_wrapper'>
 
               {
-                reviewsData.map(review=><ReviewItem  big={true} review={review} key={review._id}/>)
+                reviewsData.slice(0,5).map(review=><ReviewItem  big={true} review={review} key={review._id}/>)
               }
 
         </div>

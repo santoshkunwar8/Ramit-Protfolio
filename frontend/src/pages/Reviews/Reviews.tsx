@@ -6,19 +6,21 @@ import { useEffect, useState } from 'react'
 import { getAllReviewsApi } from '../../utils/api'
 import { ReviewType } from '../../utils/Types'
 import ReviewSkeletion from '../../Layouts/skeleton/Reviews/ReviewSkeletion'
+import { useSelector } from 'react-redux'
+import { State } from '../../redux/reducers'
 
 const Reviews = () => {
 
 
   const [reviewsData,setReviewsData] =useState<ReviewType[] |null>(null)
-
+  const {refresh} = useSelector((state:State)=>state.other)
 
 
   
 
   useEffect(()=>{
     handleFetchReviews()
-  },[])
+  },[refresh])
 
 
   const handleFetchReviews=async()=>{
@@ -37,7 +39,7 @@ const Reviews = () => {
   
 
   return (
-    <ReviewsWrapper >
+    <ReviewsWrapper  isLoading={!reviewsData} >
 
         <Navbar/>
 
@@ -61,7 +63,7 @@ const Reviews = () => {
     <div className="review_wrapper">
 
          {
-       reviewsData  ? reviewsData.slice(0,3).map(review=><ReviewItem big={true} review={review}/> ):<ReviewSkeletion/>
+       reviewsData  ? reviewsData.map(review=><ReviewItem big={true} review={review}/> ):<ReviewSkeletion/>
          } 
           
     </div>

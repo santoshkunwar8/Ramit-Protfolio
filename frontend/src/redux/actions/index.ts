@@ -9,5 +9,9 @@ interface AddUserAction {
 interface RemoveUserAction {
     type: ActionTypes.REMOVE_USER;
 }
+interface RefreshAction {
+    type: ActionTypes.REFRESH;
+}
 
-export type Action = AddUserAction | RemoveUserAction
+export type Action = AddUserAction | RemoveUserAction | RefreshAction
+

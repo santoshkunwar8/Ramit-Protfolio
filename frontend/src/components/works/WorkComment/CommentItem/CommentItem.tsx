@@ -1,11 +1,12 @@
 import React from 'react'
 import { CommentItemWrapper } from './CommentItem.styles'
 import { CommentType } from '../../../../utils/Types'
+import {format} from "timeago.js"
 type CommentItemPropsType={
     comment:CommentType
 }
 const CommentItem:React.FC<CommentItemPropsType> = ({comment}) => {
-
+    console.log(comment)
   return (
     <CommentItemWrapper>
         <div className='comment_header'>
@@ -17,7 +18,7 @@ const CommentItem:React.FC<CommentItemPropsType> = ({comment}) => {
                         <span className='userEmail'>{comment.user.email}</span>
                     </div>
             </div>
-                    <p className='createdTime' >4 min ago</p>
+                    <p className='createdTime' >{ comment?.createdAt && format(comment?.createdAt)}</p>
         </div>
         <div className='comment_text'>
         {comment.text}

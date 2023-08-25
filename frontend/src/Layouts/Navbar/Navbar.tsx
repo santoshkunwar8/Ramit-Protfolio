@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 import { NavbarWrapper } from './Navbar.styles'
 import ClientModal from "../modal/ClientModal/ClientModal";
 import { useSelector } from "react-redux";
@@ -7,8 +7,16 @@ import { State } from "../../redux/reducers";
 const Navbar = () => {
 
   const {user} = useSelector((state:State)=>state.user)
+  const path = useLocation().pathname.split("/")[1]
+  
+  const isActive=(navName:string):string=>{
 
-
+      if(navName===path){
+        return "active_nav"
+      }else{
+        return "";
+      }
+  }
 
 
 
@@ -25,14 +33,14 @@ const Navbar = () => {
 
         <ul className='nav_list'>
             <Link  to="/">
-            <li className='active_nav'>Dashboard</li>
+            <li className={`${isActive("")}`}>Dashboard</li>
             
             </Link> 
             <Link to={"/reviews"}>
-            <li>Reviews</li>
+            <li className={`${isActive("reviews")}`}>Reviews</li>
             </Link>
            <Link to={"/works"}>
-            <li>Works</li>
+            <li className={`${isActive("works")}`}> Works</li>
            </Link>
         </ul>
            

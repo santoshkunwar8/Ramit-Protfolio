@@ -2,13 +2,17 @@ import { styled } from "styled-components"
 
 export const WorkWrapper = styled.div`
 
+padding:2rem;
+display:flex;
+flex-direction:column;
+gap:3rem;
 .work_container{
     display:flex;
     flex-direction:column;
-    gap:2rem;
-    padding:1rem;
+    gap:5rem;
 
     .work_header{
+        filter:${props => props.isLoading ? "blur(1px)" : "blur(0px)"};
         display:flex;
         align-items:center;
         height:60px;

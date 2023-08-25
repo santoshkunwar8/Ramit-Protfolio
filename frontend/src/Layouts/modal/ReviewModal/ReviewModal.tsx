@@ -7,6 +7,9 @@ import { ReviewModalWrapper } from './ReviewModal.styles';
 import { Rating } from '@mui/material';
 import { ReviewStateType } from '../../../utils/Types';
 import { createReviewsApi } from '../../../utils/api';
+import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../../../redux';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -29,6 +32,9 @@ const  ReviewModal:React.FC<ReviewModalPropsType>=({children}) =>{
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const dispatch  =useDispatch()
+
+  const  {refreshAction} = bindActionCreators(actionCreators,dispatch)
   const [reviewsData,setReviewsData] = React.useState<ReviewStateType>({
     rating:0,
     text:"",
@@ -38,9 +44,14 @@ const  ReviewModal:React.FC<ReviewModalPropsType>=({children}) =>{
   const handleSubmit=async()=>{
 
     try {
-        const { data,status} = await createReviewsApi(reviewsData)
+        const { status} = await createReviewsApi(reviewsData)
         if(status===200){
-          alert("successfull")
+          // alert("successfull")
+          setReviewsData((prev)=>({
+            ...prev,text:"",rating:0,
+          }))
+          refreshAction();
+          handleClose()
         }
 
 
@@ -74,7 +85,7 @@ const  ReviewModal:React.FC<ReviewModalPropsType>=({children}) =>{
                 setReviewsData(prev=>({...prev, rating:newValue}));
         }}
                   />
-                <textarea placeholder='Add review...' className='reviewInput' name="text"  onChange={e=>setReviewsData(prev=>({...prev,text:e.target.value}))} id=""></textarea>
+                <textarea placeholder='Add review...' className='reviewInput' name="text" value={reviewsData.text} onChange={e=>setReviewsData(prev=>({...prev,text:e.target.value}))} id=""></textarea>
                 <button  onClick={handleSubmit} className='reviewButton'>Add</button>
           </ReviewModalWrapper>
         </Box>

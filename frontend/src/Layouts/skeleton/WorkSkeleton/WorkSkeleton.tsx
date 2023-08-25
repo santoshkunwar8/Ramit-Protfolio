@@ -5,7 +5,7 @@ function Media() {
 
 
   return (
-    <Box sx={{display:"flex" ,flexWrap:"wrap" ,gap:"1rem", width:"100%"}}>
+    <Box sx={{display:"flex" ,flexWrap:"wrap" ,gap:"2rem ", width:"100%"}}>
       { Array.from(new Array(12)).map((item, index) => (
         <Box key={index} sx={{ flex:1,minWidth:"250px"}}>
          
@@ -18,7 +18,7 @@ function Media() {
                 </Box>  
             </Box>
         
-            <Skeleton style={{background:"#8080806e"}}  width={"80%"} height={130} sx={{marginLeft:"auto"}}  />
+            <Skeleton style={{background:"#8080806e"}}  width={"100%"} height={130} sx={{marginLeft:"auto"}}  />
 
         
         </Box>
@@ -27,7 +27,7 @@ function Media() {
   );
 }
 
-export default function ReviewSkeletion() {
+export default function WorkSkeleton() {
   return (
     <Box sx={{ overflow: 'hidden' }}>
       <Media  />

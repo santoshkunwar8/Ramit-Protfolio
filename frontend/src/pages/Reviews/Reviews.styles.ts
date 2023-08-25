@@ -4,16 +4,17 @@ export const ReviewsWrapper = styled.div`
 
 display:flex;
 flex-direction:column;
-gap:2rem;
+gap:1rem;
 padding:2rem;
 .reviews_container{
     padding:1rem;
     display:flex;
-    gap:1rem;
+    gap:2rem;
     flex-wrap:wrap;
     justify-content:center;
     flex-direction:column;
     .review_header{
+        filter:${props => props.isLoading ? "blur(1px)" : "blur(0px)"};
         height:100px;
         display:flex;
         justify-content:space-between;

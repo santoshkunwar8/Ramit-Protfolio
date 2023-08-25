@@ -6,16 +6,18 @@ import WorkComments from '../../components/works/WorkComment/WorkComments'
 import { useParams } from 'react-router-dom'
 import { getSingleProjectApi } from '../../utils/api'
 import { WorkType } from '../../utils/Types'
+import { useSelector } from 'react-redux'
+import { State } from '../../redux/reducers'
 
 const WorkDetail = () => {
   const [workData,setWorkData] =useState<WorkType| null>(null)
-
+  const {refresh} = useSelector((state:State)=>state.other)
 
   const {id} =useParams()
   
   useEffect(()=>{
     fetchWorkById()
-  },[id])
+  },[id,refresh])
 
   const fetchWorkById=async()=>{
 

@@ -5,10 +5,11 @@ import ProjectItem from '../../components/works/ProjectItem/ProjectItem'
 import { useEffect, useState } from 'react'
 import { WorkType } from '../../utils/Types'
 import { getAllProjectApi } from '../../utils/api'
+import WorkSkeleton from '../../Layouts/skeleton/WorkSkeleton/WorkSkeleton'
 
 const Works = () => {
 
-  const [worksArr,setWorkArr] =useState<WorkType[]>([])
+  const [worksArr,setWorkArr] =useState<WorkType[]|null>(null)
 
 
 
@@ -30,7 +31,7 @@ const Works = () => {
 
 
   return (
-    <WorkWrapper>
+    <WorkWrapper isLoading={!worksArr}>
         <Navbar/>
         <div className="work_container">
           <div className="work_header">
@@ -71,7 +72,8 @@ const Works = () => {
         <div className='workWrapper'>
 
   {
-    worksArr.map(work=><ProjectItem big={true} key={work._id} work={work}/>)
+  worksArr ?   worksArr.map(work=><ProjectItem big={true} key={work._id} work={work}/>):<WorkSkeleton/>
+
     
   }          
 
