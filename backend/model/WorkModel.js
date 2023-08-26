@@ -1,5 +1,13 @@
 const { default: mongoose } = require("mongoose")
 
+const userRatings=mongoose.Schema({
+    rating:Number,
+    user:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"User"
+
+    }
+})
 
 const WorkSchema =  mongoose.Schema({
     link:{
@@ -18,6 +26,7 @@ const WorkSchema =  mongoose.Schema({
     photos:[],
     mainImg:String,
     platform:String,
+    ratings:[userRatings],
     rating:Number,
     status:{
         type:String,

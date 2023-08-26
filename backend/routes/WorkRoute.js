@@ -1,4 +1,4 @@
-const { createWok, getWork } = require("../controller/WorkController");
+const { createWok, getWork, addRating } = require("../controller/WorkController");
 
 
 const router = require("express").Router()
@@ -6,6 +6,7 @@ const router = require("express").Router()
 
 router.post("/create",createWok)
 router.get("/",getWork)
+router.post("/rating",addRating);
 
 
 
