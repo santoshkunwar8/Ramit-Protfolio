@@ -14,7 +14,7 @@ export const getAllProjectApi = () => AxiosInstance.get("/work");
 export const getSingleProjectApi = (id: string) => AxiosInstance.get(`/work?_id=${id}`)
 export const commentOnProjectApi = (data: commentPayload) => AxiosInstance.post(`/comment/create`, data)
 export const getCommentOfProjectApi = (workId: string) => AxiosInstance.get(`/comment/${workId}`)
-
+export const rateProjectApi = (data: { user: string, work: string, rating: number }) => AxiosInstance.post(`/work/rating`, data)
 
 // user
 

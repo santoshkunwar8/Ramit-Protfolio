@@ -1,16 +1,51 @@
 
+import {useState} from "react"
 import { Rating } from '@mui/material'
 import { MainWorkDetailsWrapper } from './MainWorkDetails.styles'
 import SmallSkillItem from '../../home/SkillsItem/SmallSkillItem'
 import { WorkType } from '../../../utils/Types'
 import React from 'react'
 import { BiShare } from 'react-icons/bi'
+import { rateProjectApi } from '../../../utils/api'
+import { useSelector } from 'react-redux'
+import { State } from '../../../redux/reducers'
+
 
 type MainWorkPropsType={
   work:WorkType |null,
 }
 
 const MainWorkDetails:React.FC<MainWorkPropsType> = ({work}) => {
+const {user} = useSelector((state:State)=>state.user);
+const [rating,setRating] = useState(0)
+
+  const handleRateWork=async(rating:number)=>{
+    if(!user?._id || !work)return;
+
+    const ratingPayload = {
+      user:user?._id,
+      work:work?._id,
+      rating
+    }
+    try {
+    await rateProjectApi(ratingPayload);  
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  const handleRatingChange=async(_:React.SyntheticEvent<Element,Event>,rating:number|null)=>{
+    if(!rating)return;
+try {
+  await handleRateWork(rating);
+  setRating(rating);
+} catch (error) {
+  console.log("error while rating",error)
+}
+
+
+  }
+  console.log(rating)
   return (
     <MainWorkDetailsWrapper status={work?.status?? ""}>
 
@@ -41,8 +76,8 @@ const MainWorkDetails:React.FC<MainWorkPropsType> = ({work}) => {
             </div>
     <div className='ratingBox'>
 
-        <Rating name="read-only"  value={work?.rating} readOnly />
-        <p>(0)</p>
+        <Rating name="read-only"  value={work?.ratings.length} onChange={handleRatingChange} />
+        <p>({work?.ratings.length})</p>
     </div>
             </div>
             <p className='workDesc'>{work?.desc}</p>
@@ -59,10 +94,7 @@ const MainWorkDetails:React.FC<MainWorkPropsType> = ({work}) => {
         </div>
         <div className='shareBox'>
                 <BiShare/>
-            {/* <img width="48" height="48" src="https://img.icons8.com/color/48/facebook.png" alt="facebook"/>
-            <img width="48" height="48" src="https://img.icons8.com/color/48/twitter-circled--v1.png" alt="twitter-circled--v1"/>
-            <img width="48" height="48" src="https://img.icons8.com/color/48/linkedin.png" alt="linkedin"/> */}
-            
+        
         </div>
 
     </div>

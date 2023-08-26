@@ -42,6 +42,7 @@ export type WorkType = {
     platform: string,
     updatedAt?: string,
     createdAt?: string,
+    ratings: ratings[],
 }
 
 export type CommentType = {
@@ -86,4 +87,11 @@ export type commentPayload = {
     text: string,
     user: string,
     work: string,
+
+}
+export type ratings = {
+    user: string,
+    rating: number,
+    _id: string,
+
 }
