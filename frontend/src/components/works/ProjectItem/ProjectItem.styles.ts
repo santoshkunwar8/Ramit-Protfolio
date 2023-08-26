@@ -25,6 +25,15 @@ transition:all .3s ease;
     display:flex;
     align-items:center;
     justify-content:space-between;
+    .ratingBox{
+        display:flex;
+        gap:3px;
+        align-items:center;
+        p{
+            font-size:12px;
+            color:var(--gray);
+        }
+    }
 }
 .mainText{
     font-weight:600;
