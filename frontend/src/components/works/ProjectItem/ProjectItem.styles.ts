@@ -1,6 +1,9 @@
 import { styled } from "styled-components"
-
-export const ProjectItemWrapper = styled.div`
+interface ProjectItemWrapperProps {
+    big: boolean,
+    progress: boolean,
+}
+export const ProjectItemWrapper = styled.div<ProjectItemWrapperProps>`
 
 
 min-width:480px;

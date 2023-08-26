@@ -46,7 +46,7 @@ const WorkSliderItem = () => {
         </div>
         <div className='work_item_wrapper'>
             {
-              worksArr.map((w)=><ProjectItem key={w._id}  work={w} />)
+              worksArr.map((w)=><ProjectItem big={false} key={w._id}  work={w} />)
             }
         </div>
     </WorkSliderItemWrapper>

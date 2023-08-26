@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { FooterWrapper } from './Footer.styles'
 import { AiOutlineRight } from 'react-icons/ai'
 import { FaLinkedinIn, FaTwitter } from 'react-icons/fa'

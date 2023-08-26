@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ClientsWrapper } from './clients.styles'
 import ClientItem from './ClientItem/ClientItem'
 import { UserType } from '../../../utils/Types'
@@ -7,7 +7,7 @@ import { getClientsApi } from '../../../utils/api'
 const Clients = () => {
 
  const [clientsData,setClientsData] =useState<UserType[]>([])
- const [totalCount,setTotalCount] =useState(0)
+
 
 
  
@@ -25,7 +25,7 @@ const Clients = () => {
       try {
         const {data,status} = await  getClientsApi();  
         if(status===200){
-            setTotalCount(data.message.length);
+
           setClientsData(data.message)
         }
 
@@ -85,43 +85,4 @@ const Clients = () => {
 }
 
 export default Clients;
-
-
-const clientArr=[
-    {
-        name:"Rajiv Stha",
-        img:"https://images.pexels.com/photos/15664597/pexels-photo-15664597/free-photo-of-portrait-of-man.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
-    {
-        name:"FullStack Kyle",
-        img:"https://images.pexels.com/photos/13087560/pexels-photo-13087560.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-    },{
-        name:"Tan Weinja",
-        img:"https://images.pexels.com/photos/17859453/pexels-photo-17859453/free-photo-of-women-color-light.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-    },{
-        name:"Jenney",
-        img:"https://images.pexels.com/photos/10027305/pexels-photo-10027305.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-    },{
-        name:"Richael",
-        img:"https://images.pexels.com/photos/17910786/pexels-photo-17910786.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-    },
-       {
-        name:"Rajiv Stha",
-        img:"https://images.pexels.com/photos/15664597/pexels-photo-15664597/free-photo-of-portrait-of-man.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
-    {
-        name:"FullStack Kyle",
-        img:"https://images.pexels.com/photos/13087560/pexels-photo-13087560.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-    },{
-        name:"Tan Weinja",
-        img:"https://images.pexels.com/photos/17859453/pexels-photo-17859453/free-photo-of-women-color-light.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-    },{
-        name:"Jenney",
-        img:"https://images.pexels.com/photos/10027305/pexels-photo-10027305.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-    },{
-        name:"Richael",
-        img:"https://images.pexels.com/photos/17910786/pexels-photo-17910786.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-    },
-]
-
 

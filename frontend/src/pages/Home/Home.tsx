@@ -5,12 +5,11 @@ import Navbar from "../../Layouts/Navbar/Navbar"
 import WorkSlider from "../../Layouts/WorkSlider/WorkSlider"
 import About from "../../components/home/About/About"
 import Clients from "../../components/home/Clients/Clients"
-import ProjectItem from "../../components/home/Project/ProjectItem"
+
+import HeroItems from "../../components/home/heroItems/HeroItems"
 import Reviews from "../../components/home/Reviews/Reviews"
 import UserInfo from "../../components/home/UserInfo/UserInfo"
 // import WorkItem from "../../components/home/Works/Work"
-import HeroItems from "../../components/home/heroItems/HeroItems"
-import WorkBox from "../../components/works/WorkBox"
 import { HomeWrapper } from "./Home.styles"
 import Skills from "./Skills/Skills"
 
@@ -49,25 +48,3 @@ const Home = () => {
 
 export default Home
 
-
-const works=[
-
-  {
-    url:"https://www.vrumies.org",
-    name:"vrumies.org",
-    createdAt:"2022/10/2",
-    image:"/images/workLogo.png"
-  },
-   {
-    url:"https://www.debai.org",
-    name:"debai.org",
-    createdAt:"2023/1/2",
-    image:"https://res.cloudinary.com/onlinecoder/image/upload/v1690193097/fmjmbazdcvuftgdudpnx.jpG"
-  },
-   {
-    url:"https://www.vrumies.org",
-    name:"fotoprofilpro.com",
-    createdAt:"2021/5/2",
-    image:"/images/fotoprofilpro.png"
-  },
-]

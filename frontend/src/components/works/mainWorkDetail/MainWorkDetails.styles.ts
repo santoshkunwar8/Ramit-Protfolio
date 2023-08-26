@@ -1,7 +1,9 @@
 import { styled } from 'styled-components'
 
-
-export const MainWorkDetailsWrapper = styled.div`
+interface MainWorkDetailsWrapperProps {
+    status: string
+}
+export const MainWorkDetailsWrapper = styled.div<MainWorkDetailsWrapperProps>`
 
 display:flex;
 gap:1rem;

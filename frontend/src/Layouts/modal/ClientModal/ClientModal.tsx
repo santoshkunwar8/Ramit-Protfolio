@@ -40,9 +40,9 @@ const  ClientModal:React.FC<ClientModalPropsType>=({children}) =>{
   const handleSubmit=async()=>{
     if(!checked)return;
     try {
-      const {data,status} = await becomeClientApi(currentUser)
+      const {status} = await becomeClientApi(currentUser)
       if(status===200){
-      alert("successfull")
+      handleClose()
       }
     } catch (error) {
       console.log(error)

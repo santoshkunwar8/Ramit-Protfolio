@@ -37,11 +37,12 @@ const Signup = () => {
    
     let  {value,name,files} = event.target; 
 
-  if(name==="image"){
 
+  if(name==="image"){
+    if(files){
       setProfileFile(files[0]);
-      
-      return; 
+    }
+    return; 
     }
 
 
@@ -61,7 +62,7 @@ const Signup = () => {
       alert("image should be provided ")
     }else{
 
-      upload(profileFile,async (progress,url)=>{
+      upload(profileFile,async (_,url)=>{
 
 
         try {
@@ -92,7 +93,7 @@ const Signup = () => {
     
   }
 
-  console.log(signupData)
+
 
   return (
     <AuthWrapper>
@@ -133,7 +134,7 @@ const Signup = () => {
         </div>
       </div>
       <input required  type="file" name="image" id="" style={{display:"none"}}  ref={fileRef} onChange={handleInputChange}/>
-        <div className='uploadImageButton' onClick={()=>fileRef.current.click()}>Upload Profile Image</div>
+        <div className='uploadImageButton' onClick={()=>fileRef.current?.click()}>Upload Profile Image</div>
         <button type="submit">Register</button>
 
         <div className='login_bottom'>

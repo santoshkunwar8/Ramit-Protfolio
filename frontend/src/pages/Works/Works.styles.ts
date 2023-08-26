@@ -1,6 +1,10 @@
 import { styled } from "styled-components"
 
-export const WorkWrapper = styled.div`
+interface WorkWrapperProps {
+    isLoading: boolean;
+    // other props...
+}
+export const WorkWrapper = styled.div<WorkWrapperProps>`
 
 padding:2rem;
 display:flex;

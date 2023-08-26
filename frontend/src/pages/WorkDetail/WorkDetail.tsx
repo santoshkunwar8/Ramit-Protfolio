@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import { WorkDetailsWrapper } from './workDetail.styles'
 import Navbar from '../../Layouts/Navbar/Navbar'
 import MainWorkDetails from '../../components/works/mainWorkDetail/MainWorkDetails'

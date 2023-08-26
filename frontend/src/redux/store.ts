@@ -3,6 +3,11 @@ import reducers from "./reducers/index"
 import { legacy_createStore as createStore, applyMiddleware, compose } from "redux"
 // import reducers from "./index"
 
+declare global {
+    interface Window {
+        __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+    }
+}
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

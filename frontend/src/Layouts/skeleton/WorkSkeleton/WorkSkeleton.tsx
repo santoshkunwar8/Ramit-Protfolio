@@ -6,7 +6,8 @@ function Media() {
 
   return (
     <Box sx={{display:"flex" ,flexWrap:"wrap" ,gap:"2rem ", width:"100%"}}>
-      { Array.from(new Array(12)).map((item, index) => (
+      { Array.from(new Array(12)).map((_, index) => (
+        
         <Box key={index} sx={{ flex:1,minWidth:"250px"}}>
          
             <Box sx={{ pt: 0.5  ,gap:"10px"}} display={"flex"}>

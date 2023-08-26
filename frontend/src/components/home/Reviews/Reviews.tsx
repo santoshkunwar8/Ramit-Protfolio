@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import { ReviewsWrapper } from './Reviews.styles'
 import ReviewItem from './ReviewItem/ReviewItem'
 import { getAllReviewsApi } from '../../../utils/api'

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { AuthWrapper } from '../Signup.styles'
 import {RiLockPasswordFill} from "react-icons/ri"
 import {MdEmail} from "react-icons/md"
 import Navbar from '../../../Layouts/Navbar/Navbar'

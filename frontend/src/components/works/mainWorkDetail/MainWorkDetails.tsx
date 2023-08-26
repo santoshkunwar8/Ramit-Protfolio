@@ -1,7 +1,6 @@
 
 import { Rating } from '@mui/material'
 import { MainWorkDetailsWrapper } from './MainWorkDetails.styles'
-import SkillItem from '../../home/SkillsItem/SkillItem'
 import SmallSkillItem from '../../home/SkillsItem/SmallSkillItem'
 import { WorkType } from '../../../utils/Types'
 import React from 'react'
@@ -13,7 +12,7 @@ type MainWorkPropsType={
 
 const MainWorkDetails:React.FC<MainWorkPropsType> = ({work}) => {
   return (
-    <MainWorkDetailsWrapper status={work?.status}>
+    <MainWorkDetailsWrapper status={work?.status?? ""}>
 
     <div className='imageBox'>
         <div className='mainImgWrapper'>
@@ -77,28 +76,3 @@ const MainWorkDetails:React.FC<MainWorkPropsType> = ({work}) => {
 
 export default MainWorkDetails
 
-
-const skillArr=[
-  {
-    name:"Javascript",
-    image:"/images/js.png"
-  },
-  {
-    name:"Java",
-    image:"/images/java.png"
-  },
-  {
-   name:"Php",
-   image:"/images/php.png"
- },
-  {
-    name:'React Js',
-    image:"/images/react.png"
-  },
-  {
-    name:"Node Js",
-    image:"/images/node.png"
-  },
-   
-
-]

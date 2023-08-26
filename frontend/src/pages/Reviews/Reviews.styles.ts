@@ -1,6 +1,8 @@
 import { styled } from 'styled-components'
-
-export const ReviewsWrapper = styled.div`
+interface ReviewsWrapperProps {
+    isLoading: boolean
+}
+export const ReviewsWrapper = styled.div<ReviewsWrapperProps>`
 
 display:flex;
 flex-direction:column;

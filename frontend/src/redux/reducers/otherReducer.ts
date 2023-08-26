@@ -1,4 +1,4 @@
-import { UserType } from "../../utils/Types";
+
 import { Action } from "../actions";
 import { ActionTypes } from "../actions/ActionTypes";
 

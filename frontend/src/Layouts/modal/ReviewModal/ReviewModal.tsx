@@ -80,9 +80,11 @@ const  ReviewModal:React.FC<ReviewModalPropsType>=({children}) =>{
           <ReviewModalWrapper>
                 <Rating
                  size='large' max={5} value={reviewsData.rating}
-                 onChange={(event, newValue) => {
-                 if(newValue)
-                setReviewsData(prev=>({...prev, rating:newValue}));
+                 onChange={(_, newValue) => {
+
+                 if(newValue){
+                   setReviewsData(prev=>({...prev, rating:newValue}));
+                  }
         }}
                   />
                 <textarea placeholder='Add review...' className='reviewInput' name="text" value={reviewsData.text} onChange={e=>setReviewsData(prev=>({...prev,text:e.target.value}))} id=""></textarea>

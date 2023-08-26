@@ -26,7 +26,7 @@ const Works = () => {
   },[])
 
 useEffect(()=>{
-const {status,platform,rating} = filterPayload;
+const {status,platform} = filterPayload;
 
 if(!worksArr)return;
 let data:WorkType[]=worksArr;
