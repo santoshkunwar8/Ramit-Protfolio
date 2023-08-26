@@ -16,7 +16,7 @@ gap:3rem;
         display:flex;
         align-items:center;
         height:60px;
-        gap:1rem;
+        gap:3rem;
 
         .filter_item{
             display:flex;
@@ -27,14 +27,15 @@ gap:3rem;
 
                 font-size:12px;
                 letter-spacing:1px;
+                color:var(--gray);
             }
             select{
                 outline:outline;
-                height:45px;
+                height:55px;
                 padding:0 1rem;
                 border:1px solid var(--border_color);
                 background:var(--light_black);
-                border-radius:8px;
+                border-radius:5px;
                 letter-spacing:1px;
                 font-size:14px;
 

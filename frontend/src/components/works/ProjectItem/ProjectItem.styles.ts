@@ -17,6 +17,12 @@ transition:all .3s ease;
     scale:1.02;
     background:#151515;
 }
+.midBox{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
 .mainText{
     font-weight:600;
     font-size: ${props => props.big ? "1.6rem" : "1.2rem"};

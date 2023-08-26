@@ -4,6 +4,7 @@ import { BiSolidShareAlt } from 'react-icons/bi'
 import { useNavigate } from 'react-router-dom'
 import { WorkType } from '../../../utils/Types'
 import {format} from "timeago.js"
+import { Rating } from '@mui/material'
 
 type ProjectItemPropsType={
   work:WorkType,
@@ -16,6 +17,7 @@ const ProjectItem:React.FC<ProjectItemPropsType> = ({work,big}) => {
   const handleNavigate=()=>{
     navigate(`/work/${work._id}`)
   }
+  
 
   return (
     
@@ -27,8 +29,11 @@ const ProjectItem:React.FC<ProjectItemPropsType> = ({work,big}) => {
                 <span>{work.type} |</span> <span>{work.platform }</span>
                 </div>
             <p className='project_desc'>{work.desc}</p>
+<div className='midBox'>
 
             <button className='progressBtn'>{work.status}</button>
+            <Rating size='small'  value={3} readOnly/>
+</div>
             <div className="project_bottom">
 
             <div className='project_other_info'>

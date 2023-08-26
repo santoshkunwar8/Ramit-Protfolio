@@ -2,7 +2,7 @@
 import { WorkWrapper } from './Works.styles'
 import Navbar from '../../Layouts/Navbar/Navbar'
 import ProjectItem from '../../components/works/ProjectItem/ProjectItem'
-import { useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { WorkType } from '../../utils/Types'
 import { getAllProjectApi } from '../../utils/api'
 import WorkSkeleton from '../../Layouts/skeleton/WorkSkeleton/WorkSkeleton'
@@ -10,25 +10,70 @@ import WorkSkeleton from '../../Layouts/skeleton/WorkSkeleton/WorkSkeleton'
 const Works = () => {
 
   const [worksArr,setWorkArr] =useState<WorkType[]|null>(null)
+  const [filteredWork,setFilteredWork] = useState<WorkType[]>([])
+
+  const [filterPayload,setFilterPayload] =useState({
+    platform:"All",
+    rating:"All",
+    status:"All",
+  }) 
 
 
-
+  
+  
   useEffect(()=>{
     fetchAllWorks()
   },[])
 
+useEffect(()=>{
+const {status,platform,rating} = filterPayload;
+
+if(!worksArr)return;
+let data:WorkType[]=worksArr;
+
+
+if(platform !== "All"){
+let filtered = data?.filter(wrk=>wrk.platform.toLowerCase()===platform.toLowerCase());
+
+if(filtered){
+  data = filtered
+}
+}
+
+
+ if(status !=="All"){
+  let filtered = data?.filter(wrk=>wrk.status.toLowerCase()===status.toLowerCase());
+  console.log("status changed",filtered)
+if(filtered){
+  data = filtered;
+}
+}
+console.log("final",data)
+setFilteredWork(data)
+
+},[filterPayload,worksArr])
+  
+  
   const fetchAllWorks=async()=>{
     try {
       const {data,status}= await getAllProjectApi();
       if(status===200){
         setWorkArr(data.message);
       }
-
+      
     } catch (error) {
       console.log(error)
     }
   }
+  
+  const handleFilterSelectChange=(event:ChangeEvent<HTMLSelectElement>)=>{
+    const {name,value}= event.target;
+    setFilterPayload(prev=>({
+      ...prev,[name]:value
+    }))
+  }
 
+  
 
   return (
     <WorkWrapper isLoading={!worksArr}>
@@ -37,30 +82,30 @@ const Works = () => {
           <div className="work_header">
             <div className='filter_item'>
              <label htmlFor="platform">Platform</label>
-            <select name="" id="">
-              <option value="platform">All</option>
+            <select name="platform" id="" onChange={handleFilterSelectChange}>
+              <option value="All">All</option>
               <option value="Web application">Web application</option>
-              <option value="Web application">Mobile application</option>
+              <option value="Mobile application">Mobile application</option>
 
 
             </select>
             </div>
                 <div className='filter_item'>
-             <label htmlFor="platform">Progress</label>
-            <select name="" id="">
-              <option value="platform">All</option>
-              <option value="Web application">Completed</option>
-              <option value="Web application">Progress</option>
+             <label htmlFor="platform">Status</label>
+            <select name="status" id="" onChange={handleFilterSelectChange}>
+              <option value="All">All</option>
+              <option value="Completed">Completed</option>
+              <option value="Progress">Progress</option>
 
 
             </select>
             </div>
                    <div className='filter_item'>
              <label htmlFor="platform">Ratings</label>
-            <select name="" id="">
-              <option value="platform">All</option>
-              <option value="Web application">5</option>
-              <option value="Web application">4</option>
+            <select name="rating" id="" onChange={handleFilterSelectChange}>
+              <option value="All">All</option>
+              <option value="5">5</option>
+              <option value="4">4</option>
               <option value="3">3</option>
               <option value="2">2</option>
               <option value="1">1</option>
@@ -72,7 +117,7 @@ const Works = () => {
         <div className='workWrapper'>
 
   {
-  worksArr ?   worksArr.map(work=><ProjectItem big={true} key={work._id} work={work}/>):<WorkSkeleton/>
+  worksArr ?   filteredWork.map(work=><ProjectItem big={true} key={work._id} work={work}/>):<WorkSkeleton/>
 
     
   }          
