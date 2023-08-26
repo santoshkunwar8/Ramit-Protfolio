@@ -9,7 +9,7 @@ const cookieParser = require("cookie-parser")
 require("dotenv").config();
 
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:["http://localhost:5173",process.env.FRONTEND_URL],
     methods:["POST","GET","PUT","DELETE"],
     credentials:true
 }))
@@ -27,9 +27,10 @@ app.use(session({
     resave:false,
     saveUninitialized:true,
     cookie:{
-        secure:false,
+        secure:true,
         httpOnly:true,
         maxAge:1000*60*60,
+        sameSite:"none"
     }
 }))
 
