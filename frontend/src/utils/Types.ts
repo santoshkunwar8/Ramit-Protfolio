@@ -34,7 +34,6 @@ export type WorkType = {
     status: string,
     mainImg: string,
     desc: string,
-    rating: number,
     user: UserType,
     photos: string[],
     tools: ToolType[],
@@ -43,6 +42,8 @@ export type WorkType = {
     updatedAt?: string,
     createdAt?: string,
     ratings: ratings[],
+    rating: number,
+
 }
 
 export type CommentType = {

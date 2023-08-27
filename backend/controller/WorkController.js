@@ -54,11 +54,17 @@ class WorkController{
                     { $push: { ratings: { user, rating } } },
                     { returnOriginal: false ,new:true}
                 )
-                return res.status(200).send({ message: savedProduct, success: true })
+            const ratingsSum = savedProduct.ratings.reduce((sum, item) => sum + item.rating, 0);
+            const averageRating = ratingsSum / savedProduct.ratings.length;
+            savedProduct.rating = averageRating;
+            await savedProduct.save();
+            return res.status(200).send({ message: savedProduct, success: true })
+
             } else {
 
 
                 // changing the previous rating  whose ratings userId is  user id is userId
+                
                 const saved = await WorkModel.findOneAndUpdate(
                     { _id: work },
                     { $set: { "ratings.$[element].rating": rating } },
@@ -70,7 +76,17 @@ class WorkController{
                         new:true
                     }
                 )
-                res.status(200).send({ message: saved, success: true })
+            const ratingsSum = saved.ratings.reduce((sum, item) => sum + item.rating, 0);
+            const averageRating = ratingsSum / saved.ratings.length;
+
+            // Update the average rating in the model
+            saved.rating = averageRating;
+            console.log(averageRating)
+            await saved.save();
+
+
+            return res.status(200).send({ message: saved, success: true });
+
             }
 
 

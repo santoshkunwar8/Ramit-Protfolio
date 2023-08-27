@@ -33,7 +33,8 @@ const ProjectItem:React.FC<ProjectItemPropsType> = ({work,big}) => {
 
             <button className='progressBtn'>{work.status}</button>
             <div className='ratingBox'>
-                <Rating size='small'  value={3} readOnly/>
+                <Rating size='small'  precision={0.5} value={work.rating} readOnly/>
+
                 <p>({work.ratings.length})</p>
               
               </div> 

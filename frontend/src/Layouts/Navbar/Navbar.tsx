@@ -42,6 +42,9 @@ const Navbar = () => {
            <Link to={"/works"}>
             <li className={`${isActive("works")}`}> Works</li>
            </Link>
+           <Link to={"/contact"}>
+           <li className={`${isActive("contact")}`}>Contact</li>
+           </Link>
         </ul>
            
            {

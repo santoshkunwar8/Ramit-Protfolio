@@ -7,8 +7,10 @@ import { WorkType } from '../../../utils/Types'
 import React from 'react'
 import { BiShare } from 'react-icons/bi'
 import { rateProjectApi } from '../../../utils/api'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { State } from '../../../redux/reducers'
+import { bindActionCreators } from "redux"
+import { actionCreators } from "../../../redux"
 
 
 type MainWorkPropsType={
@@ -17,7 +19,12 @@ type MainWorkPropsType={
 
 const MainWorkDetails:React.FC<MainWorkPropsType> = ({work}) => {
 const {user} = useSelector((state:State)=>state.user);
-const [rating,setRating] = useState(0)
+const dispatch = useDispatch()
+const {refreshAction} = bindActionCreators(actionCreators,dispatch)
+
+
+
+
 
   const handleRateWork=async(rating:number)=>{
     if(!user?._id || !work)return;
@@ -28,7 +35,8 @@ const [rating,setRating] = useState(0)
       rating
     }
     try {
-    await rateProjectApi(ratingPayload);  
+    await rateProjectApi(ratingPayload);
+    refreshAction()  
     } catch (error) {
       console.log(error)
     }
@@ -38,14 +46,14 @@ const [rating,setRating] = useState(0)
     if(!rating)return;
 try {
   await handleRateWork(rating);
-  setRating(rating);
+
 } catch (error) {
   console.log("error while rating",error)
 }
 
 
   }
-  console.log(rating)
+  console.log(work?.rating)
   return (
     <MainWorkDetailsWrapper status={work?.status?? ""}>
 
@@ -76,7 +84,7 @@ try {
             </div>
     <div className='ratingBox'>
 
-        <Rating name="read-only"  value={work?.ratings.length} onChange={handleRatingChange} />
+        <Rating precision={0.5} name="read-only"   value={work?.rating ?? 0} onChange={handleRatingChange} />
         <p>({work?.ratings.length})</p>
     </div>
             </div>

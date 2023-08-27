@@ -1,3 +1,4 @@
+import Footer from '../../Layouts/Footer/Footer'
 import Navbar from '../../Layouts/Navbar/Navbar'
 import { ContactWrapper } from './Contact.styles'
 
@@ -27,7 +28,7 @@ const Contact = () => {
                 <button className='sendButton'> SEND MESSAGE</button>
         </form>
         </div>
-
+    <Footer/>
     </ContactWrapper>
     </>
   )

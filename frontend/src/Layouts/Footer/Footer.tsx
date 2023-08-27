@@ -6,6 +6,7 @@ import { TbBrandFiverr } from 'react-icons/tb'
 import { VscGithub } from 'react-icons/vsc'
 import {PiYoutubeLogo} from "react-icons/pi"
 import {BsTiktok} from "react-icons/bs"
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -16,10 +17,10 @@ const Footer = () => {
         <h1 className='logo_text'>CodeWithMama</h1>
         <p className='left_footer_desc'>Get in Touch: Let's Collaborate on Your Next Project or Answer Your Queries.</p>
         {/* <button></button> */}
-        <div className='contactButton'>
+        <Link to={"/contact"} className='contactButton' >
             <h5 className='contactButtonText'>Contact Me </h5>
             <AiOutlineRight/>
-        </div>
+        </Link>
         </div>
         <div className='rightFooter'>
 
