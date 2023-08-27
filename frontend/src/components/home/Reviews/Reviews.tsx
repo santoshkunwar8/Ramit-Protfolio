@@ -3,7 +3,9 @@ import { ReviewsWrapper } from './Reviews.styles'
 import ReviewItem from './ReviewItem/ReviewItem'
 import { getAllReviewsApi } from '../../../utils/api'
 import { ReviewType } from '../../../utils/Types'
-
+import {GoCodeReview} from "react-icons/go"
+import { FaCommentDots } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 const Reviews = () => {
 
    const [reviewsData,setReviewsData] =useState<ReviewType[]>([])
@@ -50,6 +52,14 @@ const Reviews = () => {
               {
                 reviewsData.slice(0,5).map(review=><ReviewItem  big={true} review={review} key={review._id}/>)
               }
+              {
+                reviewsData?.length -5 > 0 ?
+              <Link   to={"/reviews"} className='additionalItem'>
+                <FaCommentDots/>
+                <p>{reviewsData?.length -5} others</p>
+              </Link>:""
+              }
+
 
         </div>
 

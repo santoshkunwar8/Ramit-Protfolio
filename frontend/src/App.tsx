@@ -13,6 +13,7 @@ import Login from "./pages/auth/login/Login";
 
 import Contact from "./pages/contact/Contact";
 import useSetup from "./hooks/useSetup"
+import Profile from "./pages/profile/Profile";
 
 // import 
 function App() {
@@ -47,6 +48,7 @@ function App() {
        
       <Route path="/signup"  element={<Signup/>}/>
       <Route path="/contact" element={<Contact/>}/>
+      <Route path="/profile/:userId"  element={<Profile/>}/>
 
     </Routes> 
     </BrowserRouter>

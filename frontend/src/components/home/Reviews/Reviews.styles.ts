@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const ReviewsWrapper =  styled.div`
+export const ReviewsWrapper = styled.div`
 
 .reviewTopContent{
     display:flex;
@@ -35,6 +35,33 @@ export const ReviewsWrapper =  styled.div`
     display:flex;
     gap:1rem;
     flex-wrap:wrap;
+    .additionalItem{
+        display:flex;
+        width:150px;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        padding:15px;   
+        border:1px solid var(--border_color);
+        background:var(--light_black);
+        border-radius:6px;
+        gap:8px;
+        cursor:pointer;
+        svg{
+            font-size:2rem;
+            fill:var(--main_color);
+        }
+        p{
+            color:var(--main_color);
+            font-weight:bold;
+            letter-spacing:1px;
+            font-size:13px;
+
+
+
+        }
+
+    }
 }
 
 

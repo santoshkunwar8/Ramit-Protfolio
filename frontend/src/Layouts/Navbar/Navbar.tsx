@@ -56,7 +56,7 @@ const Navbar = () => {
 
             !user ? <Link to={"/login"}>
                  <button className='client_button'>Login</button>
-               </Link> : <div className="profileBox">
+               </Link> : <Link  className="profileBox" to={`/profile/${user._id}`}>
 
                 <img className="profileImg" src="https://images.pexels.com/photos/15517285/pexels-photo-15517285/free-photo-of-man-people-woman-street.jpeg?auto=compress&cs=tinysrgb&w=400" alt="userProfile" />
                 <div className="profileInfo">
@@ -64,7 +64,7 @@ const Navbar = () => {
                   <span className="profileEmail">{user.email}</span>
                   </div>
 
-                </div>
+                </Link>
               } 
                
         </div>
