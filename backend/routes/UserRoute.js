@@ -1,4 +1,4 @@
-const { createUser, getClients, login, becomeClient, getSessionuser, adminInfo } = require("../controller/UserController");
+const { createUser, getClients, login, becomeClient, getSessionuser, adminInfo, logout } = require("../controller/UserController");
 
 
 const router = require("express").Router()
@@ -9,7 +9,7 @@ router.get("/client",getClients)
 router.get("/adminInfo",adminInfo)
 router.post("/becomeclient/:userId",becomeClient)
 router.post("/login",login)
-
+router.post("/logout",logout)
 
 
 

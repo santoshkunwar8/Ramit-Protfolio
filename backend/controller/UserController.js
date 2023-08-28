@@ -101,5 +101,21 @@ class UserController{
         res.status(500).json({message:error,success:false})
     }
    }
+
+   static async logout(req,res){
+    try {
+            req.session.destroy((err)=>{
+                if(err){
+                    throw new Error("something went wrong")
+                }
+                console.log(res.cookies);
+                console.log(req.session)
+                res.clearCookie("codewithmama.sid");
+                res.status(200).json({message:"successfully logged out",success:true})
+            })
+    } catch (error) {
+        res.status(500).json({message:error,success:false})
+    }
+   }
 }
 module.exports = UserController;

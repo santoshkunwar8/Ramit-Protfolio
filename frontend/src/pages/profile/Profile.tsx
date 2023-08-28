@@ -1,6 +1,7 @@
 import { MdMoreVert } from 'react-icons/md'
 import Navbar from '../../Layouts/Navbar/Navbar'
 import { ProfileWrapper } from './Profile.styles'
+import ProfileMenu from '../../Layouts/menu/ProfileMenu/ProfileMenu'
 
 const Profile = () => {
 
@@ -13,7 +14,10 @@ const Profile = () => {
 
                     </div>
                     <div className="profileInfo">
+                      <ProfileMenu>
+
                         <MdMoreVert className="otherIcon"/>
+                      </ProfileMenu>
                         <img className='profileImg' src="/images/user.png" alt="" />
                         <div className='userInfo'>
 
@@ -59,7 +63,7 @@ const Profile = () => {
                             Product Design 
                     </div>
                 </div>
-
+     
             </div>
 
 

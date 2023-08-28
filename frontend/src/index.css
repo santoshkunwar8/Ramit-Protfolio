@@ -40,3 +40,8 @@ body{
   background: var(--main_color);
   border-radius: 10px;
 }
+
+.css-6hp17o-MuiList-root-MuiMenu-list{
+  /* padding: 0 !important; */
+  background-color: #151515 !important;
+}
