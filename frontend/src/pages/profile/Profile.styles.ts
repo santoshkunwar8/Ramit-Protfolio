@@ -19,11 +19,12 @@ gap:2rem;
     
     .profileBg{
         height:200px;
-        background:var(--main_color);
+        background-image: linear-gradient(45deg, var(--main_color),#3f51b5c4 ,#3f51b58a);
         width:100%;
     }
-
+    
     .profileInfo{
+        position:relative;
         padding: 0 2rem;
         padding-bottom:2rem;
         display:flex;
@@ -62,6 +63,14 @@ gap:2rem;
             border:6px solid var(--border_color);
             border-radius:50%;
             object-fit:cover;
+        }
+        .otherIcon{
+            position:absolute;
+            right:1rem;
+            top:1rem;
+            font-size:1.5rem;
+            fill:var(--gray);
+            cursor:pointer;
         }
         .userInfo{
             display:flex;

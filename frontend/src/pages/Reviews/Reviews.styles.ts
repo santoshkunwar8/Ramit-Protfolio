@@ -22,6 +22,7 @@ padding:2rem;
         justify-content:space-between;
         align-items:center;
 
+
         .header_left{
             display:flex;
             align-items:center;
@@ -33,6 +34,32 @@ padding:2rem;
 
         }
         .header_right{
+            display:flex;
+            align-items:center;
+            gap:2rem;
+
+            .reviewFilterItem{
+                display:flex;
+                flex-direction:column;
+                label{
+                    font-size:12px;
+                    letter-spacing:1px;
+                    color:var(--gray);
+                }
+                select{
+                    height:40px;
+                    border-color:var(--border_color);
+                    border-radius:4px;
+                    padding:0 1rem;
+                    letter-spacing:1px;
+                    color:var(--gray);
+                    background:var(--light_black);
+                    option{
+                        background:transparent;
+                        letter-spacing:1px;
+                    }
+                }
+            }
             .reviewButton{
                 height:40px;
                 background:var(--main_color);

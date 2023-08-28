@@ -4,7 +4,7 @@ export const ContactWrapper = styled.div`
 
 
 width:100%;
-padding:1rem;
+padding:2rem;
 display:flex;
 flex-direction:column;
 align-items:center;

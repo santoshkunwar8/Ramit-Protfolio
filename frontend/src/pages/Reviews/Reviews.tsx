@@ -2,7 +2,7 @@ import { ReviewsWrapper } from './Reviews.styles'
 import Navbar from '../../Layouts/Navbar/Navbar'
 import ReviewItem from '../../components/home/Reviews/ReviewItem/ReviewItem'
 import ReviewModal from '../../Layouts/modal/ReviewModal/ReviewModal'
-import { useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { getAllReviewsApi } from '../../utils/api'
 import { ReviewType } from '../../utils/Types'
 import ReviewSkeletion from '../../Layouts/skeleton/Reviews/ReviewSkeletion'
@@ -14,6 +14,30 @@ const Reviews = () => {
 
   const [reviewsData,setReviewsData] =useState<ReviewType[] |null>(null)
   const {refresh} = useSelector((state:State)=>state.other)
+  const [filteredData,setFilteredData] = useState<ReviewType[]>([])
+  const [filterRating,setFilterRating]=useState("")
+
+  const handleRatingChange=(e:ChangeEvent<HTMLSelectElement>)=>{
+
+
+    setFilterRating(e.target.value)
+
+
+  }
+
+  useEffect(()=>{
+
+    let allData = reviewsData;
+    if(filterRating){
+     allData =  allData?.filter(rw=>rw.rating <=parseInt(filterRating)) ?? [];
+     if(allData)
+     setFilteredData(allData)
+
+    }
+    setFilteredData(allData ?? [])
+
+
+  },[filterRating ,reviewsData])
 
 
   
@@ -52,6 +76,24 @@ const Reviews = () => {
             </div>
             <div className='header_right'>
 
+              <div >
+
+                <div className="reviewFilterItem">
+                  {/* < htmlFor="">Filter by</ label> */}
+                  <select onChange={handleRatingChange}  >
+                    <option value="ratings" disabled selected>Ratings</option>
+                    <option value="5">5 </option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+
+                  </select>
+
+                </div>
+
+              </div>
+
         <ReviewModal >
 
               <button className='reviewButton'>Add review</button>
@@ -63,7 +105,7 @@ const Reviews = () => {
     <div className="review_wrapper">
 
          {
-       reviewsData  ? reviewsData.map(review=><ReviewItem big={true} review={review}/> ):<ReviewSkeletion/>
+       reviewsData  ? filteredData.map(review=><ReviewItem big={true} review={review}/> ):<ReviewSkeletion/>
          } 
           
     </div>
