@@ -72,14 +72,15 @@ transition:all .3s ease;
     .project_other_info{
         display:flex;
         flex-direction:column;
-        gap: ${props => props.big ? "8px" : "2px"};
+        gap: ${props => props.big ? "5px" : "2px"};
     
         b{
             font-weight:500;
             color:var(--main_color);
             letter-spacing:1px;
+
             cursor:pointer;
-                        font-size:${props => props.big ? "14px" : "12px"};
+                        font-size:${props => props.big ? "13px" : "12px"};
         }
         
         .editedTime{
@@ -89,6 +90,8 @@ transition:all .3s ease;
         }
     }
     .project_action{
+        display:flex;
+        gap:5px;
         svg{
             font-size:1.5rem;
             cursor:pointer;

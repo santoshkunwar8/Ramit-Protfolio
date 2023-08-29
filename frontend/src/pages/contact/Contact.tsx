@@ -9,7 +9,7 @@ const Contact = () => {
     <Navbar/>
 
         <div className="intro_box">
-            <img src="https://brainy-santosh.onrender.com/assets/images/user.jpg" alt="" />
+            <img src="/images/user.jpg" alt="userImage" />
             <h1 className='intro_text'> I am Freelancer     Fullstack Developer working globally </h1>
             <span className='secondary_text'>Contact me for collaboration </span>
             <button className='CvButton'>Download CV</button>

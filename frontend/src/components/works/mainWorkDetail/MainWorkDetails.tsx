@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { State } from '../../../redux/reducers'
 import { bindActionCreators } from "redux"
 import { actionCreators } from "../../../redux"
+import { FacebookIcon, FacebookShareButton, LinkedinIcon, LinkedinShareButton, WhatsappIcon, WhatsappShareButton } from "react-share"
 
 
 type MainWorkPropsType={
@@ -100,9 +101,22 @@ try {
                     work?.tools.map(skill=><SmallSkillItem key={skill.name} skill={skill}/>)
                 }
         </div>
-        <div className='shareBox'>
-                <BiShare/>
         
+        <div className='shareBox'>
+                  
+                    {/* <BiSolidShareAlt onClick={handleShareMode}/> */}
+                    <FacebookShareButton url={work?.link ?? ""}>
+
+                  <FacebookIcon size={40} borderRadius={5}   />
+                
+                    </FacebookShareButton>
+                    <LinkedinShareButton url={work?.link ?? ""}>
+                      <LinkedinIcon size={40}  borderRadius={5}/>
+                    </LinkedinShareButton>
+                        <WhatsappShareButton url={work?.link ?? ""}>
+                      <WhatsappIcon size={40}  borderRadius={5}/>
+                    </WhatsappShareButton>
+               
         </div>
 
     </div>

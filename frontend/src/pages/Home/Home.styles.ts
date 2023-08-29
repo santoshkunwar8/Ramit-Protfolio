@@ -63,6 +63,12 @@ gap:5rem;
         font-size:14px;
         margin-left:auto;
         cursor:pointer;
+        align-items:center;
+    
+        p{
+            text-transform:uppercase;
+            letter-spacing:1px;
+        }
     }
 
     h1{

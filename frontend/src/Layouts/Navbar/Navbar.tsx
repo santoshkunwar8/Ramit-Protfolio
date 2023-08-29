@@ -25,8 +25,9 @@ const Navbar = () => {
 
         <div  className='nav_left'>
           <Link to={"/"} >
-
-            <h1 className='logo_text'>Codewithmama</h1>
+        <div className="logoBg">
+            <h1 className='logo_text'>CodeWithMama</h1>
+        </div>
           </Link>
         </div>
         <div className='nav_right'>

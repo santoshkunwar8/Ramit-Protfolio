@@ -10,11 +10,22 @@ justify-content:space-between;
 
 .nav_left{
 
-    .logo_text{
-        font-size:1.4rem;
-        font-weight:500;
-        letter-spacing:1px;
-        cursor:pointer;
+    .logoBg{
+
+       
+        
+        .logo_text{
+            background:linear-gradient(to right,#7d19ff,#7518ff ,#5200e5d1,#6114e99c,#521eb2a8,#4e279773);
+            font-size:2rem;
+            font-weight:900;
+            letter-spacing:1px;
+                font-family: 'Orbitron', sans-serif;
+
+            cursor:pointer;
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+
+        }
     }
 }
 

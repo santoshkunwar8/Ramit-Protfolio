@@ -1,6 +1,6 @@
 import { UserInfoWrapper } from './UserInfo.styles';
 import {TbBrandFiverr} from "react-icons/tb";;
-import {VscGithub} from "react-icons/vsc";
+import {TfiGithub } from "react-icons/tfi";
 import {FaTwitter, FaLinkedinIn} from "react-icons/fa";
 const UserInfo = () => {
   return (
@@ -27,8 +27,7 @@ const UserInfo = () => {
                 <TbBrandFiverr/>
                 </a>
                 <a  href='https://github.com/Santoshkunwar44' target='_blank' className="media_box">
-
-                <VscGithub/>
+    <TfiGithub/>
                 </a>
                 <a href='https://twitter.com/santosh68789183' target='_blank' className='media_box'>
 

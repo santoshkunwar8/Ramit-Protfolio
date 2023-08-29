@@ -126,11 +126,10 @@ gap:1rem;
             gap:5px;
         }
         .shareBox{
-            border:1px solid var(--border_color);
-            width:50px;
-            height:50px;
-            display:grid;
-            place-items:center;
+            display:flex;
+            gap:8px;
+            // place-items:center;
+            align-items:start;
             border-radius:4px;
             cursor:pointer;
            

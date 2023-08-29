@@ -24,7 +24,7 @@ const Home = () => {
               <div  className="main_info_box">
                 <h1>Hey I am a Fullstack Devloper in Turing </h1>
                 <button className="cv_button">
-                  <img width="24" height="24" src="https://img.icons8.com/emoji/48/vulcan-salute-emoji.png" alt="vulcan-salute-emoji"/>
+                  {/* <img width="24" height="24" src="https://img.icons8.com/emoji/48/vulcan-salute-emoji.png" alt="vulcan-salute-emoji"/> */}
                   <p>View CV</p></button>
               </div>
               <HeroItems/>
