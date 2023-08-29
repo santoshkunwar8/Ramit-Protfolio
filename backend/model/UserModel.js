@@ -20,13 +20,13 @@ const UserSchema =  mongoose.Schema({
     isAdmin:{
         type:Boolean,
         default:false,
-    },
-    
+    },    
     isClient:{
         type:Boolean,
         default:false,
-
-    }
+    },
+    cv:String,
+    skills:Array,
 },{timestamps:true})
 
 module.exports = mongoose.model("User",UserSchema)
