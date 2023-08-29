@@ -15,6 +15,7 @@ import Contact from "./pages/contact/Contact";
 import useSetup from "./hooks/useSetup"
 import Profile from "./pages/profile/Profile";
 import {Toaster} from "react-hot-toast"
+import ProfileSetup from "./pages/profile/profileSetup/ProfileSetup";
 
 
 function App() {
@@ -51,8 +52,10 @@ function App() {
        
       <Route path="/signup"  element={<Signup/>}/>
       <Route path="/contact" element={<Contact/>}/>
-      <Route path="/profile/:userId"  element={<Profile/>}/>
-
+      <Route path="/account">
+      <Route path="profile/:userId"  element={<Profile/>}/>
+      <Route path="setup" element={<ProfileSetup/>}/>
+      </Route>
     </Routes> 
     </BrowserRouter>
     </AppWrapper>
