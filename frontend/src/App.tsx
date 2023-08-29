@@ -14,20 +14,23 @@ import Login from "./pages/auth/login/Login";
 import Contact from "./pages/contact/Contact";
 import useSetup from "./hooks/useSetup"
 import Profile from "./pages/profile/Profile";
+import {Toaster} from "react-hot-toast"
 
-// import 
+
 function App() {
 
   // const {user} = useSelector((state:State)=>state.user)
 
+
   useSetup();
   
-
+ 
   
   
 
   return (
     <>
+    <Toaster/>
     <AppWrapper>
 
     <BrowserRouter>

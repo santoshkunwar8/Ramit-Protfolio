@@ -7,10 +7,11 @@ import { ReviewModalWrapper } from './ReviewModal.styles';
 import { Rating } from '@mui/material';
 import { ReviewStateType } from '../../../utils/Types';
 import { createReviewsApi } from '../../../utils/api';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../../redux';
-
+import useAlert from '../../../hooks/useAlert';
+import { State } from '../../../redux/reducers';
 const style = {
   position: 'absolute' as 'absolute',
   top: '50%',
@@ -33,15 +34,22 @@ const  ReviewModal:React.FC<ReviewModalPropsType>=({children}) =>{
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const dispatch  =useDispatch()
+  const {user} =useSelector((state:State)=>state.user)
 
   const  {refreshAction} = bindActionCreators(actionCreators,dispatch)
   const [reviewsData,setReviewsData] = React.useState<ReviewStateType>({
     rating:0,
     text:"",
-    user:"64dace25af403e0cf8dafe0e"
+    user:""
   })
-
+  const {notify} = useAlert()
   const handleSubmit=async()=>{
+
+    if(!user){
+      return notify("You must be logged In !!","error");
+    }
+    reviewsData.user = user?._id ??"";
+
 
     try {
         const { status} = await createReviewsApi(reviewsData)
@@ -50,6 +58,7 @@ const  ReviewModal:React.FC<ReviewModalPropsType>=({children}) =>{
           setReviewsData((prev)=>({
             ...prev,text:"",rating:0,
           }))
+          notify("Review added successfully","success")
           refreshAction();
           handleClose()
         }
@@ -66,6 +75,7 @@ const  ReviewModal:React.FC<ReviewModalPropsType>=({children}) =>{
 
   return (
     <div>
+
       <Button onClick={handleOpen}>{children}</Button>
       <Modal
         open={open}

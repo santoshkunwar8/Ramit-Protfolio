@@ -5,13 +5,14 @@ import { MainWorkDetailsWrapper } from './MainWorkDetails.styles'
 import SmallSkillItem from '../../home/SkillsItem/SmallSkillItem'
 import { WorkType } from '../../../utils/Types'
 import React from 'react'
-import { BiShare } from 'react-icons/bi'
+
 import { rateProjectApi } from '../../../utils/api'
 import { useDispatch, useSelector } from 'react-redux'
 import { State } from '../../../redux/reducers'
 import { bindActionCreators } from "redux"
 import { actionCreators } from "../../../redux"
 import { FacebookIcon, FacebookShareButton, LinkedinIcon, LinkedinShareButton, WhatsappIcon, WhatsappShareButton } from "react-share"
+import useAlert from "../../../hooks/useAlert"
 
 
 type MainWorkPropsType={
@@ -22,6 +23,7 @@ const MainWorkDetails:React.FC<MainWorkPropsType> = ({work}) => {
 const {user} = useSelector((state:State)=>state.user);
 const dispatch = useDispatch()
 const {refreshAction} = bindActionCreators(actionCreators,dispatch)
+  const {notify} =useAlert()
 
 
 
@@ -44,6 +46,9 @@ const {refreshAction} = bindActionCreators(actionCreators,dispatch)
   }
 
   const handleRatingChange=async(_:React.SyntheticEvent<Element,Event>,rating:number|null)=>{
+    if(!user){
+      return notify("You must be logged In !!","error")
+    }
     if(!rating)return;
 try {
   await handleRateWork(rating);

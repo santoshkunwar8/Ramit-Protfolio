@@ -9,6 +9,7 @@ import { State } from '../../../redux/reducers'
 import { IoSend} from 'react-icons/io5'
 import { bindActionCreators } from 'redux'
 import { actionCreators } from '../../../redux'
+import useAlert from '../../../hooks/useAlert'
 type workCommentPropsType={
     work:WorkType|null
 }
@@ -19,7 +20,7 @@ const WorkComments:React.FC<workCommentPropsType> = ({work}) => {
     const {user} = useSelector((state:State)=>state.user)
     const dispatch  =useDispatch()
     const {refreshAction} = bindActionCreators(actionCreators,dispatch)
-
+    const {notify} = useAlert()
 
     const handleCommentInputChange=(e:ChangeEvent<HTMLTextAreaElement>)=>{
         setCommentText(e.target.value);
@@ -27,7 +28,9 @@ const WorkComments:React.FC<workCommentPropsType> = ({work}) => {
 
 
     const  handleSubmit=async()=>{
-  
+        if(!user){
+            return notify("You must be logged In !!" ,"error")
+        }
         if(!work?._id || !user?._id|| !commentText)return;
                 const commentPaylaod = {
             text:commentText,
