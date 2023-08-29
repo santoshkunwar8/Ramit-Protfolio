@@ -59,7 +59,7 @@ const Navbar = () => {
                  <button className='client_button'>Login</button>
                </Link> : <Link  className="profileBox" to={`/profile/${user._id}`}>
 
-                <img className="profileImg" src="https://images.pexels.com/photos/15517285/pexels-photo-15517285/free-photo-of-man-people-woman-street.jpeg?auto=compress&cs=tinysrgb&w=400" alt="userProfile" />
+                <img className="profileImg" src={user.profileImg} alt="userProfile" />
                 <div className="profileInfo">
                   <h4  className="profileName">{user.username}</h4>
                   <span className="profileEmail">{user.email}</span>

@@ -8,6 +8,10 @@ class UserController{
      try {
         
      const user =  await    UserModel.create(req.body);
+     console.log(user)
+     req.session.user  = user._doc;
+     
+     
      res.status(200).json({message:user ,success:true})
      } catch (error) {
     console.log(error);

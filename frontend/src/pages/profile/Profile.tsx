@@ -2,8 +2,11 @@ import { MdMoreVert } from 'react-icons/md'
 import Navbar from '../../Layouts/Navbar/Navbar'
 import { ProfileWrapper } from './Profile.styles'
 import ProfileMenu from '../../Layouts/menu/ProfileMenu/ProfileMenu'
+import { useSelector } from 'react-redux'
+import { State } from '../../redux/reducers'
 
 const Profile = () => {
+  const {user} = useSelector((state:State)=>state.user)
 
   return (
     <ProfileWrapper >
@@ -18,11 +21,11 @@ const Profile = () => {
 
                         <MdMoreVert className="otherIcon"/>
                       </ProfileMenu>
-                        <img className='profileImg' src="/images/user.png" alt="" />
+                        <img className='profileImg' src={user?.profileImg} alt="userProfileImg" />
                         <div className='userInfo'>
 
-                            <h3 className='username'>Amanda Smith</h3>
-                            <p className='location'>Butwal,Nepal</p>
+                            <h3 className='username'>{user?.username}</h3>
+                            <p className='location'>{user?.country}</p>
                             <p className='role'>Project Lead at Leapfrog</p>
                         </div>
                         <div className='button_wrapper'>

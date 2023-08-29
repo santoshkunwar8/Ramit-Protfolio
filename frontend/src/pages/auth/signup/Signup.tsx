@@ -10,6 +10,10 @@ import  React from "react"
 import useUploadImage from '../../../hooks/UploadImage'
 import { BiSolidUser } from 'react-icons/bi'
 import { createUserApi } from '../../../utils/api'
+import useAlert from '../../../hooks/useAlert'
+import { bindActionCreators } from 'redux'
+import { actionCreators } from '../../../redux'
+import { useDispatch } from 'react-redux'
 
 
 
@@ -27,6 +31,11 @@ const Signup = () => {
   const {upload} =  useUploadImage();
   const navigate =useNavigate()
   const fileRef = useRef<HTMLInputElement|null>(null);
+  const dispatch =useDispatch()
+  const {AddUserAction}=bindActionCreators(actionCreators,dispatch )
+
+
+  const {notify} =useAlert()
 
 
 
@@ -75,6 +84,8 @@ const Signup = () => {
             })
             
             if(status==200){
+                  notify("Signup successfull !!" ,"success")
+                      AddUserAction(data.message);
               navigate("/")
             }else{
               throw data.message;
@@ -82,6 +93,7 @@ const Signup = () => {
           }
         } catch (error) {
             // alert(error)
+                         notify("Sign up failed " ,"error")
             console.log(error)
         }
 

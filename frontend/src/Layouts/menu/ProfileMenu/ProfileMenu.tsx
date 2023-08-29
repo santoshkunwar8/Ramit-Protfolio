@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../../redux';
 import { useDispatch } from 'react-redux';
+import useAlert from '../../../hooks/useAlert';
 type ProfileMenuProps={
     children:React.ReactNode,
 }
@@ -16,7 +17,7 @@ const  ProfileMenu:React.FC<ProfileMenuProps>=({children})=> {
   const open = Boolean(anchorEl);
   const navigate =useNavigate();
   const dispatch = useDispatch()
-
+  const {notify} =useAlert()
   const {RemoveUserAction} =bindActionCreators(actionCreators,dispatch )
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -32,6 +33,7 @@ const  ProfileMenu:React.FC<ProfileMenuProps>=({children})=> {
        const {status} =  await logoutApi()
        if(status===200){    
         handleClose()
+        notify("Logged out successfully ","success")
         RemoveUserAction()
         navigate("/")
 

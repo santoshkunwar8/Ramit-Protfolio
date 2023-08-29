@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux'
 import {bindActionCreators} from "redux"
 import { UserType } from '../../../utils/Types'
 import { actionCreators } from '../../../redux'
+import useAlert from '../../../hooks/useAlert'
 
 const Login = () => {
   const [loginData,setLoginData] = useState({
@@ -19,8 +20,10 @@ const Login = () => {
   const navigate =useNavigate()
   const dispatch =useDispatch()
   const {AddUserAction} = bindActionCreators(actionCreators,dispatch);
+  const {notify} = useAlert()
 
   const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
+
 
 
 
@@ -37,10 +40,12 @@ try {
   if(status===200){
     const userPayload:UserType = data.message; 
     AddUserAction(userPayload);
+    notify("Login successfull !!" ,"success")
     navigate("/");
   }
 } catch (error) {
   console.log(error);
+      notify("Login failed" ,"error")
 }
 
 }
