@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { MdLogout } from 'react-icons/md';
@@ -8,7 +7,9 @@ import { useNavigate } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../../redux';
 import { useDispatch } from 'react-redux';
+import {CgProfile} from "react-icons/cg"
 import useAlert from '../../../hooks/useAlert';
+import { ProfileMenuWrapper } from './ProfileMenu.styles';
 type ProfileMenuProps={
     children:React.ReactNode,
 }
@@ -46,7 +47,7 @@ const  ProfileMenu:React.FC<ProfileMenuProps>=({children})=> {
   }
 
   return (
-    <div>
+    <ProfileMenuWrapper>
       <span
       className='otherIcon'
       
@@ -65,13 +66,17 @@ const  ProfileMenu:React.FC<ProfileMenuProps>=({children})=> {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem    sx={{background:"#151515",display:"flex",gap:"5px"}} onClick={handleLogout}>
+      <MenuItem  className='profileMenuItem'  sx={{background:"#151515",display:"flex",gap:"5px"}} onClick={()=>{navigate("/account/setup")}}>
+            <CgProfile  className="icon"/>
+            <p style={{color:"var(--gray)",fontSize:"14px",letterSpacing:"1px"}}>Update Profile</p>
+        </MenuItem>
+        <MenuItem  className='profileMenuItem'  sx={{background:"#151515",display:"flex",gap:"5px"}} onClick={handleLogout}>
             <MdLogout/>
-            <p>Logout</p>
+            <p style={{color:"var(--gray)",fontSize:"14px",letterSpacing:"1px"}}>Logout</p>
         </MenuItem>
      
       </Menu>
-    </div>
+    </ProfileMenuWrapper>
   );
 }
 export default ProfileMenu;

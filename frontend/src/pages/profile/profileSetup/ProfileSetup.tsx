@@ -1,24 +1,77 @@
+import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../../../Layouts/Navbar/Navbar"
 import SetupSkillItem from "../../../components/profile/SetupSkillItem.tsx/SetupSkillItem";
 import UploadCV from "../../../components/profile/uploadCV/UploadCV";
 import { ProfileSetupWrapper, SkillSetupWraper } from "./ProfileSetup.styles"
-import {useState} from "react"
+import React, {useState} from "react"
+import { State } from "../../../redux/reducers";
+import { updateUserApi } from "../../../utils/api";
+import useAlert from "../../../hooks/useAlert";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../../../redux";
 
 
 const ProfileSetup = () => {
+    
+    const {user} = useSelector((state:State)=>state.user)
+    const [tab,setTab]=useState(0);
+    const {notify}= useAlert();
+    const dispatch =useDispatch()
+    const {AddUserAction}= bindActionCreators(actionCreators,dispatch )
 
-    const [tab,setTab]=useState(1);
+
+    const queryParams = new URLSearchParams(window.location.search);
+    const skillsOnly = queryParams.get('skills');
+
+
+    const handleNext=(skillss:string[])=>{
+
+        if(skillsOnly){
+            addSkillsToDB(skillss)
+            return;
+        }
+        if(tab===0){
+            setTab(1)
+        }
+    }
+
+    const addSkillsToDB=async(skillss:string[])=>{
+    
+        if(!user?._id)return;
+        const updatePayload={
+            skills:skillss
+        }
+
+        try {
+          const {status,data} = await updateUserApi(user?._id,updatePayload) 
+          if(status===200){
+            AddUserAction(data.message)
+            notify("Skills added successfully","success")
+          }else{
+            throw "something went wrong"
+          }
+        } catch (error) {
+            console.log(error)
+                notify("Something went wrong","error")
+        }
+    }
+
+    const handleBack=()=>{
+        setTab(0);
+    }
 
     const tabMapping={
-        "0":<SkillSetup/>,
-        "1":<UploadCV/>
+        "0":<SkillSetup handleNext={handleNext}/>,
+        "1":<UploadCV handleBack={handleBack}/>
     }
+
+
+
 
   return (
     <ProfileSetupWrapper>
         <Navbar/>
         <div className="setupGround">
-
             {tabMapping[tab.toString()]}
 
         </div>
@@ -31,16 +84,26 @@ export default ProfileSetup;
 
 
 
-const SkillSetup=()=>{
+type SkillSetupPropsType={
+    handleNext:(skills:string[])=>void;
+}
 
 
-    const [selectedSkill,setSelectedSkill] =useState<string[]>(["Python"])
+const SkillSetup:React.FC<SkillSetupPropsType>=({handleNext})=>{
+    const [selectedSkill,setSelectedSkill] =useState<string[]>([]);
+    const queryParams = new URLSearchParams(window.location.search);
+    const skillsOnly = queryParams.get('skills');
+
+
+  
+
+
+
+
 
     return (    
         
-        <>
-        
-
+        <>   
         <SkillSetupWraper>
 
     <div className="skillHeader">
@@ -49,22 +112,15 @@ const SkillSetup=()=>{
     <p className="infoTxt">select atleast 5 skills</p>
     </div>
     <div className="skillWrapper">
-
         {
             skillArr.map(skill=><SetupSkillItem skill={skill} setSelectedSkill={setSelectedSkill} selectedSkill={selectedSkill}/>)
-        }
-      
+        }  
     </div>
-    <button className="nextButton">
-        Next
+    <button className="nextButton" onClick={()=>handleNext(selectedSkill)}>
+        {skillsOnly ? "Save":"Next"}
     </button>
-
-        </SkillSetupWraper>
-
-        
+        </SkillSetupWraper>    
         </>
-
-
     )
 }
 

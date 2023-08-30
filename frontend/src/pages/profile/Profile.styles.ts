@@ -75,18 +75,21 @@ gap:2rem;
         .userInfo{
             display:flex;
             flex-direction:column;
-            gap:10px;
+            gap:3px;
             .username{
                 color:var(--main_color);
+                text-transform:uppercase;
+
                 letter-spacing:1px;
             }
             .location{
-
+                text-transform:capitalize;
                 letter-spacing:1px;
                 color:var(--gray);
 
             }
             .role{
+                text-transform:capitalize;
                 color:var(--gray);
                 letter-spacing:1px;
                 font-size:15px;
@@ -109,12 +112,17 @@ gap:2rem;
 
     .skillsHeader{
         display:flex;
+        align-items:center;
         gap:5px;
         img{
-            width:30px;
-            height:30px;
+            width:36px;
+            height:36px;
         }
         h3{
+            background:linear-gradient(to right,#7d19ff,#7518ff ,#6114e99c,#521eb2a8,#4e279773);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            font-size:1.8rem;
             letter-spacing:2px;
         }
     }
@@ -135,6 +143,11 @@ gap:2rem;
     }
 }
 
+.cvBox{
+    background:var(--light_black);
+    min-height:220px;
+    border-radius:15px;
+}
 
 `
 

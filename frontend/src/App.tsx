@@ -16,11 +16,19 @@ import useSetup from "./hooks/useSetup"
 import Profile from "./pages/profile/Profile";
 import {Toaster} from "react-hot-toast"
 import ProfileSetup from "./pages/profile/profileSetup/ProfileSetup";
+import { State } from "./redux/reducers";
+import { useSelector } from "react-redux";
 
 
 function App() {
 
-  // const {user} = useSelector((state:State)=>state.user)
+  const {user} = useSelector((state:State)=>state.user)
+  console.log(user)
+
+  
+
+
+
 
 
   useSetup();

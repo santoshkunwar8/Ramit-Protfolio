@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
+import { SetupSkillItemWrapper } from "./SetupSkillItem.styles"
 
 type SetupSkillItemProps={
     skill:string,
     selectedSkill:string[],
-    setSelectedSkill:React.Dispatch<React.SetStateAction<string[]>>,
+    setSelectedSkill?:React.Dispatch<React.SetStateAction<string[]>>,
 }
 
 const SetupSkillItem:React.FC<SetupSkillItemProps> = ({skill,selectedSkill,setSelectedSkill}) => {
@@ -16,6 +17,7 @@ const SetupSkillItem:React.FC<SetupSkillItemProps> = ({skill,selectedSkill,setSe
 
 
     const handleClickSkill=()=>{
+        if(setSelectedSkill)
         setSelectedSkill((prev)=>{
             if(prev.find(skl=>skl===skill)){
                 return prev.filter(sk=>sk !==skill)
@@ -28,9 +30,9 @@ const SetupSkillItem:React.FC<SetupSkillItemProps> = ({skill,selectedSkill,setSe
 
 
   return (
-    <div   key={skill} className={`skillBox ${isSelected ? "selected":""}`} onClick={handleClickSkill}>
+    <SetupSkillItemWrapper   key={skill} className={`skillBox ${isSelected ? "selected":""}`} onClick={handleClickSkill}>
                 <p>{skill}</p>
-            </div>
+            </SetupSkillItemWrapper>
   )
 }
 

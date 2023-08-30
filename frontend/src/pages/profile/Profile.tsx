@@ -4,6 +4,7 @@ import { ProfileWrapper } from './Profile.styles'
 import ProfileMenu from '../../Layouts/menu/ProfileMenu/ProfileMenu'
 import { useSelector } from 'react-redux'
 import { State } from '../../redux/reducers'
+import SetupSkillItem from '../../components/profile/SetupSkillItem.tsx/SetupSkillItem'
 
 const Profile = () => {
   const {user} = useSelector((state:State)=>state.user)
@@ -50,24 +51,18 @@ const Profile = () => {
 
             </div>
                 <div className="skillsWrapper">
-                    <div className="skillItem">
-                            Product Design 
-                    </div>
-                      <div className="skillItem">
-                            Product Design 
-                    </div>
-                      <div className="skillItem">
-                            Product Design 
-                    </div>
-                      <div className="skillItem">
-                            Product Design 
-                    </div>
-                      <div className="skillItem">
-                            Product Design 
-                    </div>
+                {
+                  user?.skills.map(skl=><SetupSkillItem skill={skl} selectedSkill={[]} />)
+                } 
                 </div>
      
             </div>
+
+
+                <div className="cvBox">
+                   
+                </div>
+            
 
 
 

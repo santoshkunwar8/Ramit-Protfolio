@@ -55,8 +55,9 @@ max-width:600px;
     .skillBox{
         
         padding:10px;
-        border-radius:8px;
+        border-radius:4px;
         border:1px solid var(--border_color);
+        background:#151515;
         cursor:pointer;
         p{
             color:var(--gray);

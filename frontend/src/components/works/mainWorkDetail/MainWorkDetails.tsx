@@ -52,6 +52,9 @@ const {refreshAction} = bindActionCreators(actionCreators,dispatch)
     if(!rating)return;
 try {
   await handleRateWork(rating);
+  
+       notify("Successfully rated ","success")
+    
 
 } catch (error) {
   console.log("error while rating",error)
