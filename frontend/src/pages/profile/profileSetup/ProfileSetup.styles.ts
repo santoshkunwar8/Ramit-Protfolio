@@ -32,13 +32,24 @@ max-width:600px;
 .skillHeader{
     display:flex;
     align-items:center;
-    // gap:10px;
+    gap:5px;
     justify-content:space-between;
-    h1{
-        font-weight:600;
+    .headerLeft{
+        display:flex;
+        align-items:center;
+        gap:5px;
+
+        
+        img{
+            width:40px;
+            height:40px;
+        }
+        h1{
+            font-weight:600;
         letter-spacing:1px;
         font-size:1.6rem;
     }
+}
 }
 
 .infoTxt{
@@ -51,7 +62,10 @@ max-width:600px;
     flex-wrap:wrap;
     gap:10px;
     
-
+   
+    .addMoreSkill{
+        // display
+    }
     .skillBox{
         
         padding:10px;

@@ -3,12 +3,13 @@ import Navbar from "../../../Layouts/Navbar/Navbar"
 import SetupSkillItem from "../../../components/profile/SetupSkillItem.tsx/SetupSkillItem";
 import UploadCV from "../../../components/profile/uploadCV/UploadCV";
 import { ProfileSetupWrapper, SkillSetupWraper } from "./ProfileSetup.styles"
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import { State } from "../../../redux/reducers";
 import { updateUserApi } from "../../../utils/api";
 import useAlert from "../../../hooks/useAlert";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../../../redux";
+import { MdOutlineAddModerator } from "react-icons/md";
 
 
 const ProfileSetup = () => {
@@ -22,8 +23,14 @@ const ProfileSetup = () => {
 
     const queryParams = new URLSearchParams(window.location.search);
     const skillsOnly = queryParams.get('skills');
+    const cvOnly = queryParams.get("cv")
 
 
+    useEffect(()=>{
+        if(cvOnly==="true"){
+            setTab(1);
+        }
+    },[ cvOnly])
     const handleNext=(skillss:string[])=>{
 
         if(skillsOnly){
@@ -93,8 +100,18 @@ const SkillSetup:React.FC<SkillSetupPropsType>=({handleNext})=>{
     const [selectedSkill,setSelectedSkill] =useState<string[]>([]);
     const queryParams = new URLSearchParams(window.location.search);
     const skillsOnly = queryParams.get('skills');
+    const {user} =useSelector((state:State)=>state.user)
 
 
+
+
+
+    useEffect(()=>{
+    if(user){
+        const allSkillsArr = user.skills;
+        setSelectedSkill(allSkillsArr);
+    }        
+    },[user])
   
 
 
@@ -108,13 +125,18 @@ const SkillSetup:React.FC<SkillSetupPropsType>=({handleNext})=>{
 
     <div className="skillHeader">
          {/* <img width="34" height="34" src="https://img.icons8.com/3d-fluency/94/maintenance.png" alt="maintenance"/> */}
+         <div className="headerLeft">
+
+          <img width="94" height="94" src="https://img.icons8.com/3d-fluency/94/hard-working.png" alt="hard-working"/>
         <h1>Select  your skills</h1>
-    <p className="infoTxt">select atleast 5 skills</p>
+         </div>
+    {/* <p className="infoTxt">select atleast 5 skills</p> */}
     </div>
     <div className="skillWrapper">
         {
             skillArr.map(skill=><SetupSkillItem skill={skill} setSelectedSkill={setSelectedSkill} selectedSkill={selectedSkill}/>)
         }  
+     
     </div>
     <button className="nextButton" onClick={()=>handleNext(selectedSkill)}>
         {skillsOnly ? "Save":"Next"}

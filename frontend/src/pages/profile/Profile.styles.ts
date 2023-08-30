@@ -104,9 +104,9 @@ gap:2rem;
 
 }
 .skillsBox{
-    padding:2rem;
+    padding:1rem;
     background:var(--light_black);
-    border-radius:15px;
+    border-radius:10px;
     display:flex;
     flex-direction:column;
     gap:1rem;
@@ -114,18 +114,37 @@ gap:2rem;
     .skillsHeader{
         display:flex;
         align-items:center;
+        justify-content:space-between;
         gap:5px;
-        img{
-            width:36px;
-            height:36px;
-            opacity:0.8;
+        .header_left{
+            display:flex;
+            align-items:center;
+            gap:5px;
+            img{
+                width:36px;
+                height:36px;
+                opacity:0.8;
+            }
+            h3{
+                background:linear-gradient(to right,#7d19ff,#7518ff ,#6114e99c,#521eb2a8,#4e279773);
+                -webkit-background-clip:text;
+                -webkit-text-fill-color:transparent;
+                font-size:1.8rem;
+                letter-spacing:2px;
+            }
         }
-        h3{
-            background:linear-gradient(to right,#7d19ff,#7518ff ,#6114e99c,#521eb2a8,#4e279773);
-            -webkit-background-clip:text;
-            -webkit-text-fill-color:transparent;
-            font-size:1.8rem;
-            letter-spacing:2px;
+        .addSkills{
+          background:var(--main_color);
+            height:40px;
+            padding:0 1rem;
+            border:none;
+            outline:none;
+            letter-spacing:1px;
+            border-radius:3px;
+            font-size:14px;
+            text-transform:uppercase;
+            display:grid;
+            place-items:center;
         }
     }
     .skillsWrapper{
@@ -133,6 +152,29 @@ gap:2rem;
         gap:10px;
         flex-wrap:wrap;
         
+
+        .addMoreSkill{
+            display:flex;
+            gap:5px;
+            align-items:center;
+            background:#151515;
+            padding:0 1rem;
+            border:1px solid var(--main_color);
+            border-radius:4px;
+            cursor:pointer;
+            
+            p{
+                font-size:13px;
+                letter-spacing:1px;
+                color:var(--main_color);
+
+            }
+            svg{
+                fill:var(--main_color);
+
+            }
+        }
+
         .skillItem{
             border:1px solid var(--border_color);
             font-size:12px;
@@ -150,8 +192,8 @@ gap:2rem;
 .cvBox{
     background:var(--light_black);
   
-    border-radius:15px;
-    padding:2rem;
+    border-radius:10px;
+    padding:1rem;
     display:flex;
     flex-direction:column;
     gap:1rem;
@@ -161,6 +203,7 @@ gap:2rem;
         
         justify-content:space-between;
         .header_left{
+        gap:5px;
             align-items:center;
             display:flex;
             img{
@@ -186,6 +229,8 @@ gap:2rem;
             border-radius:3px;
             font-size:14px;
             text-transform:uppercase;
+            display:grid;
+            place-items:center;
 
         }
     }
