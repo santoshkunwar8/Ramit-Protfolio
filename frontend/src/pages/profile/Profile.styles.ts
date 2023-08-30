@@ -11,6 +11,7 @@ flex-direction:column;
 gap:2rem;
 
 
+
 .profielTop{
     width:100%;
     background:var(--light_black);
@@ -117,6 +118,7 @@ gap:2rem;
         img{
             width:36px;
             height:36px;
+            opacity:0.8;
         }
         h3{
             background:linear-gradient(to right,#7d19ff,#7518ff ,#6114e99c,#521eb2a8,#4e279773);
@@ -143,11 +145,56 @@ gap:2rem;
     }
 }
 
+
+
 .cvBox{
     background:var(--light_black);
-    min-height:220px;
+  
     border-radius:15px;
+    padding:2rem;
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+    .cvHeader{
+        display:flex;
+        align-items:center;
+        
+        justify-content:space-between;
+        .header_left{
+            align-items:center;
+            display:flex;
+            img{
+                width:35px;
+                height:35px;
+                opacity:0.8;
+            }
+            .cvText{
+                background:linear-gradient(to right,#7d19ff,#7518ff ,#6114e99c,#521eb2a8,#4e279773);
+                -webkit-background-clip:text;
+                -webkit-text-fill-color:transparent;
+                font-size:1.8rem;
+                letter-spacing:2px;
+            }
+        }
+        .addCV{
+            background:var(--main_color);
+            height:40px;
+            padding:0 1rem;
+            border:none;
+            outline:none;
+            letter-spacing:1px;
+            border-radius:3px;
+            font-size:14px;
+            text-transform:uppercase;
+
+        }
+    }
+    .cvWrapper{
+        display:flex;
+        flex-wrap:wrap;
+    }
 }
+
 
 `
 

@@ -5,6 +5,7 @@ import ProfileMenu from '../../Layouts/menu/ProfileMenu/ProfileMenu'
 import { useSelector } from 'react-redux'
 import { State } from '../../redux/reducers'
 import SetupSkillItem from '../../components/profile/SetupSkillItem.tsx/SetupSkillItem'
+import CvItem from '../../components/profile/CVItem/CvItem'
 
 const Profile = () => {
   const {user} = useSelector((state:State)=>state.user)
@@ -45,7 +46,7 @@ const Profile = () => {
             <div className='skillsBox'>
 
             <div className='skillsHeader'>
-                 <img width="34" height="34" src="https://img.icons8.com/3d-fluency/94/maintenance.png" alt="maintenance"/>
+          <img width="94" height="94" src="https://img.icons8.com/3d-fluency/94/hard-working.png" alt="hard-working"/>
                 <h3>Skills</h3>
 
 
@@ -60,12 +61,32 @@ const Profile = () => {
 
 
                 <div className="cvBox">
-                   
+
+
+                  <div className="cvHeader">
+                    <div className="header_left">
+
+                    <img width="68" height="68" src="https://img.icons8.com/external-flat-icons-vectorslab/68/external-Cv-social-media-flat-icons-vectorslab.png" alt="external-Cv-social-media-flat-icons-vectorslab"/>
+                    <h3 className='cvText'>CV</h3>
+                    </div>
+                    <button className='addCV'>
+                      Add CV
+                    </button>
+                    </div>
+                    
+                 {
+
+                 user &&  user.cv.length>0 ?  <div className="cvWrapper">
+                      {
+                  user?.cv.map(c=><CvItem key={c} cvUrl={c}/>) 
+                      }
+         
+                    </div> :""
+                    }
+
+
+
                 </div>
-            
-
-
-
     </ProfileWrapper>
   )
 }

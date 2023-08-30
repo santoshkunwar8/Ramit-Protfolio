@@ -25,7 +25,7 @@ const UserSchema =  mongoose.Schema({
         type:Boolean,
         default:false,
     },
-    cv:String,
+    cv:[],
     skills:Array,
 },{timestamps:true})
 

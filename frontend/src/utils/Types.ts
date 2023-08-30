@@ -64,7 +64,7 @@ export type UserType = {
     isAdmin?: boolean,
     isMember?: boolean,
     skills: string[],
-    cv: string,
+    cv: string[],
     country: string,
     isClient?: boolean,
 
