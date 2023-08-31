@@ -3,7 +3,6 @@ import { ReviewsWrapper } from './Reviews.styles'
 import ReviewItem from './ReviewItem/ReviewItem'
 import { getAllReviewsApi } from '../../../utils/api'
 import { ReviewType } from '../../../utils/Types'
-import {GoCodeReview} from "react-icons/go"
 import { FaCommentDots } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 const Reviews = () => {

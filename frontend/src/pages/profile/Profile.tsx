@@ -5,7 +5,6 @@ import ProfileMenu from '../../Layouts/menu/ProfileMenu/ProfileMenu'
 import { useSelector } from 'react-redux'
 import { State } from '../../redux/reducers'
 import SetupSkillItem from '../../components/profile/SetupSkillItem.tsx/SetupSkillItem'
-import CvItem from '../../components/profile/CVItem/CvItem'
 import { Link, useNavigate } from 'react-router-dom'
 import ClientModal from '../../Layouts/modal/ClientModal/ClientModal'
 import { BiUserCheck } from 'react-icons/bi'
@@ -70,16 +69,16 @@ const Profile = () => {
                 <h3>Skills</h3>
 
               </div>
-                {( user && user?.skills.length === 0 )&&  <Link  to={"/account/setup?skills=true"} className='addSkills'>
+                {( user && user?.skills?.length === 0 )&&  <Link  to={"/account/setup?skills=true"} className='addSkills'>
                       Add Skills
                     </Link>}
 
             </div>
              {
-              user && user?.skills.length > 0 ?
+              user && user.skills && user?.skills?.length > 0 ?
                <div className="skillsWrapper">
                 {
-                  user?.skills.map(skl=><SetupSkillItem skill={skl} selectedSkill={[]} />)
+                  user?.skills?.map(skl=><SetupSkillItem skill={skl} selectedSkill={[]} />)
                 }
                    <div onClick={()=>navigate("/account/setup?skills=true")} className="addMoreSkill">
             <MdOutlineAddModerator/>

@@ -1,5 +1,4 @@
 
-import {useState} from "react"
 import { Rating } from '@mui/material'
 import { MainWorkDetailsWrapper } from './MainWorkDetails.styles'
 import SmallSkillItem from '../../home/SkillsItem/SmallSkillItem'

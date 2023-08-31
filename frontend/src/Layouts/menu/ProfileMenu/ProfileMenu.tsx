@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../../redux';
 import { useDispatch } from 'react-redux';
-import {CgProfile} from "react-icons/cg"
+
 import useAlert from '../../../hooks/useAlert';
 import { ProfileMenuWrapper } from './ProfileMenu.styles';
 type ProfileMenuProps={

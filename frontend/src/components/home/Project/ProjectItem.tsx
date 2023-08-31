@@ -1,6 +1,4 @@
-// import React from 'react'
 
-// import { AiOutlineLike } from "react-icons/ai"
 import { ProjectItemWrapper } from "./ProjectItem.styles"
 import { WorkType } from "../../../utils/Types"
 type ProjectItemPropsType={

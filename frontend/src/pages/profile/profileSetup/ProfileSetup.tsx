@@ -16,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 const ProfileSetup = () => {
     
     const {user} = useSelector((state:State)=>state.user)
-    const [tab,setTab]=useState(0);
+    const [tab,setTab]=useState<0 | 1>(0);
     const {notify}= useAlert();
     const dispatch =useDispatch()
     const {AddUserAction}= bindActionCreators(actionCreators,dispatch )
@@ -70,10 +70,9 @@ const ProfileSetup = () => {
     }
 
     const tabMapping={
-        "0":<SkillSetup handleNext={handleNext}/>,
-        "1":<UploadCV handleBack={handleBack}/>
+        0:<SkillSetup handleNext={handleNext}/>,
+        1:<UploadCV handleBack={handleBack}/>
     }
-
 
 
 
@@ -81,7 +80,7 @@ const ProfileSetup = () => {
     <ProfileSetupWrapper>
         <Navbar/>
         <div className="setupGround">
-            {tabMapping[tab.toString()]}
+            {tabMapping[tab]}
 
         </div>
     </ProfileSetupWrapper>
@@ -111,7 +110,9 @@ const SkillSetup:React.FC<SkillSetupPropsType>=({handleNext})=>{
     useEffect(()=>{
     if(user){
         const allSkillsArr = user.skills;
-        setSelectedSkill(allSkillsArr);
+        if(allSkillsArr){
+            setSelectedSkill(allSkillsArr);
+        }
     }        
     },[user])
   

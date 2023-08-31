@@ -1,6 +1,6 @@
 import { BiLeftArrowAlt } from 'react-icons/bi';
 import { UploadCVWrapper } from './Upload.styles'
-import {useState} from "react"
+
 import { FaRegFileImage } from 'react-icons/fa';
 
 
@@ -8,15 +8,15 @@ type  UploadCVType={
   handleBack:()=>void;
 }
 const UploadCV:React.FC<UploadCVType> = ({handleBack}) => {
-  const [cvFiles,setCvFiles] =useState<FileList |null>()
+  // const [cvFiles,setCvFiles] =useState<FileList |null>()
   
 
-  const handleInputChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
-    if(e.target.files){
-      setCvFiles(e.target.files)
-    }
+  // const handleInputChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
+  //   if(e.target.files){
+  //     setCvFiles(e.target.files)
+  //   }
 
-  }
+  // }
 
 
 
@@ -44,7 +44,7 @@ const UploadCV:React.FC<UploadCVType> = ({handleBack}) => {
               </div>
             </div>
 
-        <input type="file"  multiple name="" id="" onChange={handleInputChange} style={{display:"none"}} />
+        <input type="file"  multiple name="" id=""  style={{display:"none"}} />
         {/* <img className='cvImage' src="/images/cv.png" alt="cvImage" /> */}
         <div className="buttonWrapper">
           <button className='uploadCvButton'>UPLAOD </button>

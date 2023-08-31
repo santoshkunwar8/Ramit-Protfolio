@@ -1,6 +1,5 @@
-import React, { SyntheticEvent } from 'react'
+import React from 'react'
 import { ProjectItemWrapper } from './ProjectItem.styles'
-import { BiSolidShareAlt } from 'react-icons/bi'
 import { useNavigate } from 'react-router-dom'
 import { WorkType } from '../../../utils/Types'
 import {format} from "timeago.js"
@@ -8,8 +7,6 @@ import { Rating } from '@mui/material'
 import {
   FacebookIcon,
   FacebookShareButton,
-  FacebookShareCount,
-  HatenaShareCount,
   LinkedinIcon,
   LinkedinShareButton,
   WhatsappIcon,
