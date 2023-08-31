@@ -5,7 +5,7 @@ export const UploadCVWrapper = styled.div`
 
 display:flex;
 flex-direction:column;
-gap:2rem;
+gap:1.5rem;
 background:var(--light_black);
 padding:2rem;
 border-radius:10px;
@@ -74,13 +74,47 @@ align-items:center;
     background:var(--main_color);
     border:none;
     outline:none;
-    height:55px;
+    height:45px;
     padding:0 1rem;
     border-radius:5px;
     font-size:16px;
 
     letter-spacing:2px;
     cursor:pointer;
+}
+.imageWrappers{
+    width:80%;
+    display:flex;
+    height:120px;
+    gap:2rem;
+    .CvImgItem{
+        // background:#151515;
+        height:100%;
+        border:1px solid var(--main_color);
+        cursor:pointer;
+        border-radius:10px;
+        flex:1;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        svg{
+            font-size:2rem;
+            fill:var(--main_color);
+        }
+    }
+}
+.buttonWrapper{
+    gap:4px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    p{
+        font-size:13px;
+        letter-spacing:1px;
+        color:var(--gray);
+
+    }
 }
 
 `

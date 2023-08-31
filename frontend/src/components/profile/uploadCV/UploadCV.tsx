@@ -1,6 +1,7 @@
 import { BiLeftArrowAlt } from 'react-icons/bi';
 import { UploadCVWrapper } from './Upload.styles'
 import {useState} from "react"
+import { FaRegFileImage } from 'react-icons/fa';
 
 
 type  UploadCVType={
@@ -33,9 +34,22 @@ const UploadCV:React.FC<UploadCVType> = ({handleBack}) => {
         <h1 className='main_text'>UPLOAD CV</h1>
           </div>
         </div>
+        
+            <div className="imageWrappers">
+              <div className="CvImgItem">
+                <FaRegFileImage/>
+              </div>
+              <div className="CvImgItem">
+    <FaRegFileImage/>
+              </div>
+            </div>
+
         <input type="file"  multiple name="" id="" onChange={handleInputChange} style={{display:"none"}} />
-        <img className='cvImage' src="/images/cv.png" alt="cvImage" />
-     <button className='uploadCvButton'>UPLAOD </button>
+        {/* <img className='cvImage' src="/images/cv.png" alt="cvImage" /> */}
+        <div className="buttonWrapper">
+          <button className='uploadCvButton'>UPLAOD </button>
+          {/* <p>Max 2 files </p> */}
+        </div>
      
 
     </UploadCVWrapper>
