@@ -2,16 +2,21 @@ import { UserInfoWrapper } from './UserInfo.styles';
 import {TbBrandFiverr} from "react-icons/tb";;
 import {TfiGithub } from "react-icons/tfi";
 import {FaTwitter, FaLinkedinIn} from "react-icons/fa";
-const UserInfo = () => {
+import { UserType } from '../../../utils/Types';
+type AdminInfoProps={
+  adminData : UserType |null
+}
+const UserInfo:React.FC<AdminInfoProps> = ({adminData}) => {
+
   return (
     <UserInfoWrapper>
         <div className="imageWrapper">
-<img src={"https://res.cloudinary.com/onlinecoder/image/upload/v1692963682/jpyhxdc4esf8yjy7oejz.jpg"} alt=""  className='userImage'/>
+<img src={adminData?.profileImg} alt=""  className='userImage'/>
         </div>
         <div className="otherInfo">
             <div className='name_box' >
                 <p className='name_label'>Name</p>
-                <p className='name_value'>Santosh kunwar</p>
+                <p className='name_value'>{adminData?.username}</p>
             </div>
             <div className="user_map_box">
 

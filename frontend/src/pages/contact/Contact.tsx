@@ -31,7 +31,7 @@ const Contact = () => {
             <img src="/images/user.jpg" alt="userImage" />
             <h1 className='intro_text'> I am Freelancer     Fullstack Developer working globally </h1>
             <span className='secondary_text'>Contact me for collaboration </span>
-            <button className='CvButton'>Download CV</button>
+            <button className='CvButton'>VIEW CV</button>
             
         </div>
         <div className="form_container">

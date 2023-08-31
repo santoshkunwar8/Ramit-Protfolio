@@ -21,11 +21,13 @@ class UserController{
 
     static async adminInfo(req,res){
         try {
+
+            const info = await UserModel.findOne({isAdmin:true});
             const works  = await WorkModel.find({}).count();
             const skills = await SkillModel.find({}).count();
             const clients = await UserModel.find({isClient:true}).count();
 
-            res.status(200).json({worksCount:works,skillsCount:skills,clientsCount:clients});
+            res.status(200).json({worksCount:works,skillsCount:skills,clientsCount:clients,info});
 
         } catch (error) {
             res.status(500).json({message:error.message,status:false})            

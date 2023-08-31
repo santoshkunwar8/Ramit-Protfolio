@@ -66,10 +66,10 @@ const  ProfileMenu:React.FC<ProfileMenuProps>=({children})=> {
           'aria-labelledby': 'basic-button',
         }}
       >
-      <MenuItem  className='profileMenuItem'  sx={{background:"#151515",display:"flex",gap:"5px"}} onClick={()=>{navigate("/account/setup")}}>
+      {/* <MenuItem  className='profileMenuItem'  sx={{background:"#151515",display:"flex",gap:"5px"}} onClick={()=>{navigate("/account/setup")}}>
             <CgProfile  className="icon"/>
             <p style={{color:"var(--gray)",fontSize:"14px",letterSpacing:"1px"}}>Update Profile</p>
-        </MenuItem>
+        </MenuItem> */}
         <MenuItem  className='profileMenuItem'  sx={{background:"#151515",display:"flex",gap:"5px"}} onClick={handleLogout}>
             <MdLogout/>
             <p style={{color:"var(--gray)",fontSize:"14px",letterSpacing:"1px"}}>Logout</p>

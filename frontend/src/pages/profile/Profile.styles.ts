@@ -46,10 +46,25 @@ gap:2rem;
                 background:transparent;
                 border-radius:5px;
                 padding:0 1rem;
+                
                 letter-spacing:1px;
+                text-transform:capitalize;
+                display:flex;
+                align-items:center;
+                gap:5px;
             }
             .become_client_button{
                 border:2px solid var(--border_color);
+                    background:var(--main_color);
+                
+                p{
+                    letter-spacing:2px;
+                }
+
+                svg{
+                    font-size:1.5rem;
+                }
+
             }
             .share_profile_button{
                 background:var(--main_color);

@@ -1,14 +1,19 @@
 // import React from 'react'
+import { UserType } from '../../../utils/Types'
 import { AboutWrapper } from './About.styles'
+type AdminInfoProps={
+  adminData : UserType |null
+}
+const About:React.FC<AdminInfoProps> = ({adminData}) => {
 
-const About = () => {
   return (
     <AboutWrapper >
         <div>
             <h5>About </h5> 
         </div>
         <p className='aboutText'>
-Meet Satosh Kunwar, a dedicated programmer with a passion for coding. Satosh's expertise lies in crafting innovative software solutions. A dynamic individual with a knack for both technical and social pursuits.</p>
+          {adminData?.about}
+  </p>
     </AboutWrapper>
   )
 }

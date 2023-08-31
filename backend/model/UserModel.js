@@ -15,6 +15,8 @@ const UserSchema =  mongoose.Schema({
         type:String,
         required:true
     },
+    about:String,
+    work:String,
     profileImg:String,
     country:String,
     isAdmin:{
@@ -25,7 +27,7 @@ const UserSchema =  mongoose.Schema({
         type:Boolean,
         default:false,
     },
-    cv:[],
+    cv:String,
     skills:Array,
 },{timestamps:true})
 

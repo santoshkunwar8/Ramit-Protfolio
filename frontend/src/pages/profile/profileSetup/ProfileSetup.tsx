@@ -9,7 +9,8 @@ import { updateUserApi } from "../../../utils/api";
 import useAlert from "../../../hooks/useAlert";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../../../redux";
-import { MdOutlineAddModerator } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
+
 
 
 const ProfileSetup = () => {
@@ -24,7 +25,7 @@ const ProfileSetup = () => {
     const queryParams = new URLSearchParams(window.location.search);
     const skillsOnly = queryParams.get('skills');
     const cvOnly = queryParams.get("cv")
-
+    const navigate = useNavigate()
 
     useEffect(()=>{
         if(cvOnly==="true"){
@@ -53,6 +54,7 @@ const ProfileSetup = () => {
           const {status,data} = await updateUserApi(user?._id,updatePayload) 
           if(status===200){
             AddUserAction(data.message)
+            navigate(-1);
             notify("Skills added successfully","success")
           }else{
             throw "something went wrong"
