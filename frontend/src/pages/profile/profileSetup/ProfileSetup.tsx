@@ -65,7 +65,7 @@ const ProfileSetup = () => {
         }
     }
 
-    const handleBack=()=>{
+    const handleBack=()=>{``
         setTab(0);
     }
 
