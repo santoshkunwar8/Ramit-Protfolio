@@ -2,7 +2,7 @@ import axios ,{AxiosProgressEvent}from "axios"
 
 
 const cloudName ="onlinecoder"
-const presetKey="imgVariation"
+const presetKey="sharefile"
 
 interface CallBack{
   (progress:number,url:string):void
