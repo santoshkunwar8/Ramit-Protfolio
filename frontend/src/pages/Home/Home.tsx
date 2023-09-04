@@ -76,7 +76,7 @@ const Home = () => {
                 <h1>Hey I am a Fullstack Devloper in Turing </h1>
                 <button className="cv_button" onClick={handleDownloadCV}>
                   {/* <img width="24" height="24" src="https://img.icons8.com/emoji/48/vulcan-salute-emoji.png" alt="vulcan-salute-emoji"/> */}
-                  <p>View CV</p></button>
+                  <p>Download CV</p></button>
               </div>
               <HeroItems adminData={AdminInfoData}/>
               <div className="hero_item_wrapper" >
