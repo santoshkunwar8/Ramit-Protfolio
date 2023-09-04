@@ -49,10 +49,10 @@ const Navbar = () => {
         </ul>
            
            {
-           !user?.isClient && user? <ClientModal>
+{/*            !user?.isClient && user? <ClientModal>
              <button className='client_button'>Become Client</button>
             </ClientModal>:""
-}
+} */}
             {
 
             !user ? <Link to={"/login"}>
