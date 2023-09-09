@@ -4,33 +4,43 @@ const cors = require("cors")
 const app = express()
 const session = require("express-session");
 const cookieParser = require("cookie-parser")
-
-console.log("hellosssssss")
-
 require("dotenv").config();
 
 app.use(cors({
     origin:["http://localhost:5173",process.env.FRONTEND_URL],
-    methods:["POST","GET","PUT","DELETE"],
+    methods:["POST","GET","PUT","DELETE"]  ,
     credentials:true
+
 }))
 
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Credentials", true);
+    res.header(
+      "Access-Control-Allow-Methods",
+      "GET,PUT,POST,DELETE,UPDATE,OPTIONS"
+    );
+    res.header(
+      "Access-Control-Allow-Headers",
+      "X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept"
+    );
+    next();
+  });
+app.set("trust proxy", 1); // trust first proxy
 app.use(cookieParser())
 app.use(express.json())
 app.use(morgan("common"))
-
 require("./utils/db")();
 
 app.use(session({
     name:"codewithmama.sid",
-    secret:process.env.SESSION_SECRET,
+    secret:"hellhello",
     resave:false,
-    saveUninitialized:true,
+    saveUninitialized:false,
     cookie:{
         secure:true,
-        httpOnly:true,
+        httpOnly:false,
         maxAge:1000*60*60,
-        // sameSite:"none"
+        sameSite:"none"
     }
 }))
 
