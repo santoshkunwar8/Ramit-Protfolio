@@ -5,6 +5,7 @@ const app = express()
 const session = require("express-session");
 const cookieParser = require("cookie-parser")
 
+console.log("hellosssssss")
 
 require("dotenv").config();
 
@@ -29,6 +30,7 @@ app.use(session({
         secure:true,
         httpOnly:true,
         maxAge:1000*60*60,
+        // sameSite:"none"
     }
 }))
 
