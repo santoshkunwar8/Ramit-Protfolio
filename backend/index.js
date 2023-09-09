@@ -46,6 +46,9 @@ app.use(session({
 
 require('./routes/AllRoutes')(app)
 
+app.use((err,req,res,next)=>{
+  res.status(500).json({message:err.message,success:true})
+})
 
 
 app.listen(8000,()=>console.log(`server started...`))
