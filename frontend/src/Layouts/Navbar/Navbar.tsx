@@ -1,6 +1,5 @@
 import {Link, useLocation} from "react-router-dom";
 import { NavbarWrapper } from './Navbar.styles'
-import ClientModal from "../modal/ClientModal/ClientModal";
 import { useSelector } from "react-redux";
 import { State } from "../../redux/reducers";
 
@@ -48,11 +47,8 @@ const Navbar = () => {
            </Link>
         </ul>
            
-           {
-{/*            !user?.isClient && user? <ClientModal>
-             <button className='client_button'>Become Client</button>
-            </ClientModal>:""
-} */}
+           
+
             {
 
             !user ? <Link to={"/login"}>
