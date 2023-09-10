@@ -29,6 +29,10 @@ const UserSchema =  mongoose.Schema({
     },
     cv:String,
     skills:Array,
+    isVerified:{
+        type:Boolean,
+        default:false,
+    }
 },{timestamps:true})
 
 module.exports = mongoose.model("User",UserSchema)

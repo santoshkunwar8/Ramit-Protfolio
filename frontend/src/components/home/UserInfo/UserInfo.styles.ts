@@ -3,30 +3,8 @@ import { styled } from "styled-components";
 // styled
 export const UserInfoWrapper = styled.div`
 
-display:flex;
-height:300px;
-gap:1rem;
-.imageWrapper{
-  
-    flex:1;
-    background:var(--main_color);
-    height:100%;
-    border-radius:10px;
-    position:relative;
-    overflow:hidden;
-    .userImage{
-      // overflow:hid
-      position:absolute;
-      bottom:0;
-      width:100%;
-      object-fit:cover;
-      height:100%;
-      margin:auto;
-    }
 
-}
-.otherInfo{
-    flex:1;
+    flex:5;
     display:flex;
     flex-direction:column;
     gap:1rem;
@@ -53,7 +31,12 @@ gap:1rem;
         border-radius:10px;
         width:100%;
         background-color:var(--light_black);
-        height:50% !important;
+        height:200px !important;
+        img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
     }
     .social_media_box{
         height:70px;
@@ -81,7 +64,7 @@ gap:1rem;
             font-size:1.4rem;
         }
 
-    }
+    
 }
 
 `

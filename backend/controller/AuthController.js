@@ -91,19 +91,21 @@ class AuthController{
       const {hash,code}=req.body;
       try {
        const data =  await EmailService.verifyEmailConfirmationToken(hash);
+       console.log(data.email)
       if(data.email){
         
 
-        let prevCode = email.split("-")[1];
-        let userEmail = email.split("-")[0]
-        if(prevCode===code){
+        let prevCode = data.email.split("-")[1];
+        let userEmail = data.email.split("-")[0];
 
-          const user = await UserModel.findOne({email:userEmail});
+        if(prevCode.toString()===code.toString()){
+
+          const user = await UserModel.findOneAndUpdate({email:userEmail},{isVerified:true},{new:true,returnOriginal:false});
           res.status(200).json({message:user,success:true});
 
        
        }else{
-        throw "invalid code"
+        throw Error("Invalid Code")
        }
        
       }

@@ -9,12 +9,12 @@ padding:2rem;
 padding-bottom:0;
 display:flex;
 flex-direction:column;
-gap:5rem;
+gap:2rem;
 
 .hero_section{
     display:flex;
     gap:1rem;
-    height:70vh;
+    height:100%;
     
 }
 .hero_item_wrapper{

@@ -86,7 +86,7 @@ const Signup = () => {
             if(status==200){
                   notify("verfication code is sent to your email  ." ,"success")
               
-              navigate("/account/email-confirm",{state:{email:signupData.email,code:data.code}})
+              navigate("/account/email-confirm",{state:{email:signupData.email,code:data.message.code}})
             }else{
               throw data.message;
             }

@@ -10,16 +10,14 @@ const UserInfo:React.FC<AdminInfoProps> = ({adminData}) => {
 
   return (
     <UserInfoWrapper>
-        <div className="imageWrapper">
-<img src={adminData?.profileImg} alt=""  className='userImage'/>
-        </div>
-        <div className="otherInfo">
+        
+    
             <div className='name_box' >
-                <p className='name_label'>Name</p>
+                <p className='name_label'></p>
                 <p className='name_value'>{adminData?.username}</p>
             </div>
             <div className="user_map_box">
-
+          <img src='/images/user.png'/>
             </div>
             <div className="social_media_box">
               
@@ -40,7 +38,6 @@ const UserInfo:React.FC<AdminInfoProps> = ({adminData}) => {
                 </a>
 
             </div>
-        </div>
 
     </UserInfoWrapper>
   )
