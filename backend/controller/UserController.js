@@ -2,6 +2,7 @@ const UserModel = require("../model/UserModel")
 const WorkModel = require("../model/WorkModel");
 const SkillModel = require("../model/ToolsModel");
 const EmailService = require("../services/EmailService");
+const AuthService = require("../services/AuthService");
 class UserController{
 
 
@@ -9,11 +10,12 @@ class UserController{
      try {
         
      const user =  await    UserModel.create(req.body);
-     await EmailService.sentConfirmationEmail(user._doc.email)
-     req.session.user  = user._doc;
+     const {email} = user._doc;
+     let code =  AuthService.generateCode()
+     await EmailService.sentConfirmationEmail(email,code)
+     const codeHash =  AuthService.generateConfirmationCodeHash(email,code)
      
-     
-     res.status(200).json({message:user ,success:true})
+     res.status(200).json({message:{email,code:codeHash} ,success:true})
      } catch (error) {
     console.log(error);
     res.status(500).json({message:error.message,success:false})

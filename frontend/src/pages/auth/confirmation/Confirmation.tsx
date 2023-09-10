@@ -3,6 +3,11 @@ import { ConfirmationWrapper } from './Confirmation.styles'
 import Navbar from '../../../Layouts/Navbar/Navbar'
 import  { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { confirmCodeApi } from '../../../utils/api';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../../../redux';
+import { useDispatch } from 'react-redux';
+import useAlert from '../../../hooks/useAlert';
 
 
 const Confirmation = () => {
@@ -11,7 +16,11 @@ const Confirmation = () => {
   const [email,setEmail] =useState("")
   const EmailState = useLocation().state;
   const navigate =useNavigate()
-  const [code,setCode] = useState<string>("")
+  const [code,setCode] = useState<string>("");
+  const [ hash,setHash] =useState("")
+  const dispatch = useDispatch()
+  const {AddUserAction} = bindActionCreators(actionCreators,dispatch )
+  const {notify} = useAlert()
   const handleKeyUp = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Backspace' && index > 0 && e.currentTarget.value === '') {
       inputRefs[index - 1]?.current?.focus();
@@ -39,9 +48,10 @@ const Confirmation = () => {
   };
 
   useEffect(()=>{
-    const {email:newEmail} = EmailState
+    const {email:newEmail,code:codeHash} = EmailState
     if(newEmail){
       setEmail(newEmail)
+      setHash(codeHash)
     }else{
       navigate("/signup")
     }
@@ -49,7 +59,22 @@ const Confirmation = () => {
   console.log(EmailState)
 
  
- 
+ const handleConfirm=async()=>{
+  if(code.length !==6 )return;
+
+  try {
+   const {status,data } =  await confirmCodeApi({code,hash});
+   if(status===200){
+    AddUserAction(data.message)
+    navigate("/")
+   }else{
+    throw data.message
+   }
+  } catch (error:any) {
+  
+      notify(error?.response?.data?.message,"error")
+  }
+ }
     
 
   return (
@@ -75,7 +100,7 @@ const Confirmation = () => {
       ))}
             
         </div>
-        <button className={`confirmButton ${code.length ===6 ? "isVerified":""}`}> Confirm</button>
+        <button onClick={handleConfirm} className={`confirmButton ${code.length ===6 ? "isVerified":""}`}> Confirm</button>
 
     </div>
 

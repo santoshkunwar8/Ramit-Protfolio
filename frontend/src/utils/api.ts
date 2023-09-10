@@ -11,6 +11,10 @@ type resetPasswordType={
     newPassword:string,
     email:string,
 }
+type confirmCodeType={
+    hash:string,
+    code:string,
+}
 export const getToolsApi = () => AxiosInstance.get("/tool");
 export const createToolApi = (data: ToolsStateType) => AxiosInstance.post("/tool/create", data)
 
@@ -49,6 +53,10 @@ export const resetPasswordLinkApi=(email:string)=>AxiosInstance.post("/auth/send
 export const resetPasswordApi=(data:resetPasswordType)=>AxiosInstance.post("/auth/resetPassword",data)
 export const verifyResetCodeApi=(code:number)=>AxiosInstance.post("/auth/verifyResetCode",{code})
 export const checkIfTokenIsValidApi = (token:string)=>AxiosInstance.post(`/auth/tokenvalid/${token}`)
+
+export const confirmCodeApi=(data:confirmCodeType)=>AxiosInstance.post("/auth/confirmCode",data)
+
+
 
 
 

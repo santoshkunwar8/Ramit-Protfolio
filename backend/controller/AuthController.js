@@ -53,7 +53,7 @@ class AuthController{
         if(!user){
           throw {type:"custom",message:"Authorization failed"};
         }
-      const {email   ,invalidLink}  =   await EmailService.verifyEmailConfirmationToken(token);
+      const {email  }  =   await EmailService.verifyEmailConfirmationToken(token);
       if(email){
       
       await UserModel.findOneAndUpdate(
@@ -69,31 +69,10 @@ class AuthController{
 
 
 
-    }else if(invalidLink){
-        throw {
-          type:"custom",
-          message:"Invalid link"
-        }
-      }else{
-        throw {
-          type:"custom",
-          message:"Link expired"
-        }
-      }
+    }
     } catch (error) {
-      console.log(error)
-      let errorMessage = "something went wrong";
-      let expired = false;
-      let invalidLink  = false;
-      if(error.type==="custom"){
-        errorMessage = error.message
-        if(error.message==="Link expired"){
-          expired=true;
-        }else{
-          invalidLink=true
-        }
-      }
-      return res.status(500).json({message:{expired,invalidLink },success:false})
+      
+      return res.status(500).json({message:error.message,success:false})
     }
     }
     
@@ -106,6 +85,34 @@ class AuthController{
         } catch (error) {
           return res.status(500).json({message:error.message,success:false});
       }
+    }
+
+    async confirmCode(req,res){
+      const {hash,code}=req.body;
+      try {
+       const data =  await EmailService.verifyEmailConfirmationToken(hash);
+      if(data.email){
+        
+
+        let prevCode = email.split("-")[1];
+        let userEmail = email.split("-")[0]
+        if(prevCode===code){
+
+          const user = await UserModel.findOne({email:userEmail});
+          res.status(200).json({message:user,success:true});
+
+       
+       }else{
+        throw "invalid code"
+       }
+       
+      }
+        
+      } catch (error) {
+        console.log(error.message)
+        res.status(403).json({message:error.message,success:false})
+      }
+      
     }
   
 }

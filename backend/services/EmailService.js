@@ -35,11 +35,11 @@ class EmailService{
 
     }
 
-    async sentConfirmationEmail(email){
+    async sentConfirmationEmail(email,code){
         const emailPayload = {
             text:"Confirm your email",
             subject:"Email confirmation ",
-            html:EmailHtmlService.getAccConfirmationHtml(email),
+            html:EmailHtmlService.getAccConfirmationHtml(code),
             email
         }
         try {
@@ -72,25 +72,20 @@ class EmailService{
         try {
 
             const decoded = jwt.verify(token, process.env.EMAIL_CONFIRMATOIN_HASH)
-
-
-            console.log("the decoded", decoded);
-
             return { email: decoded?.email, exp: false, invalidLink: false }
         } catch (error) {
             console.log(error.message)
             if (error?.message === "jwt expired") {
-                return { email: null, exp: true, invalidLink: false }
+                throw Error("time expired")
             } else {
-                return { email: null, exp: false, invalidLink: true }
+                throw Error("invalid code")
+                // return { email: null, exp: false, invalidLink: true }
             }
 
         }
     }
 
-    async generateCode()=>{
-        
-    }
+   
 
  
 
