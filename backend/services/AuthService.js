@@ -1,4 +1,6 @@
 const bcrypt = require("bcrypt")
+const EmailService = require("./EmailService")
+const EmailHtmlService = require("./EmailHtmlService")
 
 class AuthService{
     async hashPassword(password) {
@@ -17,6 +19,18 @@ class AuthService{
         } catch (error) {
             return error
         }
+
+    }
+    async generateCodeHash(email,code){
+        let hashEmail = `${email}${code}`;
+
+        return EmailHtmlService.getEmailConfirmationHash(hashEmail)
+    }
+
+    async generateCode(){
+
+
+
 
     }
 

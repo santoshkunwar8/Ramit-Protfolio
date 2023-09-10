@@ -45,16 +45,17 @@ class AuthController{
 
     async resetPassword(req,res){
       
-    const {email:userEmail,password,token} = req.body;
+    const {email:userEmail,newPassword,token} = req.body;
+    console.log(token)
    
     try {
-        const user = await UserModel.findOne({userEmail});
+        const user = await UserModel.findOne({email:userEmail});
         if(!user){
           throw {type:"custom",message:"Authorization failed"};
         }
       const {email   ,invalidLink}  =   await EmailService.verifyEmailConfirmationToken(token);
       if(email){
-      const newPassword = await hashPassword(password);
+      
       await UserModel.findOneAndUpdate(
         {
        email: userEmail
@@ -100,7 +101,7 @@ class AuthController{
       const {token}= req.params;
       if(!token) throw "Invalid token";
       try {
-          const data =  await EmailService.verifyConfirmationHash(token);
+          const data =  await EmailService.verifyEmailConfirmationToken(token);
           return res.status(200).json({message:data,success:true});
         } catch (error) {
           return res.status(500).json({message:error.message,success:false});

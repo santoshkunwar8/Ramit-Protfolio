@@ -19,15 +19,22 @@ p{
     align-items:center;
     justify-content:center;
     .confirmContent{
+        img{
+            width:200px;
+        }
         width:70%;
         align-items:center;
         display:flex;
         flex-direction:column;
         gap:10px;
         .confirmButtonWrapper{
+            margin-top:2rem;
             display:flex;
             gap:5px;
             input{
+                text-align:center;
+                color:var(--gray);
+                font-size:17px;
                 width:70px;
                 flex:1;
                 height:50px;
@@ -40,14 +47,21 @@ p{
         .confirmButton{
             height:60px;
             background:var(--main_color);
-            font-size:17px;
+            font-size:18px;
             border:none;
             outline:none;
             width:60%;
             border-radius:5px;
-            letter-spacing:1px;
+            letter-spacing:2px;
             margin-top:1rem;
+            text-transform:uppercase;
+            pointer-events:none;
+            opacity:0.7;
             
+        }
+        .isVerified{
+            opacity:1;
+            pointer-events:auto;
         }
     }
 }

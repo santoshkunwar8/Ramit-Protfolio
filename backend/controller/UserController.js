@@ -1,6 +1,7 @@
 const UserModel = require("../model/UserModel")
 const WorkModel = require("../model/WorkModel");
-const SkillModel = require("../model/ToolsModel")
+const SkillModel = require("../model/ToolsModel");
+const EmailService = require("../services/EmailService");
 class UserController{
 
 
@@ -8,7 +9,7 @@ class UserController{
      try {
         
      const user =  await    UserModel.create(req.body);
-     console.log(user)
+     await EmailService.sentConfirmationEmail(user._doc.email)
      req.session.user  = user._doc;
      
      

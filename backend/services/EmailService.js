@@ -88,6 +88,9 @@ class EmailService{
         }
     }
 
+    async generateCode()=>{
+        
+    }
 
  
 
