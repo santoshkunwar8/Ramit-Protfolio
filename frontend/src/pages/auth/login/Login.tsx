@@ -72,6 +72,9 @@ try {
             <Link  to={"/signup"}>
             <p className='accountText'>dont have account ?</p>
             </Link>
+            <Link  to={"/account/sentResetLink"}>
+            <p className='accountText'>Forgot password ?</p>
+            </Link>
 
           </div>
         </form>

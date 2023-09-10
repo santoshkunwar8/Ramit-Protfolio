@@ -53,7 +53,7 @@ gap:5rem;
         outline:none;
         background:var(--main_color);
         height:45px;
-        width:120px;
+        min-width:120px;
         letter-spacing:1px;
         // font-weight:bold;
         display:flex;
@@ -64,6 +64,7 @@ gap:5rem;
         margin-left:auto;
         cursor:pointer;
         align-items:center;
+        padding:0 1rem;
     
         p{
             text-transform:uppercase;

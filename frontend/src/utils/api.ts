@@ -2,6 +2,15 @@ import { ReviewStateType, ToolsStateType, UserType, WorkState, commentPayload } 
 import { AxiosInstance } from "./axios";
 
 // tool
+type loginPayload = {
+    email: string,
+    password: string,
+}
+type resetPasswordType={
+    token:string,
+    newPassword:string,
+    email:string,
+}
 export const getToolsApi = () => AxiosInstance.get("/tool");
 export const createToolApi = (data: ToolsStateType) => AxiosInstance.post("/tool/create", data)
 
@@ -18,13 +27,6 @@ export const rateProjectApi = (data: { user: string, work: string, rating: numbe
 
 // user
 
-type loginPayload = {
-    email: string,
-    password: string,
-}
-
-
-
 
 export const getClientsApi = () => AxiosInstance.get("/user/client")
 export const createUserApi = (data: UserType) => AxiosInstance.post("/user/create", data)
@@ -40,6 +42,13 @@ export const updateUserApi = (userId: string, data: any) => AxiosInstance.put(`/
 export const createReviewsApi = (data: ReviewStateType) => AxiosInstance.post("/review/create", data)
 export const getAllReviewsApi = () => AxiosInstance.get("/review")
 
+
+//auth 
+
+export const resetPasswordLinkApi=(email:string)=>AxiosInstance.post("/auth/sendResetLink",{email});
+export const resetPasswordApi=(data:resetPasswordType)=>AxiosInstance.post("/auth/resetPassword",data)
+export const verifyResetCodeApi=(code:number)=>AxiosInstance.post("/auth/verifyResetCode",{code})
+export const checkIfTokenIsValidApi = (token:string)=>AxiosInstance.post(`/auth/tokenvalid/${token}`)
 
 
 

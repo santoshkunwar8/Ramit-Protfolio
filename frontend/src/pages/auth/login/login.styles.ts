@@ -74,7 +74,7 @@ flex-direction:column;
     }
     .login_bottom{
         display:flex;
-        justify-content:center;
+        justify-content:space-between ;
         width:100%;
         
         .accountText{

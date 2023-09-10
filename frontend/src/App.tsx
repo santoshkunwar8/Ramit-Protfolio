@@ -18,6 +18,9 @@ import {Toaster} from "react-hot-toast"
 import ProfileSetup from "./pages/profile/profileSetup/ProfileSetup";
 import { State } from "./redux/reducers";
 import { useSelector } from "react-redux";
+import ResetLink from "./pages/auth/ResetLink/ResetLink";
+import ResetPassword from "./pages/auth/resetPassword/ResetPassword";
+import Confirmation from "./pages/auth/confirmation/Confirmation";
 
 
 function App() {
@@ -41,6 +44,7 @@ function App() {
     <>
     <Toaster/>
     <AppWrapper>
+      
 
     <BrowserRouter>
     <Routes>
@@ -57,13 +61,19 @@ function App() {
       <Route  path="/reviews" element={<Reviews/>}/>
       <Route path="/works" element={<Works/>}/>
       <Route path="/login" element={<Login/>}/> 
-       
       <Route path="/signup"  element={<Signup/>}/>
       <Route path="/contact" element={<Contact/>}/>
+
       <Route path="/account">
       <Route path="profile/:userId"  element={<Profile/>}/>
       <Route path="setup" element={<ProfileSetup/>}/>
+      <Route path="sentResetLink" element={<ResetLink/>}/>
+      <Route path="resetpassword" element={<ResetPassword/>} />
+      <Route path="email-confirm"  element={<Confirmation/>}/>
+
+
       </Route>
+
     </Routes> 
     </BrowserRouter>
     </AppWrapper>
