@@ -17,7 +17,7 @@ const UserInfo:React.FC<AdminInfoProps> = ({adminData}) => {
                 <p className='name_value'>{adminData?.username}</p>
             </div>
             <div className="user_map_box">
-          <img src='/images/user.png'/>
+          <img src='/images/users.jpg'/>
             </div>
             <div className="social_media_box">
               
