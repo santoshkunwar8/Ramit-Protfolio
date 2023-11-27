@@ -4,6 +4,7 @@ import HeroItems from '../heroItems/HeroItems'
 import { AdminInfoType } from '../../../pages/Home/Home'
 import About from '../About/About'
 import UserInfo from '../UserInfo/UserInfo'
+import FileSaver from 'file-saver'
 
 type HeroProps={
     adminInfo:AdminInfoType
@@ -14,9 +15,9 @@ const Hero:React.FC<HeroProps> = ({adminInfo}) => {
     
     const handleDownloadCV=()=>{
 
-        const cvUrl = AdminInfoData.info?.cv;
+        const cvUrl = adminInfo.info?.cv;
         if(cvUrl){
-          FileSaver.saveAs("https://res.cloudinary.com/onlinecoder/image/upload/v1693489974/pdr0nkhjrqr1uks3pdue.pdf",'codewithmamaCV.pdf')
+          FileSaver.saveAs("https://res.cloudinary.com/onlinecoder/image/upload/v1701071534/mtciiur9y3mlpiz6t4vz.pdf",'codewithmamaCV.pdf')
         }
         
     

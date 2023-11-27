@@ -31,7 +31,9 @@ const Contact = () => {
             <img src="/images/user.jpg" alt="userImage" />
             <h1 className='intro_text'> I am Freelancer     Fullstack Developer working globally </h1>
             <span className='secondary_text'>Contact me for collaboration </span>
-            <button className='CvButton'>VIEW CV</button>
+            <a href="https://res.cloudinary.com/onlinecoder/image/upload/v1701071534/mtciiur9y3mlpiz6t4vz.pdf">
+                 <button className='CvButton'>VIEW CV</button>
+              </a> 
             
         </div>
         <div className="form_container">
