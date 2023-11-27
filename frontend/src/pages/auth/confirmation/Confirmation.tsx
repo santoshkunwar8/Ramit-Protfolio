@@ -12,7 +12,6 @@ import useAlert from '../../../hooks/useAlert';
 
 const Confirmation = () => {
   const inputRefs = Array.from({ length: 6 }, () => useRef<HTMLInputElement>(null));
-  const [verified,setVerfied] = useState<boolean>(false)
   const [email,setEmail] =useState("")
   const EmailState = useLocation().state;
   const navigate =useNavigate()
@@ -29,7 +28,7 @@ const Confirmation = () => {
     }
   };
 
-  const handleInputChange = (index: number, e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (_: number, e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.currentTarget.value;
   //  console.log(value)
    if(value){

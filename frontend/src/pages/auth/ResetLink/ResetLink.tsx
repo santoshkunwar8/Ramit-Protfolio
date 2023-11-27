@@ -1,8 +1,7 @@
 import React, { useState } from "react"
 import Navbar from "../../../Layouts/Navbar/Navbar"
 import {  ResetLinkWrapper } from "./ResetLink.styles"
-import { resetPasswordLinkApi, verifyResetCodeApi } from "../../../utils/api"
-import { useNavigate } from "react-router-dom"
+import { resetPasswordLinkApi } from "../../../utils/api"
 import useAlert from "../../../hooks/useAlert"
 
 const ResetLink = () => {
