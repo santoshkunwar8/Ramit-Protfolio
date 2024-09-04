@@ -55,13 +55,13 @@ gap:2rem;
 }
 .client_data_box{
     display:flex;
-    gap:10px;
+    gap:30px;
     flex-wrap:wrap;
     .client_data{
-        border:1px solid var(--border_color);
+border:1px solid var(--border_color);
 border-radius:7px;
-width:140px;
-height:160px;
+width:170px;
+height:170px;
 backdrop-filter:blur(20px);
 padding:10px;
 display:flex;

@@ -12,10 +12,10 @@ const WorkBox = () => {
         </div>
         <div>
 
-      <h1>  Code Creations</h1> 
+      <h1>Creative Creations</h1> 
       
       
-      <h1> Showcasing My Innovative Development Projects</h1>
+      <h1> Showcasing My Innovative And Creative Projects</h1>
         </div>
           <button className="explore_button">
           <p>

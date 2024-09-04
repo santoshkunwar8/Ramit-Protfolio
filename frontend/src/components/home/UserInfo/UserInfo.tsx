@@ -1,7 +1,6 @@
 import { UserInfoWrapper } from './UserInfo.styles';
-import {TbBrandFiverr} from "react-icons/tb";;
+import {FaTwitter, FaLinkedinIn, FaFacebook, FaInstagram} from "react-icons/fa";
 import {TfiGithub } from "react-icons/tfi";
-import {FaTwitter, FaLinkedinIn} from "react-icons/fa";
 import { UserType } from '../../../utils/Types';
 type AdminInfoProps={
   adminData : UserType |null
@@ -17,24 +16,24 @@ const UserInfo:React.FC<AdminInfoProps> = ({adminData}) => {
                 <p className='name_value'>{adminData?.username}</p>
             </div>
             <div className="user_map_box">
-          <img src='/images/users.jpg'/>
+          <img src='/images/user.png'/>
             </div>
             <div className="social_media_box">
               
-                <a href='https://www.linkedin.com/in/santosh-kunwar-5573a2273/' target='_blank' className="media_box current_media" >
+                <a href='https://www.linkedin.com/in/ramitnpn/' target='_blank' className="media_box current_media" >
 
                 <FaLinkedinIn/>
                 </a>
-                <a href='https://www.fiverr.com/santoshkunwa442' target='_blank' className="media_box">
+                <a href='https://www.facebook.com/ramitnpn1' target='_blank' className="media_box">
 
-                <TbBrandFiverr/>
+                <FaFacebook/>
                 </a>
-                <a  href='https://github.com/Santoshkunwar44' target='_blank' className="media_box">
+                <a  href='https://github.com/RamitNpn' target='_blank' className="media_box">
     <TfiGithub/>
                 </a>
-                <a href='https://twitter.com/santosh68789183' target='_blank' className='media_box'>
+                <a href='https://www.instagram.com/ramitnpn1/' target='_blank' className='media_box'>
 
-                <FaTwitter/>
+                <FaInstagram/>
                 </a>
 
             </div>

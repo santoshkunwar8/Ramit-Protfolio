@@ -35,9 +35,12 @@ export const ReviewsWrapper = styled.div`
     display:flex;
     gap:1rem;
     flex-wrap:wrap;
+    width:2305px;
+    display:flex;
+
     .additionalItem{
         display:flex;
-        width:150px;
+        width:170px;
         flex-direction:column;
         align-items:center;
         justify-content:center;

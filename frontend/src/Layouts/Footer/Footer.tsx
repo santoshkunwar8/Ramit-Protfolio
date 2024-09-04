@@ -14,7 +14,7 @@ const Footer = () => {
         <div className='footerTop'>
 
         <div className="leftFooter">
-        <h1 className='logo_text'>CodeWithMama</h1>
+        <h1 className='logo_text'>Ramit Neupane</h1>
         <p className='left_footer_desc'>Get in Touch: Let's Collaborate on Your Next Project or Answer Your Queries.</p>
         {/* <button></button> */}
         <Link to={"/contact"} className='contactButton' >
@@ -54,7 +54,7 @@ const Footer = () => {
         <div  className='footerBottom'>
         
          <ul className='bottom_footer_left'>
-          <li>@2023 Github Inc.</li>
+          <li><a href="https://www.facebook.com/cornortech">@2024 Cornor Tech Pvt Ltd.</a></li>
           <li>Terms</li>
           <li>Privacy</li>
           <li>Sitemap</li>
@@ -62,23 +62,24 @@ const Footer = () => {
          </ul>
          <ul>
           <li>
+            <a href="https://www.linkedin.com/in/ramitnpn/">
               <FaLinkedinIn/>
-          </li>
-          <li>
+              </a></li>
+          <li><a href="https://www.linkedin.com/in/ramitnpn/">
                     <TbBrandFiverr/>
-          </li>
-          <li>
+                    </a></li>
+          <li><a href="https://www.linkedin.com/in/ramitnpn/">
                <VscGithub/>
-          </li>
-          <li>
+               </a></li>
+          <li><a href="https://www.linkedin.com/in/ramitnpn/">
             <FaTwitter/>
-          </li>
-          <li>
+            </a></li>
+          <li><a href="https://www.linkedin.com/in/ramitnpn/">
             <PiYoutubeLogo/>
-          </li>
-          <li>
+            </a></li>
+          <li><a href="https://www.linkedin.com/in/ramitnpn/">
             <BsTiktok/>
-          </li>
+          </a></li>
          </ul>
 
         </div>

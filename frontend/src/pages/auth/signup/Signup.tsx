@@ -118,26 +118,26 @@ const Signup = () => {
       <div   className='form_content'>
          <div className="input_item">
           <BiSolidUser/>
-        <input type="text" name="username" id="" placeholder='username' onChange={handleInputChange} required />
+        <input type="text" name="username" id="" placeholder='Username' onChange={handleInputChange} required />
 
         </div>
         <div className="input_item">
           <MdEmail/>
-        <input type="email" name="email" id="" placeholder='email address' onChange={handleInputChange} required />
+        <input type="email" name="email" id="" placeholder='Email Address' onChange={handleInputChange} required />
 
         </div>
             <div className="input_item">
           <ImFlag/>
-        <input type="text" name="country" id="" placeholder='country' onChange={handleInputChange} required />
+        <input type="text" name="country" id="" placeholder='Country' onChange={handleInputChange} required />
 
         </div>
         <div className="input_item">
           <RiLockPasswordFill/>
-        <input type="password" name="password" id="" placeholder='app password' onChange={handleInputChange} required/>
+        <input type="password" name="password" id="" placeholder='Password' onChange={handleInputChange} required/>
         </div>
           <div className="input_item">
           <RiLockPasswordFill/>
-        <input type="password" name="confirmPassword" id="" placeholder='confirm app password' onChange={handleInputChange} required/>
+        <input type="password" name="confirmPassword" id="" placeholder='Retype Password' onChange={handleInputChange} required/>
 
         </div>
       </div>
@@ -147,7 +147,7 @@ const Signup = () => {
 
         <div className='login_bottom'>
        <Link to={"/login"}>
-        <p className='accountText'>already have account  ?</p> 
+        <p className='accountText'>Already have account?</p> 
        
        </Link>
       </div>

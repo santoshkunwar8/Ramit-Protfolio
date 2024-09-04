@@ -25,7 +25,7 @@ const Navbar = () => {
         <div  className='nav_left'>
           <Link to={"/"} >
         <div className="logoBg">
-            <h1 className='logo_text'>CodeWithMama</h1>
+            <h1 className='logo_text'>Ramit Neupane</h1>
         </div>
           </Link>
         </div>

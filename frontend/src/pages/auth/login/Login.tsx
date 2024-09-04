@@ -61,19 +61,19 @@ try {
           </div>
           <div className="input_item">
             <MdEmail/>
-          <input type="email" name="email"  placeholder='email address'  onChange={handleChange} required/>
+          <input type="email" name="email"  placeholder='Email address'  onChange={handleChange} required/>
           </div>
           <div className="input_item">
             <RiLockPasswordFill/>
-          <input type="password" name="password"  placeholder='app password' onChange={handleChange} required/>
+          <input type="password" name="password"  placeholder='Account Password' onChange={handleChange} required/>
           </div>
           <button type="submit">Login</button>
           <div className='login_bottom'>
             <Link  to={"/signup"}>
-            <p className='accountText'>dont have account ?</p>
+            <p className='accountText'>Not Registered Yet?</p>
             </Link>
             <Link  to={"/account/sentResetLink"}>
-            <p className='accountText'>Forgot password ?</p>
+            <p className='accountText'>Forgot password?</p>
             </Link>
 
           </div>

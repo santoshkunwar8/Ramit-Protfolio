@@ -62,22 +62,22 @@ height:700px;
                     color:var(--gray);
                 }
                 .progress_full{
-                    width:100%;
+                    width:75%;
                     height:6px;
                     border-radius:10px;
                     background:#2F353C;
                     overflow:hidden;
                     .green{
                         background:#37e710 !important;
-                        width:55% !important;
+                        width:65% !important;
                     }
                     .blue{
-                        width:90% !important;  
+                        width:80% !important;  
                         background: #7060ff !important;
                     }
                     .red{
                         background:#ED5748  !important;
-                        width:45% !important; 
+                        width:70% !important; 
                     }
                     .progress{
                         width:80%;

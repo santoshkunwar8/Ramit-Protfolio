@@ -64,9 +64,9 @@ useEffect(()=>{
         <div className="skill_box">
                     <div className='text_box'>
 
-         <h4 className='main_text'> My Software Development Skill Set</h4>
+         <h4 className='main_text'>Showcasing My Multifacilated Skills</h4>
                 <div className='desc_text'>
-       Code architect crafting seamless software solutions with versatile programming expertise
+       My multifacilied Skill's Whcih can help you on your business!
                     </div>
 
                     </div>
@@ -78,9 +78,9 @@ useEffect(()=>{
                       <div className='skillItem'>
                        <div className='skillInfo'>
 
-                        <img width="94" height="94" src="https://img.icons8.com/3d-fluency/94/workflow.png" alt="workflow"/>
+                        <img width="94" height="94" src="https://cdn-icons-png.flaticon.com/512/4668/4668243.png" alt="workflow"/>
 
-                        <p className='skillName'>Data Structure And Algorithm</p>
+                        <p className='skillName'>Graphics Design</p>
                         </div>
                         <div className='progress_box'>
 
@@ -89,7 +89,7 @@ useEffect(()=>{
 
                           </div>
                         </div>
-                          <p className='progress_count'>80%</p>
+                          <p className='progress_count'>75%</p>
                       </div>
                   </div>
                         <div className='skillItem'>
@@ -105,14 +105,14 @@ useEffect(()=>{
 
                           </div>
                         </div>
-                          <p className='progress_count'>90%</p>
+                          <p className='progress_count'>80%</p>
                       </div>
                   </div>
                          <div className='skillItem'>
                           <div className='skillInfo'>
 
-                          <img width="94" height="94" src="https://img.icons8.com/3d-fluency/94/android-os.png" alt="android-os"/>
-                        <p className='skillName'>Moblile App Developement </p>
+                          <img width="94" height="94" src="https://cdn-icons-png.flaticon.com/512/2886/2886890.png" alt="android-os"/>
+                        <p className='skillName'> Video Editing </p>
                           </div>
                         <div className='progress_box'>
 
@@ -121,14 +121,14 @@ useEffect(()=>{
 
                           </div>
                         </div>
-                          <p className='progress_count'>55%</p>
+                          <p className='progress_count'>65%</p>
                       </div>
                   </div>
                         <div className='skillItem'>
                           <div className='skillInfo'>
-                            <img width="94" height="94" src="https://img.icons8.com/3d-fluency/94/paint-palette.png" alt="paint-palette"/>
+                            <img width="94" height="94" src="https://cdn-icons-png.freepik.com/256/4661/4661361.png?semt=ais_hybrid" alt="paint-palette"/>
 
-                        <p className='skillName'>UI / UX Design  </p>
+                        <p className='skillName'> Brand Management  </p>
                           </div>
                         <div className='progress_box'>
 
@@ -137,7 +137,7 @@ useEffect(()=>{
 
                           </div>
                         </div>
-                          <p className='progress_count'>45%</p>
+                          <p className='progress_count'>70%</p>
                       </div>
                   </div>
                   </div>

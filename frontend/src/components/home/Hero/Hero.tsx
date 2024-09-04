@@ -17,7 +17,7 @@ const Hero:React.FC<HeroProps> = ({adminInfo}) => {
 
         const cvUrl = adminInfo.info?.cv;
         if(cvUrl){
-          FileSaver.saveAs("https://res.cloudinary.com/onlinecoder/image/upload/v1701071534/mtciiur9y3mlpiz6t4vz.pdf",'codewithmamaCV.pdf')
+          FileSaver.saveAs("https://drive.google.com/file/d/1MEplgEv4k2ZA8PIQisSPbf5lHuDMc9-7/view?usp=sharing",'RamitNeupane.pdf')
         }
         
     
@@ -32,7 +32,7 @@ const Hero:React.FC<HeroProps> = ({adminInfo}) => {
 
           
               <div  className="main_info_box">
-                <h1>Hey I am a Fullstack Devloper in Turing </h1>
+                <h1>Hey I am a Entrepreneur with specialized IT skills!</h1>
                 <button className="cv_button" onClick={handleDownloadCV}>
                   {/* <img width="24" height="24" src="https://img.icons8.com/emoji/48/vulcan-salute-emoji.png" alt="vulcan-salute-emoji"/> */}
                   <p>Download CV</p></button>
