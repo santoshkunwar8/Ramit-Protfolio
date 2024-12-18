@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 export const SkillItemWrapper=styled.div`
    border:1px solid var(--border_color);   

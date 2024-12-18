@@ -5,7 +5,7 @@
 //   --white:#E7E7E7;
 //   --main_color:#8325FD;
 // }
-import {styled} from "styled-components";
+import styled from "styled-components";
 export const AppWrapper=styled.div`
 
 background:var(--black_color);

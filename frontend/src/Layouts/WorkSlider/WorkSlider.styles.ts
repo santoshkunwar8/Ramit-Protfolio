@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import styled from "styled-components";
 
 export const WorkSliderWrapper = styled.div`
 height:400px;

@@ -102,13 +102,13 @@ const Reviews = () => {
             </div>
 
           </div>
-    <div className="review_wrapper">
+          <div className="review_wrapper">
 
-         {
-       reviewsData  ? filteredData.map(review=><ReviewItem big={true} review={review}/> ):<ReviewSkeletion/>
-         } 
-          
-    </div>
+{
+reviewsData  ? filteredData.map(review=><ReviewItem big={true} review={review}/> ):<ReviewSkeletion/>
+} 
+ 
+</div>
 
         </div>
 
