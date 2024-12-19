@@ -77,9 +77,9 @@ export const ClientsWrapper = styled.div`
 
   @media (max-width: 768px) {
     .client_content {
-      flex-direction: column;
       align-items: flex-start;
-      margin-top: 13rem;
+      justify-content: flex-start;
+      margin-top: 25rem;
     }
 
     .vertical_line {
@@ -117,24 +117,28 @@ export const ClientsWrapper = styled.div`
   }
   @media (max-width: 650px) {
     .client_content {
-      flex-direction: column;
       align-items: flex-start;
-      margin-top: 19rem;
+      justify-content: flex-start;
+      margin-top: 34rem;
+    }
+
+    .vertical_line {
+      height: 200px;
+      width: 5px;
     }
   }
 
   @media (max-width: 512px) {
     .client_content {
-      flex-direction: column;
       align-items: flex-start;
-      margin-top: 22rem;
+      margin-top: 36rem;
     }
   }
 
   @media (max-width: 480px) {
     .client_content {
       // gap: 1rem;
-      margin-top: 32rem;
+      margin-top: 43rem;
     }
 
     .vertical_line {
@@ -169,4 +173,12 @@ export const ClientsWrapper = styled.div`
       }
     }
   }
+    @media (max-width: 428px) {
+    .client_content {
+      margin-top: 46rem;
+    }
+       @media (max-width: 410px) {
+    .client_content {
+      margin-top: 50rem;
+    }
 `;
