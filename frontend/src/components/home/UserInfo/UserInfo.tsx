@@ -1,5 +1,5 @@
 import { UserInfoWrapper } from './UserInfo.styles';
-import {FaTwitter, FaLinkedinIn, FaFacebook, FaInstagram} from "react-icons/fa";
+import { FaLinkedinIn, FaFacebook, FaInstagram} from "react-icons/fa";
 import {TfiGithub } from "react-icons/tfi";
 import { UserType } from '../../../utils/Types';
 type AdminInfoProps={
