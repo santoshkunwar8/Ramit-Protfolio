@@ -18,6 +18,13 @@ export const ProjectItemWrapper = styled.div<ProjectItemWrapperProps>`
     scale: 1.02;
     background: #151515;
   }
+
+  .project_image {
+    width: 100%;
+    height: ${(props) => (props.big ? "200px" : "150px")};
+    object-fit: cover;
+    border-radius: 10px;
+  }
   .midBox {
     display: flex;
     align-items: center;

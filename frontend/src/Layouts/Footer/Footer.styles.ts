@@ -80,12 +80,20 @@ export const FooterWrapper = styled.div`
     }
   }
   .footerBottom {
-    height: 60px;
+   width:100%;
+    height: 80px;
     background: var(--light_black);
     display: flex;
     justify-content: space-between;
     padding: 0 2rem;
     align-items: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+    }
+      
     .bottom_footer_left {
       li {
         font-size: 12px;
@@ -162,6 +170,7 @@ export const FooterWrapper = styled.div`
 
   @media (max-width: 480px) {
     .footerTop {
+    flex-direction:column;
       gap: 1rem;
       padding: 1rem 0;
 
@@ -184,7 +193,8 @@ export const FooterWrapper = styled.div`
       }
 
       .rightFooter {
-        grid-template-columns: 1fr;
+         display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 0.5rem;
 
         ul li {
