@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 interface ReviewsWrapperProps {
   isLoading: boolean;
@@ -20,7 +20,7 @@ export const ReviewsWrapper = styled.div<ReviewsWrapperProps>`
       display: flex;
       justify-content: space-between;
       align-items: center;
-      filter: ${(props) => (props.isLoading ? 'blur(1px)' : 'none')};
+      filter: ${(props) => (props.isLoading ? "blur(1px)" : "none")};
 
       .header_left {
         display: flex;
@@ -135,6 +135,56 @@ export const ReviewsWrapper = styled.div<ReviewsWrapperProps>`
       font-size: 1rem;
       text-align: center;
       width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+
+    .reviews_container {
+      .review_header {
+        // flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+
+        .header_right {
+          // flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+      }
+
+      .review_wrapper {
+        .review_card {
+          flex: 1 1 calc(50% - 20px);
+          min-width: 100%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.5rem;
+
+    .reviews_container {
+      .review_header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+
+        .header_right {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
+      }
+
+      .review_wrapper {
+        .review_card {
+          flex: 1 1 100%;
+          min-width: 100%;
+        }
+      }
     }
   }
 `;
