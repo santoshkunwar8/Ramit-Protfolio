@@ -7,6 +7,9 @@ export const NavbarWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0 4px;
+  .nav_icon {
+    display: none;
+  }
 
   .nav_left {
     .logoBg {
@@ -131,7 +134,17 @@ export const NavbarWrapper = styled.div`
           margin-right: 8px;
         }
       }
+      
     }
+      .nav_icon {
+        display: inline;
+        margin-right: 0.5rem;
+        font-size: 1.5rem;
+      }
+
+      .nav_text {
+        display: none;
+      }
 
     .nav_right {
       gap: 1rem;
@@ -176,6 +189,21 @@ export const NavbarWrapper = styled.div`
         }
       }
     }
+
+    .nav_list {
+        a {
+          li {
+            .nav_icon {
+              display: inline;
+              margin-right: 0.5rem;
+              font-size: 1.6rem;
+            }
+
+            .nav_text {
+              display: none;
+            }
+          }
+        }
 
     .nav_right {
       gap: 0.5rem;
@@ -227,6 +255,15 @@ export const NavbarWrapper = styled.div`
         gap: 0.5rem;
         li {
           font-size: 10px;
+        }
+        .nav_icon {
+          display: inline;
+          margin-right: 0.5rem;
+          font-size: 1.4rem;
+        }
+
+        .nav_text {
+          display: none;
         }
       }
 
