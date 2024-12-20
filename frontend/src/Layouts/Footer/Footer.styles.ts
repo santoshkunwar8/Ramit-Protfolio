@@ -87,11 +87,13 @@ export const FooterWrapper = styled.div`
     justify-content: space-between;
     padding: 0 2rem;
     align-items: center;
+    border-radius: 40px;
 
     @media (max-width: 768px) {
       flex-direction: column;
       gap: 1rem;
       padding: 1rem;
+      margin-bottom:70px;
     }
       
     .bottom_footer_left {
@@ -119,6 +121,7 @@ export const FooterWrapper = styled.div`
   }
 
   @media (max-width: 768px) {
+   margin-bottom:90px;
     .footerTop {
       flex-direction: column;
       align-items: center;
@@ -156,7 +159,10 @@ export const FooterWrapper = styled.div`
     .footerBottom {
       flex-direction: column;
       height: auto;
-      padding: 1rem 0;
+      padding: 2rem 0;
+       margin: 0;
+      //  background:black;
+        border-radius: 40px;
 
       .bottom_footer_left {
         margin-bottom: 1rem;
@@ -204,7 +210,14 @@ export const FooterWrapper = styled.div`
     }
 
     .footerBottom {
-      padding: 0.5rem 1rem;
+      width: 100%;
+      padding: 0.5rem 0rem;
+      margin:0;
+
+      ul {
+        justify-content: center;
+        width: 100%;
+      }
 
       ul li {
         font-size: 10px;

@@ -7,6 +7,7 @@ import {
   FaStar,
   FaBriefcase,
   FaEnvelope,
+  FaUser,
 } from "react-icons/fa";
 
 const Navbar = () => {
@@ -68,7 +69,10 @@ const Navbar = () => {
 
         {!user ? (
           <Link to={"/login"}>
-            <button className="client_button">Login</button>
+            <button className="client_button">
+              <FaUser className="login_icon" />
+              <span>Login</span>
+            </button>
           </Link>
         ) : (
           <Link className="profileBox" to={`/account/profile/${user._id}`}>
