@@ -37,9 +37,14 @@ const Hero: React.FC<HeroProps> = ({ adminInfo }) => {
         </div>
         <div className="hero_section_right">
           <UserInfo adminData={adminInfo.info} />
-          <About adminData={adminInfo.info} />
+          <span className="about_section">
+            <About adminData={adminInfo.info} />
+          </span>
         </div>
       </div>
+      <span className="about_section_large">
+        <About adminData={adminInfo.info} />
+      </span>
     </HeroWrapper>
   );
 };

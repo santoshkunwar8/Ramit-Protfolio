@@ -18,9 +18,76 @@ const HeroWrapper = styled.div`
     flex: 5;
     gap: 1rem !important;
   }
+
+  .about_section {
+    display: none;
+  }
+  .about_section_large {
+    display: block;
+  }
+
+  @media (max-width: 1600px) {
+    .about_section {
+      display: none;
+    }
+
+    .about_section_large {
+      display: block;
+      // margin-right: 200px;
+      margin-top: -200px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 1500px) {
+    .about_section {
+      display: none;
+    }
+
+    .about_section_large {
+      display: block;
+      // margin-right: 200px;
+      margin-top: -500px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  @media (max-width: 1200px) {
+    .about_section {
+      display: none;
+    }
+
+    .about_section_large {
+      display: block;
+      // margin-right: 200px;
+      margin-top: -500px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .about_section {
+      // display: block;
+    }
+
+    .about_section_large {
+      display: block;
+      padding-top: 90px;
+    }
+  }
+
   @media (max-width: 680px) {
     .hero_section {
       flex-direction: column;
+    }
+    .about_section {
+      display: block;
+    }
+
+    .about_section_large {
+      display: none;
     }
   }
 `;

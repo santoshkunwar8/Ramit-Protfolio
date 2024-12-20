@@ -9,7 +9,12 @@ export const NavbarWrapper = styled.div`
   padding: 0 4px;
   .nav_icon {
     display: none;
+    font-size: 1.5rem;
   }
+    .nav_text {
+              font-size: 1rem;
+              display: block; 
+            }
 
   .nav_left {
     .logoBg {
@@ -89,6 +94,12 @@ export const NavbarWrapper = styled.div`
       text-transform: uppercase;
       outline: none;
 
+
+      .login_icon {
+          font-size: 1.2rem;
+          display: none; 
+        }
+
       &:hover {
         background: var(--hover_main_color);
       }
@@ -126,41 +137,69 @@ export const NavbarWrapper = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+    @media (max-width: 768px) {
     .nav_left {
-      .logoBg {
-        .logo_text {
-          font-size: 1.5rem;
-          margin-right: 8px;
-        }
-      }
-      
+      display: none; 
     }
-      .nav_icon {
-        display: inline;
-        margin-right: 0.5rem;
-        font-size: 1.5rem;
-      }
-
-      .nav_text {
-        display: none;
-      }
 
     .nav_right {
-      gap: 1rem;
+       gap: 2rem;
+      justify-content: center;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: ;
+      background: var(--dark_background);
+      padding: 0.5rem 0;
+      z-index: 1000;
 
       .nav_list {
-        gap: 1rem;
+        gap: 2rem;
+        width: auto; 
+        justify-content: center; 
 
-        li {
-          font-size: 12px;
+        a {
+          li {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            flex-direction: column; 
+
+            .nav_icon {
+              display: inline; 
+              margin-right: 0; 
+              font-size: 2.5rem;
+            }
+
+            .nav_text {
+              display: none; 
+            }
+          }
         }
       }
 
       .client_button {
         font-size: 10px;
         height: 30px;
-        padding: 0 8px;
+        padding: 0 6px;
+        background:none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0rem; 
+        // padding-right:14rem;
+
+
+        .login_icon {
+        font-size: 2.2rem;
+          display: inline;    //login icon
+          margin-bottom:20px;
+        }
+
+        span {
+          display: none;     //login text
+        }
       }
 
       .profileBox {
@@ -173,8 +212,12 @@ export const NavbarWrapper = styled.div`
           font-size: 13px;
         }
 
-        .profileEmail {
-          font-size: 10px;
+        .user_icon {
+          display: inline; 
+        }
+
+        .profileInfo {
+          display: none; 
         }
       }
     }
