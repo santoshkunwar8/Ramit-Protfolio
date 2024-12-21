@@ -20,7 +20,7 @@ const Footer = () => {
           {/* <button></button> */}
           <Link to={"/contact"} className="contactButton">
             <h5 className="contactButtonText">Contact Me </h5>
-            <AiOutlineRight />
+            <AiOutlineRight className="icon" strokeWidth={68} />
           </Link>
           <a href="https://www.cornortech.com" className="exploreButton">
             Explore Cornor Tech's Website
@@ -53,10 +53,11 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+      <hr className="line" />
       <div className="footerBottom">
         <ul className="bottom_footer_left">
           <li>
-            <a href="https://www.facebook.com/cornortech">
+            <a href="https://www.facebook.com/cornortech" className="cornorTM">
               @2024 Cornor Tech Pvt Ltd.
             </a>
           </li>
