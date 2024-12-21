@@ -18,7 +18,7 @@ export const FooterWrapper = styled.div`
       }
 
       .left_footer_desc {
-        font-size: 14px;
+        font-size: 16px;
         color: var(--gray);
       }
 
@@ -28,13 +28,18 @@ export const FooterWrapper = styled.div`
         gap: 4px;
         margin-top: 2rem;
         cursor: pointer;
-
+        font-weight:600;
         font-size: 15px;
         .contactButtonText {
-          font-weight: 400;
-          font-size: 14px;
+          font-weight: 600;
+          font-size: 16px;
           letter-spacing: 1px;
         }
+            .icon {
+          font-size: 20px; 
+          font-weight: bold;   
+          
+          }
       }
 
         .exploreButton {
@@ -79,6 +84,9 @@ export const FooterWrapper = styled.div`
       }
     }
   }
+   .line{
+   border-color:var(--light_black);
+   }
   .footerBottom {
    width:100%;
     height: 80px;
@@ -130,18 +138,65 @@ export const FooterWrapper = styled.div`
       .leftFooter {
         .logo_text {
           font-size: 1.2rem;
+          font-size: 1.5rem;
+          color: var(--main_color); 
+          margin-bottom: 0.5rem;
         }
 
         .left_footer_desc {
-          font-size: 12px;
+          font-size: 18px;
+          color: var(--gray);
+          margin-bottom: 1rem;
+          line-height: 1.5; 
+        }
         }
 
-        .contactButton {
+        .exploreButton {
           font-size: 13px;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          width: 100%;
+          margin-top: 1rem;
+           color: white; 
+          border: none; 
+          border-radius: 5px; 
+          text-align: center; 
+          text-decoration: none; 
+          padding: 10px 20px;
+          font-size: 16px;
+          font-weight: 600;
+        }
+        .contactButton {
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          width: 100%;
+          margin-top: 1rem;
+           color: white; 
+          border: none; 
+          border-radius: 5px; 
+          text-align: center; 
+          text-decoration: none; 
+          padding: 10px 20px;
 
-          .contactButtonText {
-            font-size: 12px;
-          }
+         .contactButtonText {
+          font-weight: 600;
+          font-size:48px ;
+          letter-spacing: 1px;
+        }
+  
+          background: linear-gradient(
+            to right,
+            #00ff00,
+            #00cc00,
+            #009900,
+            #006600,
+            #003300
+          ); 
+}
+        
+
         }
       }
 
@@ -158,6 +213,7 @@ export const FooterWrapper = styled.div`
 
     .footerBottom {
       flex-direction: column;
+      background: var(--black_color);
       height: auto;
       padding: 2rem 0;
        margin: 0;
@@ -193,8 +249,10 @@ export const FooterWrapper = styled.div`
           font-size: 11px;
 
           .contactButtonText {
-            font-size: 10px;
-          }
+          font-weight: 600;
+          font-size:14px ;
+          letter-spacing: 1px;
+        }
         }
       }
 
@@ -209,9 +267,13 @@ export const FooterWrapper = styled.div`
       }
     }
 
+    .line{
+   border-color:var(--light_black);
+   }
+
     .footerBottom {
       width: 100%;
-      padding: 0.5rem 0rem;
+      padding: 1rem 0rem;
       margin:0;
 
       ul {
@@ -221,6 +283,10 @@ export const FooterWrapper = styled.div`
 
       ul li {
         font-size: 10px;
+
+        .cornorTM{
+        font-size:12px;
+        }
       }
     }
   }
