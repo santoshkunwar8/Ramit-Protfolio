@@ -41,6 +41,25 @@ app.use(
   })
 );
 
+// Middleware to log cookies
+app.use((req, res, next) => {
+  console.log("Cookies: ", req.cookies);
+  console.log("Session: ", req.session);
+  next();
+});
+
+// Test route to set a session value
+app.get("/test-session", (req, res) => {
+  req.session.test = "Session is working!";
+  res.send("Session value set!");  
+});
+
+// Route to check session value
+app.get("/check-session", (req, res) => {
+  res.send(req.session.test || "No session value set");
+});
+
+
 require("./routes/AllRoutes")(app);
 
 app.listen(8000, () => console.log(`server started...`));

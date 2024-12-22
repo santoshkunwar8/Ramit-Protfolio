@@ -74,12 +74,12 @@ class UserController{
         const user =await UserModel.findOne({email})
 
         if(!user){
-                throw "This email is not register";
+                throw "This email is not registered";
         }
         const { password , ...other} =user._doc;
 
         if(loginPw !== password){
-            throw "Invalid credentails"
+            throw "Invalid credentials"
         }
     
         req.session.user = other;
@@ -93,12 +93,17 @@ class UserController{
 
     } catch (error) {
         // console.log(error)
+        console.error("Login error:", error); 
             return res.status(500).json({message:error})
 
     }
    }
    static getSessionuser(req,res){
     try {
+        if (!req.cookies['codewithmama.sid']) {
+            throw "Cookie is not set";
+        }
+
         const user = req.session.user;
         console.log("session ",req.session)
 
