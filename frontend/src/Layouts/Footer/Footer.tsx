@@ -28,28 +28,18 @@ const Footer = () => {
         </div>
         <div className="rightFooter">
           <ul>
-            <li>Experiences</li>
             <li>Projects</li>
             <li>About</li>
             <li>Contact</li>
             <li>Clients</li>
-            <li>Pricing</li>
-          </ul>
-          <ul>
-            <li>Support</li>
-            <li>Docs</li>
-            <li>About</li>
-            <li>Skills</li>
-            <li>Status</li>
-            <li>Contributions</li>
+            <li>Reviews</li>
           </ul>
           <ul>
             <li>Blogs</li>
             <li>Company</li>
             <li>Blogs</li>
             <li>Career</li>
-            <li>Shop</li>
-            <li>Professional Service</li>
+            <li>Get Job</li>
           </ul>
         </div>
       </div>

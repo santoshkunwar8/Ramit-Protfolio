@@ -23,7 +23,7 @@ export const UserInfoWrapper = styled.div`
             // color:red;
         }
         .name_value{
-            font-size:13px;
+            font-size:16px;
             font-weight:600;
         }
     }
