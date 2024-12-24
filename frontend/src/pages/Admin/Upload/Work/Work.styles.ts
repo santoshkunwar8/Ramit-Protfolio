@@ -7,6 +7,7 @@ export const UploadWorkWrapper = styled.form`
 display:flex;
 flex-direction:column;;
 gap:1rem;
+padding-top:2rem;
 max-width:700px;
 width:95%;
 margin:auto;

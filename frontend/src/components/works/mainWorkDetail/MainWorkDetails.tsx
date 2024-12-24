@@ -28,7 +28,7 @@ const MainWorkDetails: React.FC<MainWorkPropsType> = ({ work }) => {
   const dispatch = useDispatch();
   const { refreshAction } = bindActionCreators(actionCreators, dispatch);
   const { notify } = useAlert();
-  const [currentImage, setCurrentImage] = useState(work?.mainImg);
+  const [currentImage, setCurrentImage] = useState(work?.mainImg || "");
 
   const handleRateWork = async (rating: number) => {
     if (!user?._id || !work) return;

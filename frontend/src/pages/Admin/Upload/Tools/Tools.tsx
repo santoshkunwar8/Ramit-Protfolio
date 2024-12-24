@@ -73,7 +73,7 @@ const Tools = () => {
 
 
   return (
-    <UploadWorkWrapper onSubmit={handleAddToolsToDB}>
+    <UploadWorkWrapper onSubmit={handleAddToolsToDB} style={{paddingTop:'2rem'}}>
         <input type="text" name="name" id="" placeholder='Tool Name'   onChange={handleChange}/>
         <input type="file" name="image" id="" style={{display:"none"}} ref={fileRef} onChange={handleChange} />
         <div className='toolUpload' onClick={()=>fileRef.current?.click()}>

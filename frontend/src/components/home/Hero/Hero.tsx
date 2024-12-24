@@ -5,6 +5,7 @@ import { AdminInfoType } from "../../../pages/Home/Home";
 import About from "../About/About";
 import UserInfo from "../UserInfo/UserInfo";
 import FileSaver from "file-saver";
+// import { getTestApi } from "../../../utils/api";
 
 type HeroProps = {
   adminInfo: AdminInfoType;

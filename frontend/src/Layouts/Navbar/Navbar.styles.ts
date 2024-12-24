@@ -138,9 +138,9 @@ export const NavbarWrapper = styled.div`
   }
 
     @media (max-width: 768px) {
-    .nav_left {
-      display: none; 
-    }
+    // .nav_left {
+    //   display: none; 
+    // }
 
     .nav_right {
        gap: 2rem;
@@ -153,6 +153,22 @@ export const NavbarWrapper = styled.div`
       background: var(--dark_background);
       padding: 0.5rem 0;
       z-index: 1000;
+      
+     background: linear-gradient(
+          to right,
+          #7d19ff,
+          #7518ff,
+          #5200e5d1,
+          #6114e99c,
+          #521eb2a8,
+          #4e279773
+        );
+    padding-bottom: 2rem;
+    padding-top: 2.5rem;
+    z-index: 1000;
+    border-radius:none;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2); 
+
 
       .nav_list {
         gap: 2rem;
@@ -203,9 +219,11 @@ export const NavbarWrapper = styled.div`
       }
 
       .profileBox {
+        margin-bottom:18px;
+        padding-left:48px;
         .profileImg {
-          width: 35px;
-          height: 35px;
+          width: 60px;
+          height: 60px;
         }
 
         .profileName {
@@ -266,8 +284,8 @@ export const NavbarWrapper = styled.div`
 
       .profileBox {
         .profileImg {
-          width: 30px;
-          height: 30px;
+          width: 60px;
+          height: 60px;
         }
 
         .profileName {
