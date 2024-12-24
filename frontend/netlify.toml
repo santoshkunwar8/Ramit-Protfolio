@@ -1,4 +1,15 @@
+[build]
+  # Specify the base directory (if your Vite project is in a folder like "frontend")
+  base = "frontend"
+  
+  # Specify the directory where Vite outputs the build files
+  publish = "dist"
+  
+  # Command to build the project
+  command = "npm run build"
+
+# Redirects for single-page applications (React with Vite)
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+  from = "/*"
+  to = "/index.html"
+  status = 200
