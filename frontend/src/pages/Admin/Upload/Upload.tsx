@@ -1,9 +1,9 @@
 import { Link, Outlet } from "react-router-dom";
 import { UploadWrapper } from "./Upload.styles";
-import useAdminAuth from "../../../hooks/useAdminAuth";
+// import useAdminAuth from "../../../hooks/useAdminAuth";
 
 const Upload = () => {
-  useAdminAuth();
+  // useAdminAuth();
   return (
     <UploadWrapper>
       <div className="buttonBox">

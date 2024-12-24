@@ -44,6 +44,7 @@ export const rateProjectApi = (data: {
 // user
 
 export const getClientsApi = () => AxiosInstance.get("/user/client");
+export const getTestApi = async() => AxiosInstance.get("/check-session");
 export const createUserApi = (data: UserType) =>
   AxiosInstance.post("/user/create", data);
 export const loginApi = (data: loginPayload) =>

@@ -35,23 +35,24 @@ app.use(
     cookie: {
       secure: false,
       httpOnly: true,
-      maxAge: 1000 * 60 * 60,
-      sameSite: "none",
+      maxAge: 1000 * 60 * 60*24,
+      sameSite: "lax",
     },
   })
 );
 
 // Middleware to log cookies
 app.use((req, res, next) => {
-  console.log("Cookies: ", req.cookies);
-  console.log("Session: ", req.session);
+  // console.log("Cookies: ", req.cookies);
+  // console.log("Session: ", req.session);
   next();
 });
 
 // Test route to set a session value
 app.get("/test-session", (req, res) => {
   req.session.test = "Session is working!";
-  res.send("Session value set!");  
+  // console.log("test",  req.session.user);
+  res.send( req.session.user);
 });
 
 // Route to check session value

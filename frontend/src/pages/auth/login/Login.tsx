@@ -40,8 +40,12 @@ try {
   if(status===200){
     const userPayload:UserType = data.message; 
     AddUserAction(userPayload);
+    localStorage.setItem("user", JSON.stringify(userPayload));
     notify("Login successfull !!" ,"success")
     navigate("/");
+  }
+  else {
+    notify(data.message, "error");
   }
 } catch (error) {
   console.log(error);

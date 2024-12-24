@@ -1,17 +1,21 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { State } from "../redux/reducers";
 
 const useAdminAuth = () => {
   const navigate = useNavigate();
-  const user = useSelector((state: State) => state.user);
+  const location = useLocation();
+  const user = useSelector((state: State) => state.user.user); 
 
   useEffect(() => {
-    if (!user || user.email !== "Contact.cornortech@gmail.com") {
-      navigate("/");
+    const isAdminRoute = location.pathname.startsWith("/admin/upload");
+
+    // Redirect unauthorized users
+    if (isAdminRoute && (!user || !user.isAdmin)) {
+      navigate("/login"); 
     }
-  }, [user, navigate]);
+  }, [user, location.pathname, navigate]);
 };
 
 export default useAdminAuth;

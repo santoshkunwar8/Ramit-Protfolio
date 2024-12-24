@@ -82,8 +82,8 @@ const Navbar = () => {
               alt="userProfile"
             />
             <div className="profileInfo">
-              <h4 className="profileName">{user.username}</h4>
-              <span className="profileEmail">{user.email}</span>
+              {/* <h4 className="profileName">{user.username}</h4> */}
+              {/* <span className="profileEmail">{user.email}</span> */}
             </div>
           </Link>
         )}

@@ -1,9 +1,10 @@
 const { createTools, getTools } = require("../controller/ToolsController")
+const authMiddleware = require("../middlewares/authMiddleware")
 
 const router  =require("express").Router()
 
-router.post("/create",createTools)
-router.get("/",getTools)
+router.post("/create", authMiddleware,createTools)
+router.get("/", authMiddleware,getTools)
 
 
 

@@ -52,7 +52,7 @@ class AuthController {
 
   async resetPassword(req, res) {
     const { email: userEmail, newPassword, token } = req.body;
-    console.log(token);
+    // console.log(token);
 
     try {
       const user = await UserModel.findOne({ email: userEmail });
@@ -94,7 +94,7 @@ class AuthController {
     const { hash, code } = req.body;
     try {
       const data = await EmailService.verifyEmailConfirmationToken(hash);
-      console.log(data.email);
+      // console.log(data.email);
       if (data.email) {
         let prevCode = data.email.split("-")[1];
         let userEmail = data.email.split("-")[0];

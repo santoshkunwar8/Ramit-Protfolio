@@ -77,12 +77,15 @@ class UserController{
                 throw "This email is not registered";
         }
         const { password , ...other} =user._doc;
+        // console.log("user",user)    ;
+
 
         if(loginPw !== password){
             throw "Invalid credentials"
         }
     
         req.session.user = other;
+        // console.log("session ",req.session);
 
         res.status(200).json({message:other,success:true})
 
@@ -98,14 +101,18 @@ class UserController{
 
     }
    }
+
+
    static getSessionuser(req,res){
     try {
+
+        // console.log("Cookies: ", req.cookies);
         if (!req.cookies['codewithmama.sid']) {
             throw "Cookie is not set";
         }
 
         const user = req.session.user;
-        console.log("session ",req.session)
+        // console.log("session User", user)
 
         if(!user){
             throw "User is not logged in ";
@@ -122,8 +129,8 @@ class UserController{
                 if(err){
                     throw new Error("something went wrong")
                 }
-                console.log(res.cookies);
-                console.log(req.session)
+                // console.log(res.cookies);
+                // console.log(req.session)
                 res.clearCookie("codewithmama.sid");
                 res.status(200).json({message:"successfully logged out",success:true})
             })
