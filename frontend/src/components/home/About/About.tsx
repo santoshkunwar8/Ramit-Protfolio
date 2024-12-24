@@ -12,7 +12,7 @@ const About:React.FC<AdminInfoProps> = ({adminData}) => {
             <h5>About </h5> 
         </div>
         <p className='aboutText'>
-          {adminData?.about}
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati placeat repellat corporis accusantium sapiente a ea explicabo dolores voluptas quam, odio itaque. Reprehenderit similique eaque repellat minus quis? Tempore nemo corrupti eos libero aut ea veniam, dolor iure illum repellat vitae eaque accusantium, molestias fuga, dolorem quas sint eum odio.
   </p>
     </AboutWrapper>
   )
