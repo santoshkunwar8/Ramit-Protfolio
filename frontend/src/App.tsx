@@ -15,15 +15,15 @@ import useSetup from "./hooks/useSetup";
 import Profile from "./pages/profile/Profile";
 import { Toaster } from "react-hot-toast";
 import ProfileSetup from "./pages/profile/profileSetup/ProfileSetup";
-import { State } from "./redux/reducers";
-import { useSelector } from "react-redux";
+// import { State } from "./redux/reducers";
+// import { useSelector } from "react-redux";
 import ResetLink from "./pages/auth/ResetLink/ResetLink";
 import ResetPassword from "./pages/auth/resetPassword/ResetPassword";
 import Confirmation from "./pages/auth/confirmation/Confirmation";
 import ProtectedAdminRoute from "./components/ProtectedAdminRoute";
 
 function App() {
-  const { user } = useSelector((state: State) => state.user);
+  // const { user } = useSelector((state: State) => state.user);
   const loading = useSetup();
 
   // console.log(user);
