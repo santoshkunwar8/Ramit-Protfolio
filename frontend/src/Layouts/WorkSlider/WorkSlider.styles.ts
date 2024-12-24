@@ -18,32 +18,37 @@ export const WorkSliderWrapper = styled.div`
     height: 400px;
   }
 
+   @media (max-width: 1800px) {
+      margin-top: -120px;
+
+  }
+
   @media (max-width: 1600px) {
-      margin-top: -100px;
+      margin-top: 1px;
 
   }
   @media (max-width: 1500px) {
-      margin-top: -100px;
+      margin-top: 1px;
 
 
   }
 
   @media (max-width: 1400px) {
-     margin-top: -380px;
+     margin-top: 1px;
 
   }
 
     @media (max-width: 1300px) {
-      margin-top: -320px;
+      margin-top: 0px;
   }
   @media (max-width: 1200px) {
     .slider {
       padding: 60px 0;
-      padding-bottom: 400px;
+      // padding-bottom: 400px;
       padding-top:10px;
-      background:green;
+      // background:green;
     }
-      margin-top: -350px;
+      margin-top:80px;
   }
 
     @media (max-width: 1000px) {
@@ -52,7 +57,7 @@ export const WorkSliderWrapper = styled.div`
       padding-bottom: 400px;
       padding-top:10px;
     }
-      margin-top: -240px;
+      margin-top:80px;
   }
 
   @media (max-width: 840px) {
@@ -60,7 +65,7 @@ export const WorkSliderWrapper = styled.div`
       padding-top: 2px;
       padding-bottom: 400px;
     }
-      margin-top: -300px;
+      margin-top: 100px;
   }
 
   @media (max-width: 768px) {
@@ -70,14 +75,17 @@ export const WorkSliderWrapper = styled.div`
       padding-top:px;
       padding-bottom: px;
     }
+      margin-top:100px;
   }
     @media (max-width: 680px) {
     padding-top:340px;
       padding-bottom: 30px;
     .slider {
       padding-top:px;
-      padding-bottom: px;
+      padding-bottom: 10px;
     }
+      margin-top:80px;
+
   }
      @media (max-width: 665px) {
     padding-top:400px;
@@ -86,11 +94,13 @@ export const WorkSliderWrapper = styled.div`
       padding-top:px;
       padding-bottom: px;
     }
+      margin-top:80px;
+
   }
     
      @media (max-width: 556px) {
-    padding-top:-440px;
-    margin-top:-30rem;
+    // padding-top:-0px;
+    margin-top:10rem;
       padding-bottom: 30px;
     .slider {
       padding-top:px;
@@ -99,7 +109,7 @@ export const WorkSliderWrapper = styled.div`
   }
 
   @media (max-width: 540px) {
-      padding-top: 600px;
+      padding-top: 400px;
       padding-bottom: 60px;
     .slider {
       min-height: 240px;
@@ -110,7 +120,7 @@ export const WorkSliderWrapper = styled.div`
   }
     
   @media (max-width: 500px) {
-      margin-top:-190px;
+      margin-top:px;
       padding-bottom: 60px;
     .slider {
       min-height: 240px;
@@ -120,7 +130,7 @@ export const WorkSliderWrapper = styled.div`
     }
   }
     @media (max-width: 430px) {
-      margin-top:-160px;
+      margin-top:260px;
       padding-bottom: 60px;
     .slider {
       min-height: 240px;

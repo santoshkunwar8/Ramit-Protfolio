@@ -23,7 +23,24 @@ const HeroWrapper = styled.div`
     display: none;
   }
   .about_section_large {
-    display: block;
+    display:none;
+     margin-top: -250px;
+      justify-content: center;
+      align-items: center;
+      // background:red;
+  }
+     @media (max-width: 1800px) {
+    .about_section {
+      display: none;
+    }
+
+    .about_section_large {
+      display: block;
+      // margin-right: 200px;
+      margin-top: -250px;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   @media (max-width: 1600px) {
@@ -34,7 +51,7 @@ const HeroWrapper = styled.div`
     .about_section_large {
       display: block;
       // margin-right: 200px;
-      margin-top: -200px;
+      margin-top: -140px;
       justify-content: center;
       align-items: center;
     }
@@ -48,7 +65,7 @@ const HeroWrapper = styled.div`
     .about_section_large {
       display: block;
       // margin-right: 200px;
-      margin-top: -500px;
+      margin-top:-120px;
       justify-content: center;
       align-items: center;
     }
@@ -61,7 +78,7 @@ const HeroWrapper = styled.div`
     .about_section_large {
       display: block;
       // margin-right: 200px;
-      margin-top: -500px;
+      margin-top: -80px;
       justify-content: center;
       align-items: center;
     }
@@ -69,12 +86,13 @@ const HeroWrapper = styled.div`
 
   @media (max-width: 1023px) {
     .about_section {
-      // display: block;
+      display: block;
     }
 
     .about_section_large {
-      display: block;
-      padding-top: 90px;
+      display: none;
+      //  margin-top: 40px;
+      //  margin-bottom: 800px;
     }
   }
 
