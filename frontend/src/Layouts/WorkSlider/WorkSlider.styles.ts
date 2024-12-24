@@ -41,6 +41,7 @@ export const WorkSliderWrapper = styled.div`
       padding: 60px 0;
       padding-bottom: 400px;
       padding-top:10px;
+      background:green;
     }
       margin-top: -350px;
   }
