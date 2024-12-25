@@ -29,9 +29,9 @@ const Contact = () => {
 
         <div className="intro_box">
             <img src="/images/User.jpg" alt="userImage" />
-            <h1 className='intro_text'> I am Freelancer     Fullstack Developer working globally </h1>
+            <h1 className='intro_text'> Driving Technology Towards Revolution Through <br /> Cornor Tech  </h1>
             <span className='secondary_text'>Contact me for collaboration </span>
-            <a href="https://res.cloudinary.com/onlinecoder/image/upload/v1701071534/mtciiur9y3mlpiz6t4vz.pdf">
+            <a href="https://drive.google.com/file/d/1MEplgEv4k2ZA8PIQisSPbf5lHuDMc9-7/view?usp=sharing">
                  <button className='CvButton'>VIEW CV</button>
               </a> 
             
