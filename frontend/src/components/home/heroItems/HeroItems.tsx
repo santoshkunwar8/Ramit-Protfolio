@@ -16,7 +16,7 @@ const HeroItems:React.FC<itemCountTypeProps> = ({adminData}) => {
     <HeroItemsWrapper  >
       <div className='itemBox'>
     <img width="94" height="94" src="https://img.icons8.com/3d-fluency/94/briefcase--v2.png" alt="briefcase--v2"/>
-    <p> <span className='item_count'>2+  </span>  Experience</p>
+    <p> <span className='item_count'>2+ Years </span>  Experience</p>
       </div>
        <div className='itemBox current_item'>
 

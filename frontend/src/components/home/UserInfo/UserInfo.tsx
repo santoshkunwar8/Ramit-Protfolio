@@ -13,7 +13,7 @@ const UserInfo:React.FC<AdminInfoProps> = ({adminData}) => {
     
             <div className='name_box' >
                 <p className='name_label'></p>
-                <p className="name_value">  {adminData?.username} Ramit Neupane (CEO & Founder - Cornor Tech) </p>
+                <p className="name_value">  Ramit Neupane (CEO & Founder - Cornor Tech) </p>
 
             </div>
             <div className="user_map_box">
