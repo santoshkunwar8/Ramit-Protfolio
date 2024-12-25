@@ -139,4 +139,37 @@ export const WorkSliderWrapper = styled.div`
       padding-bottom: 400px;
     }
   }
+     @media (max-width: 408px) {
+      margin-top:300px;
+      padding-bottom: 60px;
+    .slider {
+      min-height: 240px;
+      max-height: 100vh;
+       padding-top: 40px;
+      padding-bottom: 400px;
+    }
+  }
+     @media (max-width: 380px) {
+      margin-top:330px;
+      padding-bottom: 60px;
+    .slider {
+      min-height: 240px;
+      max-height: 100vh;
+       padding-top: 40px;
+      padding-bottom: 400px;
+    }
+  }
+
+   @media (max-width: 360px) {
+      margin-top:380px;
+      padding-bottom: 60px;
+    .slider {
+      min-height: 240px;
+      max-height: 100vh;
+       padding-top: 40px;
+      padding-bottom: 400px;
+    }
+  }
+    
+    
 `;

@@ -107,6 +107,10 @@ const HeroWrapper = styled.div`
     .about_section_large {
       display: none;
     }
+       h1 {
+      font-size: 1.85rem  !important;
+      // color: green;
+      }
   }
 `;
 
