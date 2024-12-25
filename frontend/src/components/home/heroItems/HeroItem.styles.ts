@@ -70,6 +70,28 @@ export const HeroItemsWrapper = styled.div`
         height: 40px;
       }
     }
+      @media (max-width: 450px) {
+      width: 40px;
+      height: 100px;
+      padding: 4px;
+      gap: 10px;
+
+      p {
+        font-size: 9px !important;
+        font-weight:300;
+        // color:green;
+
+        .item_count {
+          font-size: 10px;
+        }
+      }
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+      
 
     p {
       display: flex;

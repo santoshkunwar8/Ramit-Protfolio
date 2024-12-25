@@ -128,6 +128,7 @@ export const FooterWrapper = styled.div`
       gap: 1rem;
       padding: 1rem;
       margin-bottom:70px;
+      
     }
       
     .bottom_footer_left {
@@ -209,7 +210,7 @@ export const FooterWrapper = styled.div`
 
          .contactButtonText {
           font-weight: 600;
-          font-size:48px ;
+          font-size:16px ;
           letter-spacing: 1px;
         }
   

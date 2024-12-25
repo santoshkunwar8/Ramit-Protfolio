@@ -1,6 +1,6 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home/Home";
-import { AppWrapper } from "./App.styles";
+import { AppWrapper, LoadingScreen } from "./App.styles";
 import Admin from "./pages/Admin/Admin";
 import Upload from "./pages/Admin/Upload/Upload";
 import Work from "./pages/Admin/Upload/Work/Work";
@@ -29,7 +29,14 @@ function App() {
   // console.log(user);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <LoadingScreen>
+        <div>
+          <div className="spinner"></div>
+          <div className="message">Please wait, loading...</div>
+        </div>
+      </LoadingScreen>
+    );
   }
 
 

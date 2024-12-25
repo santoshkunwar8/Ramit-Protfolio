@@ -21,6 +21,8 @@ const HeroWrapper = styled.div`
 
   .about_section {
     display: none;
+    justify-content: center;
+      align-items: center;
   }
   .about_section_large {
     display:none;
@@ -37,7 +39,7 @@ const HeroWrapper = styled.div`
     .about_section_large {
       display: block;
       // margin-right: 200px;
-      margin-top: -250px;
+      margin-top: -200px;
       justify-content: center;
       align-items: center;
     }
@@ -51,7 +53,7 @@ const HeroWrapper = styled.div`
     .about_section_large {
       display: block;
       // margin-right: 200px;
-      margin-top: -140px;
+      margin-top: -200px;
       justify-content: center;
       align-items: center;
     }
@@ -81,17 +83,32 @@ const HeroWrapper = styled.div`
       margin-top: -80px;
       justify-content: center;
       align-items: center;
+      text-align:center;
+    
     }
   }
 
   @media (max-width: 1023px) {
     .about_section {
-      display: block;
+      display: none;
     }
 
     .about_section_large {
+      display: block;
+       margin-top: 1px;
+      //  margin-bottom: 800px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .about_section {
       display: none;
-      //  margin-top: 40px;
+    }
+
+    .about_section_large {
+      display: block;
+      
+       margin-top: 40px;
       //  margin-bottom: 800px;
     }
   }

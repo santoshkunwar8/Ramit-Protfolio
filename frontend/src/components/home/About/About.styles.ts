@@ -18,6 +18,7 @@ h5{
     line-height:25px;
     color:var(--gray);
     font-size:14px;
+    text-align:justify;
 }
 
 `

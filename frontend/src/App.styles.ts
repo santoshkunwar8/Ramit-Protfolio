@@ -18,6 +18,39 @@ witdh:100%
 
 `
 
+export const LoadingScreen = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ddd;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #555;
+  }
+`;
+
 // #root {
 //   max-width: 1280px;
 //   margin: 0 auto;
