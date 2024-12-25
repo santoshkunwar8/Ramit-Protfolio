@@ -32,7 +32,7 @@ const Profile = () => {
 
                             <h3 className='username'>{user?.username}</h3>
                             <p className='location'>{user?.country}</p>
-                            <p className='role'>Project Lead at Leapfrog</p>
+                            <p className='role'></p>
                         </div>
                         <div className='button_wrapper'>
 

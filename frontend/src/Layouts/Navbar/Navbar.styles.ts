@@ -8,6 +8,11 @@ export const NavbarWrapper = styled.div`
   justify-content: space-between;
   padding: 0 4px;
 
+  .profilebox{
+  width:20px;
+  height:20px;
+  }
+
   /* Desktop Styles */
   .nav_icon {
     display: none;
@@ -45,6 +50,21 @@ export const NavbarWrapper = styled.div`
     display: flex;
     align-items: center;
     gap: 2rem;
+
+    .profileBox {
+      display: flex;
+      gap: 10px;
+      cursor: pointer;
+
+      .profileImg {
+        border-radius: 50%;
+        object-fit: cover;
+        width: 45px;
+        height: 45px;
+        border: 3px solid var(--main_color);
+        padding: 2px;
+      }
+}
 
     .nav_list {
       display: flex;
@@ -108,6 +128,8 @@ export const NavbarWrapper = styled.div`
       justify-content: space-around;
       z-index: 1000;
       box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.2);
+
+      
 
       .nav_list {
         display: flex;
