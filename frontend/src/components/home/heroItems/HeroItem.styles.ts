@@ -5,6 +5,7 @@ export const HeroItemsWrapper = styled.div`
   align-items: center;
   gap: 1rem;
 
+
   .current_item {
     border: 3px solid var(--main_color);
     opacity: 1 !important;
@@ -29,29 +30,67 @@ export const HeroItemsWrapper = styled.div`
       padding: 8px;
     }
 
+    @media (max-width: 680px) {
+      width: 50px;
+      height: 120px;
+      padding: 5px;
+
+      p {
+        font-size: 12px;
+
+        .item_count {
+          font-size: 11px;
+        }
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
     @media (max-width: 480px) {
-      width: 60px;
-      padding: 6px;
+      width: 40px;
+      height: 100px;
+      padding: 4px;
+      gap: 10px;
+
+      p {
+        font-size: 12px !important;
+        font-weight:300;
+        // color:green;
+
+        .item_count {
+          font-size: 10px;
+        }
+      }
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
     }
 
     p {
-      // color:var(--gray);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      font-size: 15px;
-      font-weight: 500;
+      font-size: 14px;
+      font-weight: 400;
       letter-spacing: 0.8px;
-      .item_count {
-        // color:var(--main_color)
 
+      .item_count {
         @media (max-width: 768px) {
-          font-size: 14px;
+          font-size: 13px;
+        }
+
+        @media (max-width: 680px) {
+          font-size: 10px;
         }
 
         @media (max-width: 480px) {
-          font-size: 13px;
+          font-size: 8px;
         }
       }
     }
@@ -65,10 +104,20 @@ export const HeroItemsWrapper = styled.div`
         height: 70px;
       }
 
+      @media (max-width: 680px) {
+        width: 50px;
+        height: 50px;
+      }
+
       @media (max-width: 480px) {
-        width: 60px;
-        height: 60px;
+        width: 30px;
+        height: 30px;
       }
     }
+
+    @media (max-width: 480px) {
+      gap:0.2rem;
+      // background:green;
+}
   }
 `;

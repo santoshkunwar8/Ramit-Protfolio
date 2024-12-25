@@ -64,7 +64,12 @@ export const UserInfoWrapper = styled.div`
             font-size:1.4rem;
         }
 
-    
+}
+        @media (max-width: 710px) {
+        p{
+        font-size:0.8rem !important;
+        // color:green;
+        }
 }
 
 `

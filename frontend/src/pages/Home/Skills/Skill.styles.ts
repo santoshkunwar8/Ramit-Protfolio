@@ -44,6 +44,7 @@ export const SkillWrapper = styled.div`
           img {
             width: 30px;
             height: 30px;
+
             @media (max-width: 806px) {
               width: 20px;
               height: 20px;
@@ -137,5 +138,12 @@ export const SkillWrapper = styled.div`
         letter-spacing: 1px;
       }
     }
+  }
+     @media (max-width: 370px) {
+      .main_text {
+        font-size: 1.6rem !important;
+        // color:green;
+      
+      }
   }
 `;
