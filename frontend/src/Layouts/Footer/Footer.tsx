@@ -1,11 +1,12 @@
 import { FooterWrapper } from "./Footer.styles";
 import { AiOutlineRight } from "react-icons/ai";
-import { FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { FaLinkedinIn} from "react-icons/fa";
 import { TbBrandFiverr } from "react-icons/tb";
 import { VscGithub } from "react-icons/vsc";
 import { PiYoutubeLogo } from "react-icons/pi";
 import { BsTiktok } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -18,28 +19,29 @@ const Footer = () => {
             Queries.
           </p>
           {/* <button></button> */}
+          <a href="/contact">
           <Link to={"/contact"} className="contactButton">
             <h5 className="contactButtonText">Contact Me </h5>
             <AiOutlineRight className="icon" strokeWidth={68} />
-          </Link>
+          </Link></a>
           <a href="https://www.cornortech.com" className="exploreButton">
             Explore Cornor Tech's Website
           </a>
         </div>
         <div className="rightFooter">
           <ul>
-            <li>Projects</li>
-            <li>About</li>
-            <li>Contact</li>
-            <li>Clients</li>
-            <li>Reviews</li>
+           <a href="/works"> <li>Projects</li></a>
+            <a href="/"><li>About</li></a>
+            <a href="/contact"><li>Contact</li></a>
+            <a href="/"></a><li>Clients</li>
+            <a href="/review"><li>Reviews</li></a>
           </ul>
           <ul>
-            <li>Blogs</li>
-            <li>Company</li>
-            <li>Blogs</li>
-            <li>Career</li>
-            <li>Get Job</li>
+            <a href="https://cornortech.com/"><li>Blogs</li></a>
+            <a href="https://cornortech.com/"><li>Company</li></a>
+            <a href="https://cornortech.com/"><li>Blogs</li></a>
+            <a href="https://cornortech.com/"><li>Career</li></a>
+            <a href="https://cornortech.com/"><li>Get Job</li></a>
           </ul>
         </div>
       </div>
@@ -62,27 +64,28 @@ const Footer = () => {
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/ramitnpn/">
+            <a href="https://www.fiverr.com/santoshkunwa442">
               <TbBrandFiverr />
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/ramitnpn/">
+            <a href="https://github.com/RamitNpn">
               <VscGithub />
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/ramitnpn/">
-              <FaTwitter />
+            <a href="https://wa.me/9867387360">
+            <FaWhatsapp />
+
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/ramitnpn/">
+            <a href="https://www.youtube.com/@ramitnpn">
               <PiYoutubeLogo />
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/ramitnpn/">
+            <a href="https://www.tiktok.com/@ramitneupane01">
               <BsTiktok />
             </a>
           </li>

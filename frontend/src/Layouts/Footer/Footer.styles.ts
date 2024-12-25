@@ -22,25 +22,51 @@ export const FooterWrapper = styled.div`
         color: var(--gray);
       }
 
-      .contactButton {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        margin-top: 2rem;
-        cursor: pointer;
-        font-weight:600;
-        font-size: 15px;
-        .contactButtonText {
-          font-weight: 600;
-          font-size: 16px;
-          letter-spacing: 1px;
-        }
-            .icon {
-          font-size: 20px; 
-          font-weight: bold;   
-          
-          }
-      }
+      
+     .contactButton {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers text and icon */
+  padding: 10px 20px; /* Adjusted padding for better size */
+  gap: 8px;
+  margin-top: 2rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  background: linear-gradient(
+    to right,
+    rgb(0, 255, 0),
+         rgb(0, 204, 0),
+         rgb(0, 153, 0), 
+         rgb(0, 102, 0), 
+         rgb(0, 51, 0)
+  );
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  width: fit-content; /* Matches width to content */
+  transition: all 0.3s ease;
+}
+
+.contactButton:hover {
+  filter: brightness(1.1);
+}
+
+.contactButtonText {
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.icon {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 
         .exploreButton {
       display: inline-block;
@@ -179,6 +205,7 @@ export const FooterWrapper = styled.div`
           text-align: center; 
           text-decoration: none; 
           padding: 10px 20px;
+          
 
          .contactButtonText {
           font-weight: 600;
