@@ -4,7 +4,7 @@ import { AboutWrapper } from './About.styles'
 type AdminInfoProps={
   adminData : UserType |null
 }
-const About:React.FC<AdminInfoProps> = ({adminData}) => {
+const About:React.FC<AdminInfoProps> = ({}) => {
 
   return (
     <AboutWrapper >

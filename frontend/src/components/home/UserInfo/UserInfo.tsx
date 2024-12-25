@@ -5,7 +5,7 @@ import { UserType } from '../../../utils/Types';
 type AdminInfoProps={
   adminData : UserType |null
 }
-const UserInfo:React.FC<AdminInfoProps> = ({adminData}) => {
+const UserInfo:React.FC<AdminInfoProps> = ({}) => {
 
   return (
     <UserInfoWrapper>
