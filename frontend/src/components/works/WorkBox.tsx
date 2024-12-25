@@ -18,9 +18,7 @@ const WorkBox = () => {
       <h1> Showcasing My Innovative And Creative Projects</h1>
         </div>
           <button className="explore_button">
-          <p>
-          Explore my innovation 
-             </p>
+          <a href="/works">Explore My Innovations</a>
              <AiOutlineRight/>
 
           </button>

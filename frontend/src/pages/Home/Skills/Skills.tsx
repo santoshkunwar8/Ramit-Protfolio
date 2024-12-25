@@ -34,7 +34,7 @@ const Skills = () => {
         </div>
 
         <div className="viewMoreButton">
-          <p className="">View More</p>
+          <p className="">Explore Tools</p>
           <AiOutlineRight />
         </div>
         <div className="toolsContainer">
@@ -51,7 +51,7 @@ const Skills = () => {
           </div>
         </div>
         <div className="viewMoreButton">
-          <p className="">View More</p>
+          <p className="">Explore Skills</p>
           <AiOutlineRight />
         </div>
         <div className="mySkillsContainer">

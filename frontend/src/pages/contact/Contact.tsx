@@ -28,7 +28,7 @@ const Contact = () => {
     <Navbar/>
 
         <div className="intro_box">
-            <img src="/images/user.jpg" alt="userImage" />
+            <img src="/images/User.jpg" alt="userImage" />
             <h1 className='intro_text'> I am Freelancer     Fullstack Developer working globally </h1>
             <span className='secondary_text'>Contact me for collaboration </span>
             <a href="https://res.cloudinary.com/onlinecoder/image/upload/v1701071534/mtciiur9y3mlpiz6t4vz.pdf">
