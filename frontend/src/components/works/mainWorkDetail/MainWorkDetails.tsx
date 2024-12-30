@@ -89,7 +89,7 @@ const MainWorkDetails: React.FC<MainWorkPropsType> = ({ work }) => {
           <div className="primaryInfo">
             <div className="main_info">
               <h1 className="workName">{work?.name}</h1>
-              <p className="workType">Online thrift marketplace</p>
+              <p className="workType">Educational Platform</p>
               <a className="workLink" href={work?.link} target="_blank">
                 {work?.link}
               </a>
