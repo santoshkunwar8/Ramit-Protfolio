@@ -1,7 +1,7 @@
 import axios from "axios"
 
 export const AxiosInstance = axios.create({
-    baseURL: `http://localhost:8000/api`,
+    baseURL: `https://backend.ramitneupane.com.np/api`,
     withCredentials:true
 })
 
