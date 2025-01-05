@@ -5,7 +5,7 @@ module.exports = (app)=>{
     app.use("/api/work",require("./WorkRoute"));
     app.use("/api/review",require("./ReviewRoute"));
     app.use("/api/comment",require("./CommentRoute"));
-    app.use("/api/tool",authMiddleware,require("./ToolsRoute"));
+    app.use("/api/tool",require("./ToolsRoute"));
     app.use("/api/auth",require("./AuthRoute"))
     
 }
