@@ -8,11 +8,19 @@ const MongoStore = require("connect-mongo");
 
 require("dotenv").config();
 
+// app.use(
+//   cors({
+//     origin: ["http://localhost:5173", process.env.FRONTEND_URL],
+//     methods: ["POST", "GET", "PUT", "DELETE"],
+//     credentials: true,
+//   })
+// );
 app.use(
   cors({
     origin: ["http://localhost:5173", process.env.FRONTEND_URL],
-    methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    optionsSuccessStatus: 204, // ← add this for older browsers
   })
 );
 
@@ -35,7 +43,7 @@ app.use(
     cookie: {
       secure: false,
       httpOnly: true,
-      maxAge: 1000 * 60 * 60*24,
+      maxAge: 1000 * 60 * 60 * 24,
       sameSite: "lax",
     },
   })
@@ -52,14 +60,13 @@ app.use((req, res, next) => {
 app.get("/test-session", (req, res) => {
   req.session.test = "Session is working!";
   // console.log("test",  req.session.user);
-  res.send( req.session.user);
+  res.send(req.session.user);
 });
 
 // Route to check session value
 app.get("/check-session", (req, res) => {
   res.send(req.session.test || "No session value set");
 });
-
 
 require("./routes/AllRoutes")(app);
 

@@ -27,7 +27,7 @@ const Works = () => {
     let data: WorkType[] = worksArr;
 
     if (platform !== "All") {
-      let filtered = data?.filter(
+      const filtered = data?.filter(
         (wrk) => wrk.platform.toLowerCase() === platform.toLowerCase()
       );
 
@@ -37,7 +37,7 @@ const Works = () => {
     }
 
     if (status !== "All") {
-      let filtered = data?.filter(
+      const filtered = data?.filter(
         (wrk) => wrk.status.toLowerCase() === status.toLowerCase()
       );
       console.log("status changed", filtered);
@@ -47,7 +47,7 @@ const Works = () => {
     }
 
     if (rating !== "All") {
-      let filtered = data?.filter((wrk) => wrk.rating >= parseInt(rating));
+      const filtered = data?.filter((wrk) => wrk.rating >= parseInt(rating));
       console.log("status changed", filtered);
       if (filtered) {
         data = filtered;
@@ -61,6 +61,9 @@ const Works = () => {
       const { data, status } = await getAllProjectApi();
       if (status === 200) {
         setWorkArr(data.message);
+        console.log("API response:", data);
+        console.log("API response data:", data);
+        console.log("Data.message:", data.message);
       }
     } catch (error) {
       console.log(error);
@@ -124,10 +127,19 @@ const Works = () => {
           </div>
         </div>
         <div className="workWrapper">
-          {worksArr ? (
+          {/* {worksArr ? (
             filteredWork.map((work) => (
               <ProjectItem big={true} key={work._id} work={work} />
             ))
+          ) : (
+            <WorkSkeleton />
+          )} */}
+          {worksArr && filteredWork.length > 0 ? (
+            filteredWork.map((work) => (
+              <ProjectItem big={true} key={work._id} work={work} />
+            ))
+          ) : worksArr && filteredWork.length === 0 ? (
+            <p>No projects found.</p>
           ) : (
             <WorkSkeleton />
           )}

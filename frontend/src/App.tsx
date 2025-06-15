@@ -32,13 +32,12 @@ function App() {
     return (
       <LoadingScreen>
         <div>
-          <div className="spinner"></div>
+          {/* <div className="spinner"></div> */}
           <div className="message">Please wait, loading...</div>
         </div>
       </LoadingScreen>
     );
   }
-
 
   return (
     <>
